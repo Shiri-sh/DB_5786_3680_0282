@@ -205,3 +205,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+DB_lab_ER_Diagram.erdplus
+DB_lab-Relational Schema .erdplus
