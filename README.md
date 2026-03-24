@@ -62,6 +62,8 @@ These decisions improve data integrity, normalization, and alignment with real-w
 ### SQL INSERT statements - Mackoroo
 ![LAB_ORDER_INSERT](images/stage1/LAB_ORDER_INSERT.png)
 ![LAB_TECHNICIAN_INSERT](images/stage1/LAB_TECHNICIAN_INSERT.png)
+![lab_order](images/stage1/lab_order.png)
+
 
 ### CSV Imports
 ![CSV](images/stage1/CSV.png)
