@@ -13,9 +13,9 @@
 * DSD Diagram
 * Design Decisions
 * Data Insertion Methods
-  -- SQL INSERT statements
-  Mockaroo,
-  Python scripts --
+  -- SQL INSERT Statements Mackoroo
+  CSV Imports,
+  Python Scripts --
 * Backup and Restore
 ---
 
@@ -56,5 +56,20 @@ Several design decisions were made to ensure a realistic and efficient database 
 * Equipment is linked to lab tests to represent the dependency between tests and diagnostic tools.
 
 These decisions improve data integrity, normalization, and alignment with real-world scenarios.
+
+---
+## Data Insertion Methods
+### SQL INSERT statements - Mackoroo
+![LAB_ORDER_INSERT](images/stage1/LAB_ORDER_INSERT.png)
+![LAB_TECHNICIAN_INSERT](images/stage1/LAB_TECHNICIAN_INSERT.png)
+
+### CSV Imports
+![CSV](images/stage1/CSV.png)
+![diagnostic_equipment](images/stage1/diagnostic_equipment.png)
+
+### Python Scripts
+![python](images/stage1/python.png)
+
+
 
 
