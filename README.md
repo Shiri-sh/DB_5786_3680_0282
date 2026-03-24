@@ -28,7 +28,7 @@ The system is responsible for managing laboratory tests, including test definiti
 The goal of this system is to ensure efficient tracking of laboratory processes and accurate storage of diagnostic data.
 
 ---
-## System Screens
+## System Screens-![linkToTheSite](https://aistudio.google.com/apps/88bbcf57-d648-4756-ba67-b17949258251?showPreview=true&showAssistant=true)
 ![dashboard](images/stage1/labflow_screenshots/dashboard.png)
 ![LabTests](images/stage1/labflow_screenshots/LabTests.png)
 ![labOrders](images/stage1/labflow_screenshots/labOrders.png)
