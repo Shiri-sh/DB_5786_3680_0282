@@ -3,7 +3,7 @@ services:
   # PostgreSQL Database
   # -------------------------
   db:
-    image: postgres:latest
+    image: postgres:17.4
     container_name: PostgreSQL_DB
     restart: always
     environment:
@@ -15,10 +15,10 @@ services:
     volumes:
       # - ./init-db:/docker-entrypoint-initdb.d
       # - postgres_data:/var/lib/postgresql
-      - ./DBProject_3680_0282/שלב א:/docker-entrypoint-initdb.d
+      - ./DBProject_3680_0282/שלב א/init-db:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql
     networks:
-      - kids_network
+      - lab_network
 
   # -------------------------
   # pgAdmin
@@ -37,7 +37,7 @@ services:
     depends_on:
       - db
     networks:
-      - kids_network
+      - lab_network
 
 # -------------------------
 # Volumes
@@ -48,4 +48,4 @@ volumes:
 
 
 networks:
-  kids_network:
+  lab_network:
