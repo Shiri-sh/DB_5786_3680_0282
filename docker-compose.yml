@@ -15,7 +15,7 @@ services:
     volumes:
       # - ./init-db:/docker-entrypoint-initdb.d
       # - postgres_data:/var/lib/postgresql
-      - ./DBProject_3680_0282/שלב א/init-db:/docker-entrypoint-initdb.d
+      - ./שלב_א/init-db:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql
     networks:
       - lab_network
