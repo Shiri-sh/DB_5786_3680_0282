@@ -67,7 +67,12 @@ These decisions improve data integrity, normalization, and alignment with real-w
 ![insert_result](../images/stage1/insert_results.png)
 
 ---
-##Backup and Restore
+## Backup and Restore
 ### Backup
+![backup](../images/stage1/backup.png)
+![backup1](../images/stage1/backup1.png)
+
 ### Restore
+![restore_running](../images/stage1/restore_running.png)
+
 
