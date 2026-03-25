@@ -64,7 +64,7 @@ These decisions improve data integrity, normalization, and alignment with real-w
 
 ### Python Scripts
 ![python](../images/stage1/python.png)
-![insert_result](../images/stage1/insert_result.png)
+![insert_result](../images/stage1/insert_results.png)
 
 ---
 ##Backup and Restore
