@@ -24,17 +24,17 @@ The goal of this system is to ensure efficient tracking of laboratory processes 
 ![dashboard](../images/stage1/labflow_screenshots/dashboard.png)
 ![LabTests](../images/stage1/labflow_screenshots/LabTests.png)
 ![labOrders](../images/stage1/labflow_screenshots/labOrders.png)
-![results](images/stage1/labflow_screenshots/results.png)
-![technicians](images/stage1/labflow_screenshots/technicians.png)
-![equipment](images/stage1/labflow_screenshots/equipment.png)
+![results](../images/stage1/labflow_screenshots/results.png)
+![technicians](../images/stage1/labflow_screenshots/technicians.png)
+![equipment](../images/stage1/labflow_screenshots/equipment.png)
 
 ---
 ## ERD Diagram
-![ERD](images/stage1/ERD.png)
+![ERD](../images/stage1/ERD.png)
 
 ---
 ## DSD Diagram
-![DSD](images/stage1/DSD.png)
+![DSD](../images/stage1/DSD.png)
 
 ---
 ## Design Decisions
@@ -52,19 +52,19 @@ These decisions improve data integrity, normalization, and alignment with real-w
 ---
 ## Data Insertion Methods
 ### SQL INSERT statements - Mackoroo
-![LAB_ORDER_INSERT](images/stage1/LAB_ORDER_INSERT.png)
-![LAB_TECHNICIAN_INSERT](images/stage1/LAB_TECHNICIAN_INSERT.png)
-![lab_order](images/stage1/lab_order.png)
+![LAB_ORDER_INSERT](../images/stage1/LAB_ORDER_INSERT.png)
+![LAB_TECHNICIAN_INSERT](../images/stage1/LAB_TECHNICIAN_INSERT.png)
+![lab_order](../images/stage1/lab_order.png)
 
 
 ### CSV Imports
-![CSV](images/stage1/CSV.png)
-![diagnostic_equipment](images/stage1/diagnostic_equipment.png)
-![import_csv](images/stage1/import_csv.png)
+![CSV](../images/stage1/CSV.png)
+![diagnostic_equipment](../images/stage1/diagnostic_equipment.png)
+![import_csv](../images/stage1/import_csv.png)
 
 ### Python Scripts
-![python](images/stage1/python.png)
-![insert_result](images/stage1/insert_result.png)
+![python](../images/stage1/python.png)
+![insert_result](../images/stage1/insert_result.png)
 
 ---
 ##Backup and Restore
