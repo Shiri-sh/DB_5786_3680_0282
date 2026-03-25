@@ -1,501 +1,501 @@
 equipment_id,equipment_name,department_id,maintenance_date
-1,Autoclave,18,17/12/2025
-2,Incubator,8,26/11/2023
-3,Microscope,6,23/11/2023
-4,Electrolyte Analyzer,19,11/09/2024
-5,Gel Electrophoresis System,8,02/04/2025
-6,CT Scanner,5,20/11/2025
-7,Automated Pipette,7,18/02/2024
-8,Incubator,19,12/10/2024
-9,X-Ray Machine,4,12/05/2025
-10,Flow Cytometer,7,28/01/2024
-11,Autoclave,7,06/09/2024
-12,Gel Electrophoresis System,13,30/07/2024
-13,Electrolyte Analyzer,6,25/04/2023
-14,Autoclave,6,18/08/2023
-15,Incubator,2,02/08/2024
-16,Biosafety Cabinet,4,07/05/2024
-17,Automated Pipette,5,05/02/2025
-18,MRI Scanner,20,22/10/2024
-19,X-Ray Machine,12,26/12/2025
-20,CT Scanner,1,05/03/2024
-21,Blood Gas Analyzer,19,28/01/2026
-22,Electrolyte Analyzer,2,24/05/2023
-23,Autoclave,20,24/03/2023
-24,X-Ray Machine,4,27/11/2023
-25,Electrolyte Analyzer,8,24/07/2023
-26,CT Scanner,3,24/07/2024
-27,Biosafety Cabinet,7,05/03/2026
-28,Incubator,4,09/11/2024
-29,MRI Scanner,2,31/10/2023
-30,X-Ray Machine,20,18/08/2024
-31,Spectrophotometer,7,29/04/2024
-32,Incubator,14,29/11/2023
-33,Flow Cytometer,13,10/04/2025
-34,Biosafety Cabinet,1,10/04/2023
-35,Microscope,12,26/03/2023
-36,X-Ray Machine,8,21/04/2023
-37,Incubator,20,25/03/2024
-38,Hematology Analyzer,18,07/01/2024
-39,Ultrasound Machine,4,07/03/2026
-40,Automated Pipette,16,23/02/2026
-41,Blood Gas Analyzer,20,25/07/2023
-42,Microscope,8,15/11/2023
-43,X-Ray Machine,6,11/05/2024
-44,Incubator,7,13/02/2025
-45,Biosafety Cabinet,9,31/08/2023
-46,Incubator,8,28/04/2024
-47,PCR Machine,17,06/08/2024
-48,Incubator,9,14/04/2024
-49,X-Ray Machine,14,21/10/2025
-50,X-Ray Machine,5,11/03/2025
-51,Autoclave,18,04/10/2023
-52,X-Ray Machine,17,04/02/2026
-53,Ultrasound Machine,3,09/01/2025
-54,Flow Cytometer,7,12/02/2024
-55,Incubator,10,04/01/2026
-56,Flow Cytometer,11,09/01/2026
-57,Spectrophotometer,10,02/01/2024
-58,Spectrophotometer,16,25/04/2024
-59,Spectrophotometer,20,12/12/2024
-60,X-Ray Machine,13,11/01/2025
-61,X-Ray Machine,3,29/02/2024
-62,Microscope,17,07/04/2024
-63,CT Scanner,8,28/01/2024
-64,Flow Cytometer,14,18/11/2025
-65,Flow Cytometer,4,04/10/2023
-66,X-Ray Machine,15,31/03/2024
-67,Biosafety Cabinet,14,26/08/2025
-68,Hematology Analyzer,2,11/08/2024
-69,Electrolyte Analyzer,1,17/07/2023
-70,Electrolyte Analyzer,12,21/11/2025
-71,Ultrasound Machine,18,22/02/2024
-72,Automated Pipette,8,03/03/2026
-73,Blood Gas Analyzer,15,26/06/2025
-74,Blood Gas Analyzer,3,06/01/2025
-75,Electrolyte Analyzer,2,25/05/2024
-76,Blood Gas Analyzer,19,19/05/2024
-77,Spectrophotometer,18,08/06/2024
-78,X-Ray Machine,11,28/11/2024
-79,Automated Pipette,14,29/07/2025
-80,Autoclave,7,07/09/2025
-81,Ultrasound Machine,14,12/10/2024
-82,Flow Cytometer,7,26/02/2024
-83,Ultrasound Machine,16,22/01/2026
-84,Autoclave,16,24/04/2023
-85,Biosafety Cabinet,13,08/12/2024
-86,CT Scanner,2,15/10/2023
-87,Microscope,4,04/07/2024
-88,PCR Machine,7,05/12/2025
-89,Biosafety Cabinet,6,30/01/2024
-90,Flow Cytometer,9,04/10/2023
-91,Ultrasound Machine,10,22/03/2026
-92,Electrolyte Analyzer,4,06/06/2024
-93,PCR Machine,3,19/09/2025
-94,Gel Electrophoresis System,4,30/07/2025
-95,CT Scanner,15,29/04/2025
-96,X-Ray Machine,11,25/10/2025
-97,X-Ray Machine,7,07/04/2025
-98,Microscope,17,25/05/2025
-99,Biosafety Cabinet,11,04/10/2023
-100,Automated Pipette,4,18/09/2025
-101,Blood Gas Analyzer,18,10/03/2026
-102,CT Scanner,6,16/02/2026
-103,MRI Scanner,7,29/05/2023
-104,PCR Machine,7,23/02/2026
-105,Gel Electrophoresis System,13,29/07/2023
-106,Flow Cytometer,7,10/02/2025
-107,Spectrophotometer,18,06/07/2023
-108,Automated Pipette,11,14/10/2025
-109,CT Scanner,6,16/04/2024
-110,CT Scanner,6,31/08/2024
-111,CT Scanner,14,24/02/2024
-112,Spectrophotometer,3,21/04/2024
-113,Microscope,20,06/04/2024
-114,PCR Machine,5,05/07/2023
-115,PCR Machine,7,26/07/2025
-116,Microscope,9,07/07/2023
-117,Hematology Analyzer,11,17/01/2025
-118,MRI Scanner,13,07/07/2023
-119,PCR Machine,7,09/06/2024
-120,Biosafety Cabinet,19,25/08/2023
-121,MRI Scanner,9,12/03/2026
-122,Flow Cytometer,19,29/11/2024
-123,Gel Electrophoresis System,10,18/07/2023
-124,Blood Gas Analyzer,5,08/05/2023
-125,Hematology Analyzer,6,06/07/2024
-126,Centrifuge,10,14/02/2024
-127,Automated Pipette,15,25/05/2023
-128,Autoclave,8,09/08/2023
-129,PCR Machine,19,10/05/2023
-130,Flow Cytometer,20,06/11/2023
-131,Microscope,3,06/09/2023
-132,PCR Machine,19,21/09/2025
-133,Hematology Analyzer,16,26/01/2026
-134,Gel Electrophoresis System,10,14/06/2023
-135,Automated Pipette,17,28/01/2026
-136,Biosafety Cabinet,16,15/10/2024
-137,MRI Scanner,9,11/01/2026
-138,Spectrophotometer,20,17/03/2025
-139,Incubator,6,25/01/2026
-140,Gel Electrophoresis System,12,19/08/2024
-141,Ultrasound Machine,2,29/11/2024
-142,Autoclave,1,25/05/2024
-143,PCR Machine,4,01/11/2023
-144,X-Ray Machine,18,24/03/2024
-145,Spectrophotometer,5,12/07/2024
-146,MRI Scanner,3,09/10/2024
-147,Biosafety Cabinet,14,09/08/2023
-148,Autoclave,10,14/12/2024
-149,PCR Machine,13,26/08/2023
-150,PCR Machine,20,05/09/2025
-151,Incubator,7,13/01/2026
-152,Biosafety Cabinet,16,23/12/2024
-153,PCR Machine,3,29/05/2023
-154,Flow Cytometer,17,20/12/2023
-155,Incubator,7,24/06/2023
-156,Flow Cytometer,2,23/07/2025
-157,Microscope,11,02/05/2023
-158,Autoclave,4,14/05/2025
-159,PCR Machine,14,09/08/2024
-160,Flow Cytometer,20,01/05/2025
-161,Ultrasound Machine,14,01/09/2024
-162,Flow Cytometer,13,12/09/2023
-163,Spectrophotometer,13,10/10/2024
-164,X-Ray Machine,5,22/02/2026
-165,Hematology Analyzer,18,11/10/2023
-166,Microscope,15,18/12/2025
-167,CT Scanner,2,26/03/2023
-168,Hematology Analyzer,19,15/02/2026
-169,PCR Machine,20,07/02/2026
-170,CT Scanner,14,18/08/2023
-171,Autoclave,19,19/03/2025
-172,Microscope,16,29/12/2025
-173,Ultrasound Machine,15,21/11/2023
-174,Autoclave,18,09/09/2025
-175,CT Scanner,4,22/07/2024
-176,Centrifuge,7,11/06/2024
-177,Spectrophotometer,4,03/12/2023
-178,Biosafety Cabinet,16,26/04/2023
-179,Gel Electrophoresis System,18,27/05/2024
-180,Automated Pipette,9,01/11/2023
-181,X-Ray Machine,19,24/12/2025
-182,Centrifuge,10,14/08/2024
-183,Spectrophotometer,2,21/10/2023
-184,Incubator,13,24/05/2023
-185,CT Scanner,18,01/06/2025
-186,Automated Pipette,19,01/12/2023
-187,Automated Pipette,12,08/06/2024
-188,Centrifuge,7,06/02/2025
-189,Blood Gas Analyzer,14,27/06/2025
-190,Automated Pipette,17,05/03/2025
-191,Hematology Analyzer,15,17/08/2024
-192,Microscope,1,22/10/2024
-193,Incubator,13,28/06/2025
-194,CT Scanner,15,23/01/2026
-195,Electrolyte Analyzer,5,26/05/2025
-196,Ultrasound Machine,20,09/03/2025
-197,Centrifuge,7,07/10/2024
-198,Automated Pipette,18,18/04/2025
-199,Incubator,19,24/07/2025
-200,Biosafety Cabinet,8,29/10/2023
-201,Centrifuge,12,30/01/2026
-202,Gel Electrophoresis System,15,03/12/2024
-203,Flow Cytometer,3,01/04/2025
-204,Centrifuge,15,06/02/2026
-205,Flow Cytometer,4,18/04/2025
-206,Microscope,9,05/12/2025
-207,Electrolyte Analyzer,1,27/01/2026
-208,PCR Machine,4,19/09/2024
-209,Biosafety Cabinet,6,08/01/2026
-210,Flow Cytometer,13,27/09/2024
-211,Automated Pipette,17,17/11/2025
-212,X-Ray Machine,11,29/11/2025
-213,Spectrophotometer,4,10/04/2024
-214,Microscope,2,12/03/2026
-215,PCR Machine,9,25/11/2024
-216,Spectrophotometer,5,05/09/2025
-217,MRI Scanner,5,02/09/2025
-218,CT Scanner,5,26/05/2025
-219,Flow Cytometer,17,21/01/2026
-220,Automated Pipette,19,25/08/2023
-221,Spectrophotometer,13,07/08/2023
-222,PCR Machine,11,04/06/2025
-223,Blood Gas Analyzer,19,12/11/2025
-224,Centrifuge,20,28/01/2026
-225,Spectrophotometer,7,25/08/2024
-226,Flow Cytometer,9,19/04/2024
-227,Centrifuge,18,15/04/2023
-228,PCR Machine,12,30/09/2025
-229,Flow Cytometer,19,28/02/2024
-230,Blood Gas Analyzer,17,24/05/2023
-231,Blood Gas Analyzer,19,22/08/2023
-232,Hematology Analyzer,10,08/12/2024
-233,PCR Machine,12,14/02/2025
-234,Hematology Analyzer,12,26/12/2023
-235,PCR Machine,4,15/05/2025
-236,Gel Electrophoresis System,10,14/02/2025
-237,Biosafety Cabinet,16,17/07/2024
-238,CT Scanner,20,11/05/2025
-239,Gel Electrophoresis System,3,04/01/2026
-240,Biosafety Cabinet,15,03/12/2023
-241,CT Scanner,9,18/05/2025
-242,Spectrophotometer,7,23/07/2023
-243,Spectrophotometer,8,13/03/2026
-244,Automated Pipette,17,22/09/2024
-245,PCR Machine,3,08/05/2024
-246,Autoclave,12,09/09/2025
-247,Flow Cytometer,3,16/01/2026
-248,Gel Electrophoresis System,8,22/10/2024
-249,Spectrophotometer,11,31/10/2025
-250,Automated Pipette,20,17/12/2025
-251,Gel Electrophoresis System,6,09/10/2023
-252,Automated Pipette,3,06/11/2023
-253,Blood Gas Analyzer,6,25/07/2025
-254,Biosafety Cabinet,18,26/10/2023
-255,MRI Scanner,18,09/06/2023
-256,Autoclave,4,29/03/2025
-257,Spectrophotometer,19,08/11/2024
-258,Microscope,5,19/01/2025
-259,Blood Gas Analyzer,3,27/09/2025
-260,Ultrasound Machine,9,22/10/2025
-261,PCR Machine,6,02/03/2025
-262,Spectrophotometer,10,10/10/2023
-263,Blood Gas Analyzer,10,23/04/2025
-264,CT Scanner,12,07/02/2024
-265,Biosafety Cabinet,20,11/10/2023
-266,Centrifuge,18,27/02/2024
-267,Electrolyte Analyzer,18,19/06/2024
-268,Gel Electrophoresis System,4,16/02/2024
-269,Electrolyte Analyzer,1,22/07/2025
-270,Incubator,1,07/11/2024
-271,CT Scanner,11,14/06/2024
-272,Blood Gas Analyzer,9,11/09/2023
-273,Electrolyte Analyzer,20,18/02/2025
-274,Microscope,18,27/06/2023
-275,Ultrasound Machine,8,12/05/2024
-276,Flow Cytometer,5,17/03/2024
-277,Blood Gas Analyzer,1,27/01/2025
-278,Microscope,13,11/05/2024
-279,Automated Pipette,14,11/06/2025
-280,Electrolyte Analyzer,10,16/10/2023
-281,Centrifuge,4,22/06/2025
-282,Flow Cytometer,10,21/04/2023
-283,X-Ray Machine,4,15/10/2024
-284,CT Scanner,6,15/02/2024
-285,PCR Machine,3,19/01/2026
-286,Electrolyte Analyzer,2,20/03/2026
-287,PCR Machine,9,08/03/2025
-288,Gel Electrophoresis System,7,16/08/2024
-289,Blood Gas Analyzer,20,12/08/2023
-290,Automated Pipette,17,13/05/2024
-291,Automated Pipette,4,17/05/2025
-292,Autoclave,1,26/12/2023
-293,Biosafety Cabinet,2,07/03/2025
-294,PCR Machine,4,11/06/2023
-295,CT Scanner,19,24/01/2025
-296,Gel Electrophoresis System,6,04/02/2025
-297,Autoclave,16,05/02/2024
-298,Gel Electrophoresis System,11,30/01/2026
-299,Microscope,16,25/10/2023
-300,Automated Pipette,17,22/03/2026
-301,Gel Electrophoresis System,7,21/06/2023
-302,Automated Pipette,9,04/04/2024
-303,Gel Electrophoresis System,17,09/09/2023
-304,X-Ray Machine,3,28/06/2023
-305,Centrifuge,10,07/06/2023
-306,Microscope,7,17/11/2023
-307,X-Ray Machine,17,19/03/2026
-308,CT Scanner,2,25/06/2025
-309,PCR Machine,15,04/11/2023
-310,Hematology Analyzer,1,10/02/2025
-311,X-Ray Machine,16,15/09/2023
-312,Spectrophotometer,20,01/05/2023
-313,Hematology Analyzer,16,31/01/2025
-314,CT Scanner,13,12/09/2023
-315,Autoclave,7,29/05/2025
-316,Autoclave,7,02/07/2024
-317,PCR Machine,15,06/01/2025
-318,Hematology Analyzer,15,02/10/2024
-319,Biosafety Cabinet,1,15/07/2024
-320,Autoclave,4,11/08/2025
-321,PCR Machine,20,30/11/2024
-322,Centrifuge,5,17/09/2025
-323,Ultrasound Machine,16,24/12/2025
-324,Autoclave,8,05/07/2024
-325,Gel Electrophoresis System,11,24/01/2026
-326,Gel Electrophoresis System,14,17/10/2025
-327,Incubator,19,08/07/2025
-328,Hematology Analyzer,1,11/09/2023
-329,Autoclave,10,19/07/2025
-330,X-Ray Machine,13,21/04/2023
-331,Hematology Analyzer,9,19/08/2025
-332,PCR Machine,11,24/01/2025
-333,Flow Cytometer,1,27/08/2023
-334,CT Scanner,17,21/09/2024
-335,Microscope,4,09/12/2024
-336,PCR Machine,16,10/10/2025
-337,Spectrophotometer,17,18/02/2026
-338,Biosafety Cabinet,16,22/06/2024
-339,Biosafety Cabinet,18,07/02/2026
-340,Hematology Analyzer,3,04/07/2025
-341,Blood Gas Analyzer,15,26/06/2024
-342,Flow Cytometer,7,14/05/2025
-343,X-Ray Machine,8,13/06/2024
-344,Ultrasound Machine,17,29/06/2023
-345,Incubator,19,23/07/2023
-346,Flow Cytometer,2,27/03/2025
-347,Microscope,10,22/12/2023
-348,Biosafety Cabinet,9,30/06/2025
-349,Hematology Analyzer,8,05/12/2023
-350,Blood Gas Analyzer,13,21/02/2025
-351,Incubator,1,12/01/2025
-352,X-Ray Machine,19,07/05/2023
-353,PCR Machine,12,12/01/2025
-354,Electrolyte Analyzer,11,28/08/2025
-355,Microscope,19,24/10/2024
-356,Ultrasound Machine,3,18/08/2024
-357,MRI Scanner,19,07/03/2026
-358,Spectrophotometer,10,17/04/2024
-359,Microscope,19,14/06/2023
-360,Incubator,11,06/04/2025
-361,Automated Pipette,8,15/04/2025
-362,PCR Machine,3,15/12/2023
-363,X-Ray Machine,14,10/04/2023
-364,X-Ray Machine,15,11/01/2024
-365,Autoclave,15,19/04/2024
-366,PCR Machine,12,10/02/2024
-367,Incubator,11,06/01/2026
-368,PCR Machine,19,18/11/2025
-369,Gel Electrophoresis System,1,13/12/2023
-370,Gel Electrophoresis System,5,06/03/2024
-371,Hematology Analyzer,19,10/08/2023
-372,Automated Pipette,17,04/04/2024
-373,PCR Machine,15,22/08/2024
-374,Hematology Analyzer,4,10/02/2024
-375,Gel Electrophoresis System,9,04/04/2023
-376,Gel Electrophoresis System,17,06/11/2024
-377,Automated Pipette,2,05/09/2023
-378,Electrolyte Analyzer,14,15/11/2025
-379,PCR Machine,16,04/06/2023
-380,Incubator,10,05/10/2025
-381,Blood Gas Analyzer,12,09/10/2024
-382,Hematology Analyzer,10,22/07/2024
-383,Hematology Analyzer,1,18/03/2024
-384,Microscope,14,25/07/2025
-385,Flow Cytometer,6,07/06/2023
-386,Centrifuge,5,03/07/2024
-387,Spectrophotometer,7,01/02/2024
-388,Electrolyte Analyzer,16,05/06/2023
-389,Biosafety Cabinet,5,15/04/2023
-390,Ultrasound Machine,15,15/04/2023
-391,Incubator,5,01/03/2026
-392,Autoclave,12,05/06/2024
-393,Electrolyte Analyzer,13,15/01/2024
-394,CT Scanner,15,10/07/2023
-395,Spectrophotometer,14,27/10/2025
-396,Blood Gas Analyzer,20,04/11/2025
-397,Blood Gas Analyzer,19,24/02/2024
-398,Centrifuge,5,28/04/2023
-399,CT Scanner,5,17/09/2025
-400,Automated Pipette,2,08/09/2025
-401,Hematology Analyzer,5,10/03/2026
-402,PCR Machine,4,18/12/2024
-403,Hematology Analyzer,2,08/08/2023
-404,Blood Gas Analyzer,8,03/08/2023
-405,CT Scanner,9,03/09/2023
-406,Centrifuge,7,08/03/2024
-407,Spectrophotometer,20,16/08/2025
-408,Blood Gas Analyzer,1,02/04/2025
-409,Microscope,8,01/09/2023
-410,Incubator,6,27/03/2024
-411,Biosafety Cabinet,13,30/03/2025
-412,Electrolyte Analyzer,16,26/09/2024
-413,Biosafety Cabinet,18,06/11/2024
-414,Blood Gas Analyzer,13,01/05/2023
-415,Centrifuge,20,21/02/2024
-416,Ultrasound Machine,14,22/01/2024
-417,Microscope,11,12/01/2025
-418,Gel Electrophoresis System,10,23/09/2024
-419,Hematology Analyzer,13,13/02/2024
-420,MRI Scanner,11,31/05/2025
-421,X-Ray Machine,8,31/12/2025
-422,Ultrasound Machine,9,05/05/2025
-423,Autoclave,16,13/02/2024
-424,Gel Electrophoresis System,7,22/06/2024
-425,Blood Gas Analyzer,17,07/04/2024
-426,MRI Scanner,7,06/07/2024
-427,Spectrophotometer,12,30/03/2025
-428,Flow Cytometer,1,23/09/2023
-429,Automated Pipette,8,01/12/2023
-430,CT Scanner,4,12/08/2025
-431,PCR Machine,5,20/02/2025
-432,Ultrasound Machine,7,20/06/2023
-433,Flow Cytometer,5,16/12/2025
-434,Gel Electrophoresis System,1,01/06/2023
-435,Automated Pipette,3,17/09/2024
-436,Incubator,3,14/03/2026
-437,Biosafety Cabinet,4,03/08/2023
-438,Spectrophotometer,7,03/07/2024
-439,Autoclave,9,25/02/2025
-440,MRI Scanner,12,28/10/2023
-441,Microscope,9,30/03/2025
-442,PCR Machine,20,26/07/2023
-443,Incubator,16,14/08/2024
-444,X-Ray Machine,14,13/01/2026
-445,Gel Electrophoresis System,5,16/04/2025
-446,CT Scanner,16,09/04/2024
-447,Hematology Analyzer,11,11/01/2025
-448,X-Ray Machine,15,16/05/2025
-449,Biosafety Cabinet,16,27/03/2025
-450,Autoclave,15,23/10/2023
-451,Electrolyte Analyzer,1,22/07/2025
-452,Electrolyte Analyzer,20,26/01/2024
-453,Ultrasound Machine,17,29/01/2024
-454,Electrolyte Analyzer,6,31/01/2026
-455,Flow Cytometer,19,01/09/2025
-456,PCR Machine,20,13/10/2024
-457,Microscope,5,16/05/2024
-458,Biosafety Cabinet,4,15/12/2024
-459,Blood Gas Analyzer,11,01/09/2024
-460,Microscope,15,07/05/2024
-461,Flow Cytometer,10,14/06/2024
-462,Flow Cytometer,20,02/07/2024
-463,Biosafety Cabinet,5,15/09/2025
-464,Incubator,12,04/11/2025
-465,CT Scanner,20,02/02/2026
-466,Automated Pipette,20,17/04/2025
-467,Biosafety Cabinet,4,30/06/2024
-468,X-Ray Machine,2,29/04/2023
-469,Automated Pipette,10,25/01/2026
-470,Autoclave,20,28/05/2024
-471,Autoclave,9,08/12/2024
-472,Electrolyte Analyzer,18,19/01/2026
-473,Microscope,6,13/01/2026
-474,Flow Cytometer,20,08/10/2025
-475,Spectrophotometer,10,28/10/2024
-476,Incubator,15,10/08/2023
-477,Microscope,4,14/04/2025
-478,X-Ray Machine,7,02/03/2026
-479,CT Scanner,9,17/09/2024
-480,Flow Cytometer,1,08/12/2023
-481,MRI Scanner,17,03/09/2023
-482,CT Scanner,9,29/10/2023
-483,CT Scanner,16,15/02/2026
-484,Microscope,2,11/11/2025
-485,Autoclave,9,14/05/2024
-486,Blood Gas Analyzer,10,20/08/2025
-487,Autoclave,20,29/01/2025
-488,Blood Gas Analyzer,6,29/07/2023
-489,Ultrasound Machine,6,14/08/2023
-490,Blood Gas Analyzer,17,04/08/2024
-491,Biosafety Cabinet,16,03/11/2024
-492,Biosafety Cabinet,10,10/10/2024
-493,Flow Cytometer,4,27/12/2023
-494,Ultrasound Machine,13,27/08/2024
-495,X-Ray Machine,5,13/10/2025
-496,X-Ray Machine,5,09/05/2025
-497,Ultrasound Machine,18,26/09/2024
-498,Centrifuge,12,09/10/2023
-499,Centrifuge,2,25/12/2024
-500,Ultrasound Machine,9,05/08/2025
+1,Autoclave,8,2025-03-26
+2,CT Scanner,15,2024-08-03
+3,Gel Electrophoresis System,16,2024-07-21
+4,Electrolyte Analyzer,3,2025-07-15
+5,X-Ray Machine,8,2025-03-09
+6,Centrifuge,1,2023-08-06
+7,Biosafety Cabinet,19,2023-09-26
+8,Biosafety Cabinet,20,2023-07-26
+9,Gel Electrophoresis System,15,2023-01-07
+10,X-Ray Machine,8,2025-06-20
+11,Flow Cytometer,3,2024-01-01
+12,Incubator,10,2025-03-29
+13,Flow Cytometer,6,2025-11-16
+14,Biosafety Cabinet,2,2023-03-21
+15,Biosafety Cabinet,14,2024-07-13
+16,Centrifuge,6,2024-04-15
+17,Hematology Analyzer,20,2023-11-03
+18,Autoclave,8,2025-12-24
+19,Hematology Analyzer,20,2025-05-09
+20,Centrifuge,17,2023-12-17
+21,Incubator,11,2023-04-07
+22,Centrifuge,17,2023-11-02
+23,Biosafety Cabinet,16,2025-11-18
+24,Centrifuge,7,2024-09-10
+25,CT Scanner,12,2024-01-06
+26,Microscope,6,2024-04-18
+27,Flow Cytometer,3,2024-05-27
+28,Biosafety Cabinet,19,2025-03-20
+29,Biosafety Cabinet,3,2023-01-09
+30,Incubator,18,2024-12-31
+31,Automated Pipette,11,2024-11-12
+32,Microscope,2,2025-08-29
+33,Incubator,16,2024-04-26
+34,Ultrasound Machine,18,2024-12-01
+35,CT Scanner,7,2024-08-28
+36,Spectrophotometer,10,2025-03-21
+37,PCR Machine,2,2025-10-15
+38,Autoclave,13,2023-10-23
+39,Autoclave,7,2025-10-11
+40,MRI Scanner,11,2025-04-04
+41,Ultrasound Machine,7,2023-07-30
+42,Incubator,1,2025-09-06
+43,Spectrophotometer,11,2025-06-15
+44,Flow Cytometer,19,2024-09-04
+45,Centrifuge,15,2025-06-17
+46,Spectrophotometer,8,2024-04-12
+47,Incubator,8,2023-08-18
+48,Hematology Analyzer,12,2023-05-11
+49,Flow Cytometer,8,2023-12-31
+50,Electrolyte Analyzer,11,2023-11-17
+51,Automated Pipette,15,2024-10-22
+52,X-Ray Machine,11,2024-07-02
+53,Automated Pipette,11,2024-03-11
+54,Autoclave,8,2025-07-23
+55,Autoclave,2,2025-11-12
+56,Electrolyte Analyzer,10,2025-06-29
+57,Autoclave,4,2024-08-02
+58,Spectrophotometer,20,2023-02-08
+59,Incubator,3,2024-08-25
+60,Spectrophotometer,5,2025-08-16
+61,Gel Electrophoresis System,6,2023-07-01
+62,Gel Electrophoresis System,20,2025-06-26
+63,Biosafety Cabinet,17,2023-05-19
+64,PCR Machine,16,2023-10-20
+65,Blood Gas Analyzer,12,2024-10-14
+66,Autoclave,11,2024-10-06
+67,Blood Gas Analyzer,6,2024-06-19
+68,Biosafety Cabinet,13,2024-10-09
+69,Spectrophotometer,1,2023-11-13
+70,Automated Pipette,5,2025-01-12
+71,Spectrophotometer,2,2023-10-12
+72,Ultrasound Machine,6,2024-05-17
+73,Ultrasound Machine,7,2025-01-07
+74,Hematology Analyzer,10,2024-11-29
+75,Hematology Analyzer,9,2025-10-18
+76,Gel Electrophoresis System,20,2024-03-16
+77,PCR Machine,11,2024-12-23
+78,MRI Scanner,15,2024-06-05
+79,Biosafety Cabinet,15,2024-10-02
+80,PCR Machine,14,2023-09-20
+81,Automated Pipette,14,2025-02-05
+82,X-Ray Machine,15,2025-06-09
+83,Microscope,3,2024-01-17
+84,Flow Cytometer,3,2025-01-09
+85,Hematology Analyzer,5,2025-08-04
+86,X-Ray Machine,19,2023-12-09
+87,PCR Machine,19,2023-09-07
+88,Hematology Analyzer,13,2024-02-07
+89,Electrolyte Analyzer,8,2024-06-03
+90,Blood Gas Analyzer,3,2025-07-15
+91,Electrolyte Analyzer,10,2025-11-21
+92,Incubator,10,2025-02-05
+93,Blood Gas Analyzer,6,2024-08-09
+94,Flow Cytometer,16,2023-05-11
+95,Hematology Analyzer,14,2025-07-27
+96,Blood Gas Analyzer,3,2023-08-19
+97,Incubator,9,2025-10-12
+98,Ultrasound Machine,19,2025-08-30
+99,CT Scanner,18,2024-06-19
+100,X-Ray Machine,19,2023-08-31
+101,Blood Gas Analyzer,4,2024-06-03
+102,Spectrophotometer,13,2023-11-22
+103,Electrolyte Analyzer,5,2023-02-13
+104,MRI Scanner,11,2023-03-22
+105,CT Scanner,8,2023-08-18
+106,Flow Cytometer,4,2025-01-16
+107,Spectrophotometer,17,2025-10-27
+108,Electrolyte Analyzer,1,2024-07-28
+109,Microscope,15,2025-09-03
+110,Gel Electrophoresis System,8,2023-07-20
+111,Centrifuge,3,2023-01-11
+112,CT Scanner,12,2024-03-17
+113,Centrifuge,12,2023-09-02
+114,MRI Scanner,18,2023-05-23
+115,Biosafety Cabinet,10,2025-06-04
+116,Autoclave,18,2025-01-24
+117,Centrifuge,17,2025-12-26
+118,Biosafety Cabinet,18,2023-06-30
+119,Automated Pipette,4,2024-03-25
+120,Hematology Analyzer,8,2025-11-12
+121,Hematology Analyzer,20,2024-10-21
+122,Electrolyte Analyzer,7,2023-11-26
+123,Flow Cytometer,10,2024-06-29
+124,MRI Scanner,4,2024-09-18
+125,Autoclave,11,2025-04-28
+126,CT Scanner,2,2023-07-14
+127,Biosafety Cabinet,6,2024-07-30
+128,CT Scanner,15,2023-09-19
+129,Autoclave,11,2025-05-16
+130,Gel Electrophoresis System,1,2025-05-27
+131,Blood Gas Analyzer,13,2023-10-13
+132,Hematology Analyzer,19,2023-12-20
+133,Spectrophotometer,7,2024-07-21
+134,Hematology Analyzer,15,2025-01-13
+135,Flow Cytometer,12,2025-03-26
+136,Spectrophotometer,19,2024-05-14
+137,Hematology Analyzer,14,2024-10-26
+138,Flow Cytometer,6,2025-04-13
+139,Automated Pipette,10,2023-05-14
+140,Electrolyte Analyzer,17,2025-08-07
+141,Spectrophotometer,12,2024-08-10
+142,Flow Cytometer,11,2025-07-03
+143,Hematology Analyzer,13,2023-12-04
+144,Blood Gas Analyzer,19,2023-07-27
+145,Automated Pipette,12,2024-10-22
+146,Centrifuge,6,2023-05-08
+147,Gel Electrophoresis System,17,2023-02-25
+148,Hematology Analyzer,4,2025-12-22
+149,Microscope,17,2024-06-21
+150,Hematology Analyzer,9,2023-10-03
+151,Electrolyte Analyzer,15,2023-06-20
+152,MRI Scanner,3,2026-01-01
+153,MRI Scanner,18,2023-01-16
+154,Incubator,10,2024-11-11
+155,Centrifuge,2,2024-04-24
+156,X-Ray Machine,16,2025-08-31
+157,Centrifuge,4,2025-08-05
+158,Automated Pipette,10,2023-03-16
+159,Centrifuge,9,2023-01-05
+160,Ultrasound Machine,17,2024-07-01
+161,MRI Scanner,2,2025-12-01
+162,Ultrasound Machine,16,2023-07-06
+163,Gel Electrophoresis System,9,2023-03-08
+164,PCR Machine,12,2023-10-31
+165,Incubator,19,2025-07-17
+166,Microscope,14,2025-08-04
+167,Spectrophotometer,13,2025-01-25
+168,Gel Electrophoresis System,4,2026-01-11
+169,PCR Machine,13,2024-12-18
+170,CT Scanner,15,2023-02-21
+171,Autoclave,20,2024-03-24
+172,Electrolyte Analyzer,4,2025-05-21
+173,Flow Cytometer,9,2023-12-30
+174,PCR Machine,11,2025-11-15
+175,Flow Cytometer,5,2025-04-05
+176,X-Ray Machine,8,2024-07-13
+177,Hematology Analyzer,17,2023-09-13
+178,Spectrophotometer,4,2023-01-05
+179,Electrolyte Analyzer,20,2023-09-07
+180,Flow Cytometer,15,2024-06-18
+181,Microscope,4,2023-01-14
+182,X-Ray Machine,20,2025-12-19
+183,Biosafety Cabinet,10,2025-08-23
+184,Flow Cytometer,15,2024-03-06
+185,Electrolyte Analyzer,19,2025-05-09
+186,MRI Scanner,2,2023-11-09
+187,Spectrophotometer,4,2023-06-27
+188,Centrifuge,12,2023-04-16
+189,X-Ray Machine,13,2024-08-03
+190,Hematology Analyzer,20,2024-09-22
+191,Electrolyte Analyzer,6,2024-01-14
+192,Autoclave,15,2023-01-13
+193,Spectrophotometer,10,2024-04-18
+194,Ultrasound Machine,12,2025-11-20
+195,Hematology Analyzer,4,2024-09-29
+196,Microscope,1,2023-08-29
+197,MRI Scanner,11,2025-10-18
+198,Ultrasound Machine,20,2024-06-30
+199,Centrifuge,16,2025-06-08
+200,X-Ray Machine,20,2023-09-09
+201,Autoclave,14,2025-07-06
+202,Electrolyte Analyzer,11,2024-01-10
+203,Incubator,1,2025-12-07
+204,MRI Scanner,17,2024-07-27
+205,CT Scanner,20,2025-06-11
+206,Flow Cytometer,6,2023-05-20
+207,Incubator,19,2023-01-02
+208,Biosafety Cabinet,15,2025-09-29
+209,Automated Pipette,11,2024-10-02
+210,Microscope,10,2023-02-20
+211,Microscope,20,2025-04-15
+212,X-Ray Machine,19,2024-02-11
+213,Blood Gas Analyzer,7,2026-01-11
+214,Automated Pipette,18,2023-06-24
+215,Electrolyte Analyzer,17,2024-10-10
+216,Spectrophotometer,9,2025-08-29
+217,Biosafety Cabinet,5,2023-04-29
+218,Blood Gas Analyzer,5,2023-07-09
+219,MRI Scanner,17,2023-10-01
+220,Flow Cytometer,1,2023-07-19
+221,Electrolyte Analyzer,15,2023-08-07
+222,Hematology Analyzer,7,2025-10-07
+223,PCR Machine,16,2024-04-26
+224,Hematology Analyzer,6,2023-01-11
+225,Incubator,7,2024-03-24
+226,PCR Machine,15,2023-10-16
+227,Spectrophotometer,14,2025-11-18
+228,Hematology Analyzer,9,2023-10-05
+229,Electrolyte Analyzer,7,2025-03-31
+230,Microscope,1,2023-07-10
+231,X-Ray Machine,17,2024-06-14
+232,Centrifuge,17,2024-08-24
+233,Centrifuge,17,2023-10-14
+234,Automated Pipette,11,2024-06-13
+235,MRI Scanner,11,2024-10-16
+236,Blood Gas Analyzer,13,2025-08-30
+237,Gel Electrophoresis System,17,2023-04-06
+238,MRI Scanner,2,2023-05-17
+239,Gel Electrophoresis System,13,2024-04-28
+240,Centrifuge,7,2024-05-18
+241,X-Ray Machine,7,2024-08-08
+242,Automated Pipette,9,2024-06-29
+243,Flow Cytometer,20,2025-10-12
+244,Ultrasound Machine,15,2025-11-26
+245,Flow Cytometer,20,2025-07-04
+246,Electrolyte Analyzer,12,2023-12-19
+247,Flow Cytometer,4,2024-09-12
+248,MRI Scanner,20,2025-10-17
+249,Ultrasound Machine,1,2023-10-01
+250,Electrolyte Analyzer,5,2025-12-01
+251,PCR Machine,19,2026-01-04
+252,Spectrophotometer,10,2024-06-17
+253,PCR Machine,4,2025-01-18
+254,Spectrophotometer,16,2023-06-29
+255,Ultrasound Machine,18,2023-10-24
+256,Electrolyte Analyzer,11,2025-06-10
+257,Flow Cytometer,1,2024-07-24
+258,Ultrasound Machine,1,2025-05-04
+259,Automated Pipette,13,2023-08-22
+260,Spectrophotometer,16,2025-09-10
+261,Incubator,9,2025-10-07
+262,Blood Gas Analyzer,9,2025-12-10
+263,Hematology Analyzer,1,2023-08-10
+264,Gel Electrophoresis System,2,2026-01-04
+265,Incubator,6,2024-07-10
+266,Centrifuge,13,2023-09-13
+267,Biosafety Cabinet,16,2024-03-15
+268,Ultrasound Machine,12,2024-01-15
+269,Spectrophotometer,14,2025-06-18
+270,Gel Electrophoresis System,20,2023-06-09
+271,Centrifuge,17,2024-07-05
+272,CT Scanner,6,2023-09-29
+273,PCR Machine,10,2023-08-16
+274,PCR Machine,7,2025-12-17
+275,Microscope,2,2023-08-02
+276,Automated Pipette,13,2023-08-12
+277,Autoclave,8,2023-02-28
+278,CT Scanner,7,2023-02-18
+279,Spectrophotometer,15,2023-02-28
+280,Electrolyte Analyzer,7,2025-11-20
+281,Hematology Analyzer,5,2025-11-15
+282,PCR Machine,14,2025-05-07
+283,Biosafety Cabinet,3,2023-03-25
+284,Microscope,2,2023-06-21
+285,Automated Pipette,13,2025-11-28
+286,Automated Pipette,5,2025-05-06
+287,Incubator,1,2023-06-05
+288,Hematology Analyzer,13,2023-09-20
+289,CT Scanner,11,2025-01-29
+290,Ultrasound Machine,1,2024-07-04
+291,Biosafety Cabinet,15,2023-07-21
+292,Flow Cytometer,12,2023-04-15
+293,X-Ray Machine,11,2023-07-04
+294,Automated Pipette,9,2023-07-23
+295,CT Scanner,5,2025-01-11
+296,Automated Pipette,4,2025-08-25
+297,CT Scanner,2,2023-02-21
+298,Autoclave,13,2023-04-07
+299,Microscope,10,2023-06-25
+300,Gel Electrophoresis System,16,2025-09-13
+301,Automated Pipette,19,2023-08-30
+302,PCR Machine,15,2023-04-29
+303,Blood Gas Analyzer,18,2023-01-02
+304,Blood Gas Analyzer,16,2024-07-23
+305,Microscope,17,2025-08-27
+306,PCR Machine,5,2023-05-06
+307,Electrolyte Analyzer,4,2025-03-13
+308,Incubator,20,2025-12-14
+309,Autoclave,13,2024-05-23
+310,Electrolyte Analyzer,17,2023-09-18
+311,X-Ray Machine,15,2024-11-15
+312,MRI Scanner,10,2025-09-18
+313,Hematology Analyzer,7,2024-12-19
+314,Automated Pipette,8,2025-08-07
+315,MRI Scanner,11,2025-11-14
+316,Flow Cytometer,16,2024-12-18
+317,Automated Pipette,9,2024-10-23
+318,CT Scanner,5,2025-10-20
+319,X-Ray Machine,20,2025-11-24
+320,Ultrasound Machine,1,2024-10-02
+321,Spectrophotometer,2,2023-09-12
+322,Centrifuge,9,2025-09-11
+323,Spectrophotometer,1,2023-03-02
+324,Flow Cytometer,13,2025-08-26
+325,Incubator,14,2025-12-23
+326,Centrifuge,3,2023-08-16
+327,Biosafety Cabinet,18,2023-12-01
+328,CT Scanner,10,2024-03-28
+329,X-Ray Machine,8,2025-10-19
+330,CT Scanner,15,2024-03-16
+331,Automated Pipette,11,2024-07-28
+332,Biosafety Cabinet,3,2023-08-01
+333,CT Scanner,19,2025-08-29
+334,PCR Machine,4,2023-10-22
+335,Autoclave,18,2023-04-05
+336,Ultrasound Machine,15,2023-03-25
+337,Biosafety Cabinet,14,2023-02-06
+338,Flow Cytometer,12,2024-11-22
+339,PCR Machine,3,2023-06-23
+340,Biosafety Cabinet,9,2023-01-15
+341,Blood Gas Analyzer,2,2023-08-27
+342,Biosafety Cabinet,3,2025-03-31
+343,Blood Gas Analyzer,13,2025-06-15
+344,Hematology Analyzer,4,2024-12-14
+345,X-Ray Machine,10,2025-09-28
+346,Gel Electrophoresis System,14,2023-04-04
+347,Centrifuge,11,2025-07-01
+348,Automated Pipette,18,2023-10-14
+349,Ultrasound Machine,3,2024-04-29
+350,Autoclave,20,2025-09-24
+351,Ultrasound Machine,1,2024-04-07
+352,Microscope,19,2025-05-08
+353,Centrifuge,1,2024-07-14
+354,Biosafety Cabinet,11,2023-11-27
+355,Biosafety Cabinet,17,2023-05-03
+356,Microscope,9,2024-04-24
+357,PCR Machine,12,2023-06-04
+358,Centrifuge,4,2023-08-22
+359,Ultrasound Machine,8,2023-01-30
+360,Spectrophotometer,4,2023-04-16
+361,Microscope,2,2024-11-17
+362,X-Ray Machine,13,2024-05-03
+363,Incubator,17,2024-12-14
+364,Ultrasound Machine,17,2024-07-14
+365,Incubator,2,2025-09-22
+366,Automated Pipette,13,2023-04-03
+367,Blood Gas Analyzer,2,2025-02-14
+368,CT Scanner,19,2024-09-21
+369,Flow Cytometer,8,2023-08-22
+370,Autoclave,12,2023-10-05
+371,Incubator,4,2025-05-18
+372,Centrifuge,6,2023-01-09
+373,Microscope,7,2023-10-19
+374,Electrolyte Analyzer,5,2025-04-23
+375,Centrifuge,14,2023-12-04
+376,Centrifuge,14,2023-02-25
+377,Blood Gas Analyzer,2,2023-03-04
+378,Centrifuge,5,2024-11-17
+379,Gel Electrophoresis System,8,2026-01-03
+380,Automated Pipette,16,2025-11-17
+381,Autoclave,20,2023-04-08
+382,Microscope,15,2024-11-17
+383,Biosafety Cabinet,20,2024-12-18
+384,Flow Cytometer,11,2023-07-25
+385,Blood Gas Analyzer,17,2023-05-11
+386,MRI Scanner,8,2023-10-17
+387,CT Scanner,12,2025-06-01
+388,Biosafety Cabinet,3,2023-05-25
+389,Spectrophotometer,17,2024-05-28
+390,Hematology Analyzer,14,2025-10-24
+391,Incubator,8,2025-01-09
+392,Automated Pipette,17,2023-10-06
+393,Hematology Analyzer,16,2023-10-12
+394,Spectrophotometer,17,2025-01-25
+395,Electrolyte Analyzer,6,2025-04-29
+396,MRI Scanner,15,2024-06-19
+397,MRI Scanner,9,2024-12-02
+398,Blood Gas Analyzer,5,2023-11-13
+399,Hematology Analyzer,4,2025-04-28
+400,Automated Pipette,9,2025-06-26
+401,Automated Pipette,17,2023-03-01
+402,Electrolyte Analyzer,8,2024-02-15
+403,Hematology Analyzer,11,2025-06-01
+404,Electrolyte Analyzer,10,2024-11-27
+405,Gel Electrophoresis System,18,2024-04-29
+406,Biosafety Cabinet,6,2025-01-27
+407,X-Ray Machine,18,2023-07-11
+408,Autoclave,2,2023-01-19
+409,Blood Gas Analyzer,14,2024-03-05
+410,Spectrophotometer,17,2025-11-11
+411,MRI Scanner,5,2025-11-09
+412,Biosafety Cabinet,15,2024-06-08
+413,Spectrophotometer,7,2024-08-31
+414,Microscope,8,2025-10-23
+415,X-Ray Machine,4,2023-12-22
+416,Ultrasound Machine,2,2025-02-02
+417,Incubator,20,2024-09-20
+418,CT Scanner,20,2025-06-02
+419,CT Scanner,6,2025-05-29
+420,Automated Pipette,6,2023-02-20
+421,PCR Machine,16,2025-10-14
+422,Hematology Analyzer,10,2024-09-07
+423,CT Scanner,19,2023-01-15
+424,PCR Machine,3,2024-12-28
+425,Automated Pipette,19,2025-12-28
+426,Flow Cytometer,20,2024-10-14
+427,CT Scanner,12,2025-07-12
+428,Biosafety Cabinet,2,2024-11-23
+429,Microscope,18,2024-07-19
+430,PCR Machine,9,2025-03-20
+431,Incubator,8,2023-04-16
+432,Centrifuge,12,2023-06-05
+433,MRI Scanner,20,2023-08-12
+434,CT Scanner,10,2023-06-09
+435,PCR Machine,19,2023-10-27
+436,PCR Machine,17,2023-06-07
+437,MRI Scanner,16,2025-12-19
+438,Biosafety Cabinet,15,2025-05-31
+439,Ultrasound Machine,2,2025-03-13
+440,X-Ray Machine,12,2024-02-24
+441,Gel Electrophoresis System,12,2025-05-28
+442,Hematology Analyzer,18,2023-10-20
+443,X-Ray Machine,4,2025-04-22
+444,Automated Pipette,10,2023-03-30
+445,Gel Electrophoresis System,19,2023-03-08
+446,Gel Electrophoresis System,1,2024-12-11
+447,Blood Gas Analyzer,8,2023-02-07
+448,Biosafety Cabinet,12,2023-12-09
+449,Hematology Analyzer,4,2023-09-25
+450,Automated Pipette,16,2023-11-18
+451,X-Ray Machine,8,2023-01-07
+452,Ultrasound Machine,10,2024-09-28
+453,Biosafety Cabinet,9,2025-07-02
+454,Autoclave,13,2023-02-12
+455,Automated Pipette,10,2025-10-04
+456,Gel Electrophoresis System,13,2023-07-01
+457,Gel Electrophoresis System,9,2023-05-17
+458,Electrolyte Analyzer,13,2024-12-17
+459,Autoclave,6,2023-09-29
+460,Gel Electrophoresis System,12,2023-10-13
+461,Gel Electrophoresis System,16,2025-06-03
+462,Microscope,3,2024-01-19
+463,Biosafety Cabinet,4,2024-02-18
+464,X-Ray Machine,2,2025-11-28
+465,Flow Cytometer,12,2024-05-07
+466,Blood Gas Analyzer,16,2024-12-09
+467,Autoclave,11,2024-09-07
+468,Ultrasound Machine,6,2024-02-16
+469,X-Ray Machine,19,2023-11-05
+470,X-Ray Machine,8,2023-11-15
+471,Biosafety Cabinet,1,2025-10-29
+472,Microscope,18,2024-06-11
+473,Blood Gas Analyzer,14,2025-11-15
+474,Hematology Analyzer,13,2026-01-10
+475,Incubator,13,2023-09-02
+476,PCR Machine,16,2025-08-24
+477,Centrifuge,4,2025-11-20
+478,Centrifuge,12,2025-01-07
+479,CT Scanner,14,2023-10-23
+480,Incubator,11,2024-08-30
+481,Spectrophotometer,20,2025-02-08
+482,Gel Electrophoresis System,3,2024-11-07
+483,Biosafety Cabinet,2,2024-01-28
+484,Incubator,15,2023-03-21
+485,Hematology Analyzer,15,2025-11-10
+486,Centrifuge,1,2025-02-16
+487,Centrifuge,11,2024-09-27
+488,Spectrophotometer,15,2023-09-21
+489,Centrifuge,8,2023-04-22
+490,Hematology Analyzer,6,2024-06-07
+491,Automated Pipette,12,2025-09-14
+492,Spectrophotometer,17,2023-05-02
+493,Automated Pipette,13,2024-01-21
+494,Hematology Analyzer,4,2024-10-19
+495,Blood Gas Analyzer,7,2023-07-10
+496,MRI Scanner,18,2023-01-14
+497,Gel Electrophoresis System,17,2023-03-07
+498,Autoclave,13,2025-05-20
+499,Autoclave,3,2024-01-02
+500,Centrifuge,19,2023-08-18
