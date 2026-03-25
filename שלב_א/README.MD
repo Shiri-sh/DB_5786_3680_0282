@@ -21,9 +21,9 @@ The goal of this system is to ensure efficient tracking of laboratory processes 
 
 ---
 ## System Screens-![linkToTheSite](https://aistudio.google.com/apps/88bbcf57-d648-4756-ba67-b17949258251?showPreview=true&showAssistant=true)
-![dashboard](images/stage1/labflow_screenshots/dashboard.png)
-![LabTests](images/stage1/labflow_screenshots/LabTests.png)
-![labOrders](images/stage1/labflow_screenshots/labOrders.png)
+![dashboard](../images/stage1/labflow_screenshots/dashboard.png)
+![LabTests](../images/stage1/labflow_screenshots/LabTests.png)
+![labOrders](../images/stage1/labflow_screenshots/labOrders.png)
 ![results](images/stage1/labflow_screenshots/results.png)
 ![technicians](images/stage1/labflow_screenshots/technicians.png)
 ![equipment](images/stage1/labflow_screenshots/equipment.png)
