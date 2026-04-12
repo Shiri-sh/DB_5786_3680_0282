@@ -660,15 +660,21 @@ After Execution Screenshot:
 ## Constraint 1
 
 Description of the change:
+האילוץ מוודא כי העלות של בדיקות מעבדה חייבת להיות חיובית.
+
+מטרת האילוץ היא לשמור על תקינות הנתונים ולמנוע הכנסת ערכים לא הגיוניים למערכת.
 
 <pre>
-ALTER TABLE ...
+ALTER TABLE LAB_TEST
+ADD CONSTRAINT chk_cost_positive CHECK (cost > 0);
 </pre>
 
 Attempt to insert invalid data:
 
 <pre>
-INSERT INTO ...
+INSERT INTO LAB_TEST
+(test_id, test_name, description, normal_range, cost, sample_type)
+VALUES (501, 'Lipid Panel', 'Lipid Panel description', 'Normal', -354.31, 'Blood');
 </pre>
 
 Execution Screenshot (error message):
@@ -678,15 +684,20 @@ Execution Screenshot (error message):
 ## Constraint 2
 
 Description of the change:
+האילוץ מוודא כי תאריך תוצאת בדיקה אינו יכול להיות בעתיד.
+
+מטרת האילוץ היא להבטיח אמינות נתונים, שכן תוצאות בדיקה לא יכולות להתקבל לפני ביצוען בפועל.
 
 <pre>
-ALTER TABLE ...
+ALTER TABLE LAB_RESULT
+ADD CONSTRAINT chk_result_date CHECK (result_date <= CURRENT_DATE);
 </pre>
 
 Attempt to insert invalid data:
 
 <pre>
-INSERT INTO ...
+INSERT INTO LAB_RESULT (result_id, lab_order_test_id, technician_id, result_value, result_date) 
+VALUES (20001, 1, 65, 'Low', '2024-09-01');
 </pre>
 
 Execution Screenshot (error message):
@@ -696,15 +707,20 @@ Execution Screenshot (error message):
 ## Constraint 3
 
 Description of the change:
+האילוץ מוודא כי תאריך התחזוקה של ציוד אינו מוקדם מתאריך מסוים.
+
+מטרת האילוץ היא למנוע הכנסת נתונים לא רלוונטיים או ישנים מדי למערכת.
 
 <pre>
-ALTER TABLE ...
+ALTER TABLE DIAGNOSTIC_EQUIPMENT
+ADD CONSTRAINT chk_maintenance CHECK (maintenance_date > '2010-01-01');
 </pre>
 
 Attempt to insert invalid data:
 
 <pre>
-INSERT INTO ...
+INSERT INTO DIAGNOSTIC_EQUIPMENT (equipment_id,equipment_name,department_id,maintenance_date) 
+VALUES (501, 'Autoclave', 8, '2000-03-26');
 </pre>
 
 Execution Screenshot (error message):
