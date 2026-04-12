@@ -732,13 +732,38 @@ Execution Screenshot (error message):
 ---
 
 ## Rollback Example
+דוגמה זו מדגימה ביצוע טרנזקציה הכוללת עדכון ומחיקה של נתונים, ולאחר מכן ביטול של כל השינויים באמצעות ROLLBACK.
 
+מטרת הדוגמה היא להראות כיצד ניתן לבטל פעולות שבוצעו בבסיס הנתונים ולהחזיר את המצב לקדמותו במקרה של טעות או צורך בביטול השינויים.
 <pre>
+-- Step 1: Show initial state
+SELECT * FROM LAB_TEST;
+
+SELECT * FROM LAB_ORDER;
+
+-- Step 2: Start transaction
 BEGIN;
 
--- UPDATE statement
+-- Step 3: Perform updates
+UPDATE LAB_TEST
+SET cost = cost * 1.2;
 
+-- Step 4: Perform delete
+DELETE FROM LAB_ORDER
+WHERE status = 'ORDERED';
+
+-- Step 5: Show changed state
+SELECT * FROM LAB_TEST;
+
+SELECT * FROM LAB_ORDER;
+
+-- Step 6: Rollback
 ROLLBACK;
+
+-- Step 7: Show reverted state
+SELECT * FROM LAB_TEST;
+
+SELECT * FROM LAB_ORDER;
 </pre>
 
 Before Execution Screenshot:
@@ -750,13 +775,29 @@ After ROLLBACK Screenshot:
 ---
 
 ## Commit Example
+דוגמה זו מדגימה ביצוע טרנזקציה הכוללת עדכון נתונים, ולאחר מכן שמירה קבועה של השינויים באמצעות COMMIT.
+
+מטרת הדוגמה היא להראות כיצד שינויים שנשמרים באמצעות COMMIT נשארים בבסיס הנתונים ולא מתבטלים לאחר סיום הטרנזקציה.
 
 <pre>
+-- Step 1: Show initial state
+SELECT * FROM LAB_TEST;
+
+-- Step 2: Start transaction
 BEGIN;
 
--- UPDATE statement
+-- Step 3: Perform update
+UPDATE LAB_TEST
+SET cost = cost * 1.1;
 
+-- Step 4: Show updated state
+SELECT * FROM LAB_TEST;
+
+-- Step 5: Commit
 COMMIT;
+
+-- Step 6: Show final state (should remain changed)
+SELECT * FROM LAB_TEST;
 </pre>
 
 Before Execution Screenshot:
