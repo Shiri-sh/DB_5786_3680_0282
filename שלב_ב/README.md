@@ -28,6 +28,8 @@ ORDER BY total_results DESC;
 </pre>
 
 Execution Screenshot:
+![select 1](./images/select/select_1.png)
+
 
 ---
 
@@ -46,23 +48,25 @@ FROM LAB_TECHNICIAN tech
 ORDER BY total_results DESC;
 </pre>
 
-Execution Screenshot:
 
 ---
 
 ### Comparison Between Methods
 
 
-Method 1:
+שיטה 1:
 משתמש ב־JOIN ו־GROUP BY כדי לחשב את כמות התוצאות לכל טכנאי בפעולה אחת.
 
-Method 2:
+שיטה 2:
 משתמש בתת־שאילתה (correlated subquery) שמתבצעת עבור כל טכנאי בנפרד.
 
 Which one is more efficient and why:
 
-Method 1 יעילה יותר, מכיוון שהחישוב מתבצע בפעולה אחת על כל הנתונים.
-Method 2 פחות יעילה, כי תת־השאילתה רצה שוב עבור כל שורה.
+שיטה 1 יעילה יותר, מכיוון שהחישוב מתבצע בפעולה אחת על כל הנתונים.
+
+שיטה 2 פחות יעילה, כי תת־השאילתה רצה שוב עבור כל שורה.
+
+
 ---
 
 ## Query 2 – Description
@@ -85,6 +89,8 @@ LIMIT 5;
 </pre>
 
 Execution Screenshot:
+![select 2](./images/select/select_2.png)
+
 
 ---
 
@@ -103,22 +109,22 @@ ORDER BY usage_count DESC
 LIMIT 5;
 </pre>
 
-Execution Screenshot:
 
 ---
 
 ### Comparison Between Methods
 
-Method 1:
+שיטה 1:
 משתמש ב־JOIN ו־GROUP BY כדי לחשב את מספר ההזמנות לכל בדיקה בפעולה אחת.
 
-Method 2:
+שיטה 2:
 משתמש בתת־שאילתה שמחשבת את מספר ההזמנות עבור כל בדיקה בנפרד.
 
 Which one is more efficient and why:
 
-Method 1 יעילה יותר, מכיוון שהחישוב מתבצע בפעולה אחת על כל הנתונים.
-Method 2 פחות יעילה, כי תת־השאילתה מתבצעת עבור כל שורה בטבלת הבדיקות.
+שיטה 1 יעילה יותר, מכיוון שהחישוב מתבצע בפעולה אחת על כל הנתונים.
+
+שיטה 2 פחות יעילה, כי תת־השאילתה מתבצעת עבור כל שורה בטבלת הבדיקות.
 
 ---
 
@@ -142,6 +148,7 @@ ORDER BY days_since_maintenance DESC;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -159,22 +166,24 @@ WHERE
 ORDER BY days_since_maintenance DESC;
 </pre>
 
-Execution Screenshot:
+
 
 ---
 
 ### Comparison Between Methods
 
-Method 1:
+שיטה 1:
 משתמש בהפרש תאריכים מדויק (CURRENT_DATE - INTERVAL) כדי לזהות ציוד שלא טופל מעל שנה.
 
-Method 2:
+שיטה 2:
 משתמש בפירוק התאריך (YEAR) ומשווה רק את השנה, ללא התחשבות בחודשים ובימים.
 
 Which one is more efficient and why:
 
-Method 1 מדויק יותר ולכן עדיף לשימוש בפועל.
-Method 2 פחות מדויק, כי הוא עלול להחזיר תוצאות שגויות כאשר ההפרש הוא פחות משנה אך בשנים שונות.
+שיטה 1 מדויק יותר ולכן עדיף לשימוש בפועל.
+
+שיטה 2 פחות מדויק, כי הוא עלול להחזיר תוצאות שגויות כאשר ההפרש הוא פחות משנה אך בשנים שונות.
+
 
 ---
 
@@ -211,6 +220,7 @@ ORDER BY r.result_date;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -232,21 +242,23 @@ ORDER BY r.result_date DESC;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
 ### Comparison Between Methods
 
-Method 1:
+שיטה 1:
 משתמש במספר JOINים כדי להביא את כל הנתונים הרלוונטיים בפעולה אחת.
 
-Method 2:
+שיטה 2:
 משתמש בתתי־שאילתות (subqueries) כדי להביא כל שדה בנפרד עבור כל שורה.
 
 Which one is more efficient and why:
 
-Method 1 יעילה יותר, מכיוון שהיא מבצעת את כל החיבורים בפעולה אחת.
-Method 2 פחות יעילה, כי תתי־השאילתות מתבצעות מחדש עבור כל שורה בתוצאה.
+שיטה 1 יעילה יותר, מכיוון שהיא מבצעת את כל החיבורים בפעולה אחת.
+
+שיטה 2 פחות יעילה, כי תתי־השאילתות מתבצעות מחדש עבור כל שורה בתוצאה.
 
 ---
 
@@ -277,6 +289,7 @@ HAVING COUNT(r.result_id) > 0;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -297,6 +310,7 @@ AND order_date < CURRENT_DATE - INTERVAL '2 days';
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -319,6 +333,7 @@ ORDER BY year, month;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -346,6 +361,7 @@ ORDER BY o.order_date DESC;
 </pre>
 
 Execution Screenshot:
+![ ]()
 
 ---
 
@@ -402,8 +418,10 @@ AND order_date < CURRENT_DATE - INTERVAL '2 year';
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -431,8 +449,10 @@ WHERE maintenance_date < CURRENT_DATE - INTERVAL '5 years';
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -474,8 +494,10 @@ WHERE NOT EXISTS (
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -522,8 +544,10 @@ HAVING COUNT(ot.test_id) = COUNT(r.result_id);
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -554,8 +578,10 @@ WHERE cost > 400;
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -619,8 +645,10 @@ WHERE test_id NOT IN (
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After Execution Screenshot:
+![ ]()
 
 ---
 
@@ -672,6 +700,7 @@ VALUES (20001, 1, 65, 'Low', '2024-09-01');
 </pre>
 
 Execution Screenshot (error message):
+![ ]()
 
 ---
 
@@ -695,6 +724,7 @@ VALUES (501, 'Autoclave', 8, '2000-03-26');
 </pre>
 
 Execution Screenshot (error message):
+![ ]()
 
 ---
 
@@ -738,10 +768,13 @@ SELECT * FROM LAB_ORDER;
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After UPDATE Screenshot:
+![ ]()
 
 After ROLLBACK Screenshot:
+![ ]()
 
 ---
 
@@ -772,8 +805,11 @@ SELECT * FROM LAB_TEST;
 </pre>
 
 Before Execution Screenshot:
+![ ]()
 
 After UPDATE Screenshot:
+![ ]()
 
 After COMMIT Screenshot:
+![ ]()
 
