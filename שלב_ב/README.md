@@ -378,10 +378,7 @@ Description:
 המחיקה מתבצעת במספר שלבים, בהתאם לתלויות בין הטבלאות, על מנת לשמור על שלמות הנתונים (תחילה תוצאות, לאחר מכן בדיקות ולבסוף ההזמנות).
 
 <pre>
--- BEFORE
-SELECT * FROM LAB_ORDER
-WHERE status = 'ORDERED'
-AND order_date < CURRENT_DATE - INTERVAL '2 year';
+
 
 -- delete from deepest table first
 DELETE FROM LAB_RESULT
@@ -410,17 +407,14 @@ DELETE FROM LAB_ORDER
 WHERE status = 'ORDERED'
 AND order_date < CURRENT_DATE - INTERVAL '2 year';
 
--- AFTER
-SELECT * FROM LAB_ORDER
-WHERE status = 'ORDERED'
-AND order_date < CURRENT_DATE - INTERVAL '2 year';
+
 </pre>
 
 Before Execution Screenshot:
-![ a](./images/delete/delete_1/before.png)
+![ delete](./images/delete/delete_1/before.png)
 
 After Execution Screenshot:
-![ ]()
+![ delete](./images/delete/delete_1/after.png)
 
 ---
 
@@ -434,24 +428,19 @@ Description:
 השאילתה משתמשת בתנאי על שדה תאריך לצורך סינון הנתונים למחיקה.
 
 <pre>
--- before deletion
-SELECT * FROM DIAGNOSTIC_EQUIPMENT
-WHERE maintenance_date < CURRENT_DATE - INTERVAL '5 years';
 
 -- deletion
 DELETE FROM DIAGNOSTIC_EQUIPMENT
 WHERE maintenance_date < CURRENT_DATE - INTERVAL '5 years';
 
--- after deletion
-SELECT * FROM DIAGNOSTIC_EQUIPMENT
-WHERE maintenance_date < CURRENT_DATE - INTERVAL '5 years';
+
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![ delete](./images/delete/delete_2/before.png)
 
 After Execution Screenshot:
-![ ]()
+![ delete](./images/delete/delete_2/after.png)
 
 ---
 
@@ -465,14 +454,7 @@ Description:
 
 <pre>
 
--- BEFORE
-SELECT *
-FROM LAB_ORDER_TEST ot
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM LAB_RESULT r
-    WHERE r.lab_order_test_id = ot.lab_order_test_id
-);
+
 
 -- DELETE
 DELETE FROM LAB_ORDER_TEST ot
@@ -482,21 +464,14 @@ WHERE NOT EXISTS (
     WHERE r.lab_order_test_id = ot.lab_order_test_id
 );
 
--- AFTER
-SELECT *
-FROM LAB_ORDER_TEST ot
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM LAB_RESULT r
-    WHERE r.lab_order_test_id = ot.lab_order_test_id
-);
+
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![ delete](./images/delete/delete_3/before.png)
 
 After Execution Screenshot:
-![ ]()
+![ delete](./images/delete/delete_3/after.png)
 
 ---
 
@@ -513,13 +488,6 @@ Description:
 
 
 <pre>
---before update
-SELECT o.lab_order_id, o.status
-FROM LAB_ORDER o
-JOIN LAB_ORDER_TEST ot ON o.lab_order_id = ot.lab_order_id
-LEFT JOIN LAB_RESULT r ON ot.lab_order_test_id = r.lab_order_test_id
-GROUP BY o.lab_order_id, o.status
-HAVING COUNT(ot.test_id) = COUNT(r.result_id);
 
 -- update
 UPDATE LAB_ORDER
@@ -533,20 +501,14 @@ WHERE lab_order_id IN (
     HAVING COUNT(ot.test_id) = COUNT(r.result_id)
 );
 
--- after update
-SELECT o.lab_order_id, o.status
-FROM LAB_ORDER o
-JOIN LAB_ORDER_TEST ot ON o.lab_order_id = ot.lab_order_id
-LEFT JOIN LAB_RESULT r ON ot.lab_order_test_id = r.lab_order_test_id
-GROUP BY o.lab_order_id, o.status
-HAVING COUNT(ot.test_id) = COUNT(r.result_id);
+
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![ update 1](./images/update/update_1/before.png)
 
 After Execution Screenshot:
-![ ]()
+![update 1 ](./images/update/update_1/after.png)
 
 ---
 
@@ -560,27 +522,20 @@ Description:
 השאילתה משתמשת בתנאי על שדה מספרי לעדכון הנתונים.
 
 <pre>
--- before update
-SELECT test_id, description, cost
-FROM LAB_TEST
-WHERE cost > 400;
+
 
 -- update
 UPDATE LAB_TEST
 SET description = description || ' (Expensive Test)'
 WHERE cost > 400;
 
--- after update
-SELECT test_id, description, cost
-FROM LAB_TEST
-WHERE cost > 400;
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![update 2 ](./images/update/update_2/before.png)
 
 After Execution Screenshot:
-![ ]()
+![update 2 ](./images/update/update_2/after.png)
 
 ---
 
@@ -593,15 +548,7 @@ Description:
 
 
 <pre>
--- before update
-SELECT test_id, description, cost
-FROM LAB_TEST
-WHERE test_id NOT IN (
-    SELECT DISTINCT ot.test_id
-    FROM LAB_ORDER_TEST ot
-    JOIN LAB_ORDER o ON ot.lab_order_id = o.lab_order_id
-    WHERE o.order_date >= CURRENT_DATE - INTERVAL '1 year'
-);
+
 
 UPDATE LAB_TEST
 SET cost = cost * 0.9
@@ -612,23 +559,6 @@ WHERE test_id NOT IN (
     WHERE o.order_date >= CURRENT_DATE - INTERVAL '1 year'
 );
 
--- after update
-SELECT test_id, description, cost
-FROM LAB_TEST
-WHERE test_id NOT IN (
-    SELECT DISTINCT ot.test_id
-    FROM LAB_ORDER_TEST ot
-    JOIN LAB_ORDER o ON ot.lab_order_id = o.lab_order_id
-    WHERE o.order_date >= CURRENT_DATE - INTERVAL '1 year'
-);
-
-
-
--- -- before update
--- SELECT lab_order_id, status, priority, order_date
--- FROM LAB_ORDER
--- WHERE status = 'IN_PROGRESS'
--- AND order_date < CURRENT_DATE - INTERVAL '30 days';
 
 -- -- update
 -- UPDATE LAB_ORDER
@@ -636,18 +566,14 @@ WHERE test_id NOT IN (
 -- WHERE status = 'IN_PROGRESS'
 -- AND order_date < CURRENT_DATE - INTERVAL '30 days';
 
--- -- after update
--- SELECT lab_order_id, status, priority, order_date
--- FROM LAB_ORDER
--- WHERE status = 'IN_PROGRESS'
--- AND order_date < CURRENT_DATE - INTERVAL '30 days';
+
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![update ](./images/update/update_3/before.png)
 
 After Execution Screenshot:
-![ ]()
+![update ](./images/update/update_3/after.png)
 
 ---
 
@@ -676,7 +602,7 @@ VALUES (501, 'Lipid Panel', 'Lipid Panel description', 'Normal', -354.31, 'Blood
 </pre>
 
 Execution Screenshot (error message):
-
+![ co1](./images/constraints/constraint_1.png)
 ---
 
 ## Constraint 2
@@ -699,7 +625,7 @@ VALUES (20001, 1, 65, 'Low', '2024-09-01');
 </pre>
 
 Execution Screenshot (error message):
-![ ]()
+![co2 ](./images/constraints/constraint_2.png)
 
 ---
 
@@ -723,7 +649,7 @@ VALUES (501, 'Autoclave', 8, '2000-03-26');
 </pre>
 
 Execution Screenshot (error message):
-![ ]()
+![ co3](./images/constraints/constraint_3.png)
 
 ---
 
@@ -767,13 +693,13 @@ SELECT * FROM LAB_ORDER;
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![init ](./images/rollback/init_state.png)
 
 After UPDATE Screenshot:
-![ ]()
+![change ](./images/rollback/after_change.png)
 
 After ROLLBACK Screenshot:
-![ ]()
+![rolback ](./images/rollback/after_rollback.png)
 
 ---
 
