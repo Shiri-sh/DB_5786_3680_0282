@@ -148,7 +148,7 @@ ORDER BY days_since_maintenance DESC;
 </pre>
 
 Execution Screenshot:
-![ ]()
+![select 5](./images/select/select_5.png)
 
 ---
 
@@ -219,8 +219,7 @@ FROM LAB_RESULT r
 ORDER BY r.result_date;
 </pre>
 
-Execution Screenshot:
-![ ]()
+
 
 ---
 
@@ -242,7 +241,7 @@ ORDER BY r.result_date DESC;
 </pre>
 
 Execution Screenshot:
-![ ]()
+![select 7](./images/select/select_7.png)
 
 ---
 
@@ -289,7 +288,7 @@ HAVING COUNT(r.result_id) > 0;
 </pre>
 
 Execution Screenshot:
-![ ]()
+![select 3](./images/select/select_3.png)
 
 ---
 
@@ -310,7 +309,7 @@ AND order_date < CURRENT_DATE - INTERVAL '2 days';
 </pre>
 
 Execution Screenshot:
-![ ]()
+![select 6](./images/select/select_6.png)
 
 ---
 
@@ -333,7 +332,7 @@ ORDER BY year, month;
 </pre>
 
 Execution Screenshot:
-![ ]()
+![ select 4](./images/select/select_4.png)
 
 ---
 
@@ -361,7 +360,7 @@ ORDER BY o.order_date DESC;
 </pre>
 
 Execution Screenshot:
-![ ]()
+![ select 8](./images/select/select_8.png)
 
 ---
 
@@ -418,7 +417,7 @@ AND order_date < CURRENT_DATE - INTERVAL '2 year';
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![ a](./images/delete/delete_1/before.png)
 
 After Execution Screenshot:
 ![ ]()
