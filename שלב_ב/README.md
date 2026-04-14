@@ -730,11 +730,11 @@ SELECT * FROM LAB_TEST;
 </pre>
 
 Before Execution Screenshot:
-![ ]()
+![ commit](./images/commit/init_state.png)
 
 After UPDATE Screenshot:
-![ ]()
+![ commit](./images/commit/after_change.png)
 
 After COMMIT Screenshot:
-![ ]()
+![commit ](./images/commit/after_commit.png)
 
