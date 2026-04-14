@@ -569,12 +569,6 @@ WHERE test_id NOT IN (
 );
 
 
--- -- update
--- UPDATE LAB_ORDER
--- SET priority = 'URGENT'
--- WHERE status = 'IN_PROGRESS'
--- AND order_date < CURRENT_DATE - INTERVAL '30 days';
-
 
 </pre>
 
