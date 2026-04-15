@@ -8,7 +8,7 @@
 
 ---
 
-## Query 1 – Description
+## Query 1
 
 השאילתה מחזירה את מספר תוצאות המעבדה שבוצעו על ידי כל טכנאי, ומדרגת אותם בסדר יורד לפי כמות התוצאות.
 
@@ -26,11 +26,6 @@ LEFT JOIN LAB_RESULT r ON tech.technician_id = r.technician_id
 GROUP BY tech.technician_id, tech.certification
 ORDER BY total_results DESC;
 </pre>
-
-Execution Screenshot:
-![select 1](./images/select/select_1.png)
-
-
 ---
 
 ### Method 2
@@ -48,6 +43,8 @@ FROM LAB_TECHNICIAN tech
 ORDER BY total_results DESC;
 </pre>
 
+Execution Screenshot:
+![select 1](./images/select/select_1.png)
 
 ---
 
@@ -69,7 +66,7 @@ Which one is more efficient and why:
 
 ---
 
-## Query 2 – Description
+## Query 2 
 
 השאילתה מחזירה את הבדיקות הנפוצות ביותר במעבדה, על פי מספר הפעמים שכל בדיקה הוזמנה, ומציגה את 5 הבדיקות המובילות.
 
@@ -87,10 +84,6 @@ GROUP BY t.test_name
 ORDER BY usage_count DESC
 LIMIT 5;
 </pre>
-
-Execution Screenshot:
-![select 2](./images/select/select_2.png)
-
 
 ---
 
@@ -110,6 +103,9 @@ LIMIT 5;
 </pre>
 
 
+Execution Screenshot:
+![select 2](./images/select/select_2.png)
+
 ---
 
 ### Comparison Between Methods
@@ -128,7 +124,7 @@ Which one is more efficient and why:
 
 ---
 
-## Query 5 – Description
+## Query 5
 השאילתה מחזירה ציוד שלא עבר תחזוקה במשך יותר משנה, יחד עם מספר הימים שעברו מאז התחזוקה האחרונה, וממיינת את התוצאות לפי משך הזמן שעבר.
 
 מטרת השאילתה היא לאפשר למנהל המעבדה לזהות ציוד הדורש תחזוקה דחופה ולמנוע תקלות.
@@ -146,10 +142,6 @@ FROM DIAGNOSTIC_EQUIPMENT
 WHERE maintenance_date < CURRENT_DATE - INTERVAL '1 year'
 ORDER BY days_since_maintenance DESC;
 </pre>
-
-Execution Screenshot:
-![select 5](./images/select/select_5.png)
-
 ---
 
 ### Method 2
@@ -167,9 +159,10 @@ ORDER BY days_since_maintenance DESC;
 </pre>
 
 
+Execution Screenshot:
+![select 5](./images/select/select_5.png)
 
 ---
-
 ### Comparison Between Methods
 
 שיטה 1:
@@ -187,7 +180,7 @@ Which one is more efficient and why:
 
 ---
 
-## Query 7 – Description
+## Query 7 
 
 השאילתה השאילתה מחזירה את כל תוצאות המעבדה יחד עם פרטים נוספים: מזהה הזמנה, שם הבדיקה, ערך התוצאה ומזהה הטכנאי שביצע אותה.
 
@@ -267,7 +260,6 @@ Which one is more efficient and why:
 
 ## Query 3
 
-Description:
 השאילתה מחזירה הזמנות שלא הושלמו אך כבר קיימות עבורן תוצאות חלקיות.
 
 מטרת השאילתה היא לזהות צווארי בקבוק בתהליך, כלומר הזמנות שהחלו להתבצע אך טרם הסתיימו.
@@ -294,8 +286,6 @@ Execution Screenshot:
 
 ## Query 6
 
-Description:
-
 השאילתה מחזירה את כל הזמנות המעבדה הדחופות שטרם הושלמו ואשר הוזמנו לפני יותר מיומיים
 
 מטרת השאילתה היא לאפשר למנהל המעבדה לזהות הזמנות דחופות שמתעכבות בטיפול, ולפעול להאצת הטיפול בהן.
@@ -315,8 +305,6 @@ Execution Screenshot:
 ---
 
 ## Query 4
-
-Description:
 
 השאילתה מחזירה את מספר תוצאות המעבדה לפי שנה וחודש.
 
@@ -339,8 +327,6 @@ Execution Screenshot:
 ---
 
 ## Query 8
-
-Description:
 
 השאילתה מחזירה את כל הזמנות המעבדה יחד עם הבדיקות שבוצעו במסגרת כל הזמנה והעלות של כל בדיקה.
 
@@ -372,8 +358,6 @@ Execution Screenshot:
 ---
 
 ## DELETE Query 1
-
-Description:
 
 השאילתה מוחקת הזמנות מעבדה ישנות (מעל שנתיים) שעדיין נמצאות בסטטוס "ORDERED".
 
@@ -424,8 +408,6 @@ After Execution Screenshot:
 
 ## DELETE Query 2
 
-Description:
-
 השאילתה מוחקת ציוד מעבדה שלא עבר תחזוקה במשך יותר מחמש שנים.
 
 מטרת השאילתה היא להסיר ציוד ישן ולא תקין מהמערכת.
@@ -451,17 +433,12 @@ After Execution Screenshot:
 
 ## DELETE Query 3
 
-Description:
-
 השאילתה מוחקת רשומות של בדיקות הזמנה (LAB_ORDER_TEST) שאין להן תוצאות קשורות.
 
 מטרת השאילתה היא לנקות נתונים לא שלמים או נטושים ולשפר את איכות הנתונים במערכת.
 
 
 <pre>
-
-
-
 -- DELETE
 DELETE FROM LAB_ORDER_TEST ot
 WHERE NOT EXISTS (
@@ -469,8 +446,6 @@ WHERE NOT EXISTS (
     FROM LAB_RESULT r
     WHERE r.lab_order_test_id = ot.lab_order_test_id
 );
-
-
 </pre>
 
 Before Execution Screenshot:
@@ -487,15 +462,12 @@ After Execution Screenshot:
 
 ## UPDATE Query 1
 
-Description:
-
 השאילתה מעדכנת את סטטוס ההזמנות ל־"COMPLETED" במקרים בהם לכל הבדיקות המשויכות להזמנה קיימות תוצאות.
 
 מטרת השאילתה היא לשמור על עקביות הנתונים ולהבטיח שהסטטוס של ההזמנה משקף את מצבה בפועל.
 
 
 <pre>
-
 -- update
 UPDATE LAB_ORDER
 SET status = 'COMPLETED'
@@ -507,8 +479,6 @@ WHERE lab_order_id IN (
     GROUP BY o.lab_order_id
     HAVING COUNT(ot.test_id) = COUNT(r.result_id)
 );
-
-
 </pre>
 
 Before Execution Screenshot:
@@ -521,8 +491,6 @@ After Execution Screenshot:
 
 ## UPDATE Query 2
 
-Description:
-
 השאילתה מעדכנת את תיאור הבדיקות שמחירן גבוה מערך מסוים, ומוסיפה להן ציון שהן בדיקות יקרות.
 
 מטרת השאילתה היא להדגיש בדיקות יקרות לצורך הצגה בממשק המשתמש או לצורך ניתוח.
@@ -530,13 +498,10 @@ Description:
 השאילתה משתמשת בתנאי על שדה מספרי לעדכון הנתונים.
 
 <pre>
-
-
 -- update
 UPDATE LAB_TEST
 SET description = description || ' (Expensive Test)'
 WHERE cost > 400;
-
 </pre>
 
 Before Execution Screenshot:
@@ -549,16 +514,12 @@ After Execution Screenshot:
 
 ## UPDATE Query 3
 
-Description:
-
 השאילתה מעניקה הנחה של 10% לבדיקות שלא הוזמנו בשנה האחרונה.
 
 מטרת השאילתה היא לעודד שימוש בבדיקות פחות פופולריות.
 
 
 <pre>
-
-
 UPDATE LAB_TEST
 SET cost = cost * 0.9
 WHERE test_id NOT IN (
@@ -567,9 +528,6 @@ WHERE test_id NOT IN (
     JOIN LAB_ORDER o ON ot.lab_order_id = o.lab_order_id
     WHERE o.order_date >= CURRENT_DATE - INTERVAL '1 year'
 );
-
-
-
 </pre>
 
 Before Execution Screenshot:
@@ -585,8 +543,6 @@ After Execution Screenshot:
 ---
 
 ## Constraint 1
-
-Description of the change:
 
 האילוץ מוודא כי העלות של בדיקות מעבדה חייבת להיות חיובית.
 
@@ -611,8 +567,6 @@ Execution Screenshot (error message):
 
 ## Constraint 2
 
-Description of the change:
-
 האילוץ מוודא כי תאריך תוצאת בדיקה אינו יכול להיות בעתיד.
 
 מטרת האילוץ היא להבטיח אמינות נתונים, שכן תוצאות בדיקה לא יכולות להתקבל לפני ביצוען בפועל.
@@ -635,8 +589,6 @@ Execution Screenshot (error message):
 ---
 
 ## Constraint 3
-
-Description of the change:
 
 האילוץ מוודא כי תאריך התחזוקה של ציוד אינו מוקדם מתאריך מסוים.
 
