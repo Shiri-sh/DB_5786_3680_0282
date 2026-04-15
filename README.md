@@ -17,5 +17,15 @@
   CSV Imports,
   Python Scripts --
 * Backup and Restore
+
+### Stage 2
+
+* Introduction
+* SELECT Queries (Paired Queries)
+* Additional SELECT Queries
+* DELETE Queries
+* UPDATE Queries
+* Constraints
+* Transactions: ROLLBACK and COMMIT
 ---
 
