@@ -52,10 +52,10 @@ with open('insert_lab_test.sql', 'w', encoding='utf-8') as f_test:
         normal_range = "Normal"
         cost = random_cost()
         sample = random_sample_type()
-
+        equipment_id = random.randint(1, 500)
         sql = f"""INSERT INTO LAB_TEST 
-(test_id, test_name, description, normal_range, cost, sample_type)
-VALUES ({i}, '{test_name}', '{description}', '{normal_range}', {cost}, '{sample}');
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES ({i}, '{test_name}', '{description}', '{normal_range}', {cost}, {equipment_id}, '{sample}');
 """
         f_test.write(sql)
 
