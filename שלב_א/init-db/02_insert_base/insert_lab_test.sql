@@ -1,500 +1,1501 @@
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (1, 'Electrolyte Panel', 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '13.5-17.5 g/dL', 78.23, 474, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (2, 'Electrolyte Panel', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.', '0.4-4.0 mIU/L', 330.44, 437, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (3, 'Thyroid TSH', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '0.4-4.0 mIU/L', 323.85, 272, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (4, 'Thyroid TSH', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', '13.5-17.5 g/dL', 374.07, 203, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (5, 'Thyroid TSH', 'Mauris sit amet eros.', '70-100 mg/dL', 298.8, 400, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (6, 'Urinalysis', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '13.5-17.5 g/dL', 210.37, 76, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (7, 'CBC', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', '>30 ng/mL', 70.35, 316, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (8, 'Lipid Panel', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', '0.4-4.0 mIU/L', 352.53, 67, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (9, 'COVID-19 PCR', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '>30 ng/mL', 399.87, 332, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (10, 'Lipid Panel', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', '>30 ng/mL', 406.03, 84, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (11, 'COVID-19 PCR', 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', '>30 ng/mL', 312.24, 434, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (12, 'CBC', 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '70-100 mg/dL', 156.5, 373, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (13, 'Lipid Panel', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', '13.5-17.5 g/dL', 330.65, 488, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (14, 'Vitamin D', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', '<5.7%', 433.22, 139, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (15, 'Lipid Panel', 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '70-100 mg/dL', 46.67, 164, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (16, 'Thyroid TSH', 'Morbi non lectus.', '70-100 mg/dL', 32.62, 32, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (17, 'COVID-19 PCR', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', '0.4-4.0 mIU/L', 415.05, 327, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (18, 'COVID-19 PCR', 'Vivamus vel nulla eget eros elementum pellentesque.', '<5.7%', 352.56, 18, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (19, 'Glucose', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.', '0.4-4.0 mIU/L', 193.28, 208, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (20, 'HbA1c', 'Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 'Negative', 90.09, 377, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (21, 'Thyroid TSH', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', '0.4-4.0 mIU/L', 358.07, 425, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (22, 'HbA1c', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', '<5.7%', 417.33, 301, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (23, 'CBC', 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl.', '>30 ng/mL', 156.67, 279, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (24, 'Urinalysis', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 'Negative', 134.17, 459, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (25, 'Urinalysis', 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '70-100 mg/dL', 414.14, 353, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (26, 'COVID-19 PCR', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '0.4-4.0 mIU/L', 340.21, 299, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (27, 'Urinalysis', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.', '70-100 mg/dL', 84.32, 374, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (28, 'Electrolyte Panel', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '70-100 mg/dL', 423.24, 183, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (29, 'CBC', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '>30 ng/mL', 397.3, 42, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (30, 'Vitamin D', 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '13.5-17.5 g/dL', 235.53, 242, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (31, 'Urinalysis', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 'Negative', 247.13, 64, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (32, 'Urinalysis', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 'Negative', 205.55, 208, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (33, 'Urinalysis', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 'Negative', 180.51, 317, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (34, 'Vitamin D', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', '70-100 mg/dL', 282.39, 56, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (35, 'Urinalysis', 'Vivamus vestibulum sagittis sapien.', '13.5-17.5 g/dL', 184.87, 468, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (36, 'Urinalysis', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', '13.5-17.5 g/dL', 399.05, 410, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (37, 'Vitamin D', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', '<5.7%', 58.48, 326, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (38, 'Vitamin D', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.', '>30 ng/mL', 33.68, 442, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (39, 'HbA1c', 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', '0.4-4.0 mIU/L', 243.41, 353, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (40, 'Electrolyte Panel', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '<5.7%', 150.31, 246, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (41, 'Thyroid TSH', 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '13.5-17.5 g/dL', 302.47, 227, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (42, 'Lipid Panel', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.', '13.5-17.5 g/dL', 354.42, 332, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (43, 'CBC', 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', '70-100 mg/dL', 91.08, 316, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (44, 'Glucose', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '<5.7%', 73.37, 351, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (45, 'Glucose', 'Nulla tempus.', '<5.7%', 129.55, 248, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (46, 'HbA1c', 'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', '<5.7%', 206.27, 415, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (47, 'COVID-19 PCR', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', '0.4-4.0 mIU/L', 273.17, 297, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (48, 'HbA1c', 'Curabitur convallis.', '70-100 mg/dL', 78.55, 183, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (49, 'CBC', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', '70-100 mg/dL', 356.16, 478, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (50, 'COVID-19 PCR', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '70-100 mg/dL', 217.49, 118, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (51, 'COVID-19 PCR', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.', '<5.7%', 266.34, 214, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (52, 'CBC', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.', '13.5-17.5 g/dL', 276.78, 61, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (53, 'Vitamin D', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', '0.4-4.0 mIU/L', 383.67, 427, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (54, 'Thyroid TSH', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '0.4-4.0 mIU/L', 251.75, 258, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (55, 'Urinalysis', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '>30 ng/mL', 374.88, 460, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (56, 'Glucose', 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', '70-100 mg/dL', 231.14, 140, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (57, 'CBC', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.', '13.5-17.5 g/dL', 356.0, 338, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (58, 'Vitamin D', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.', 'Negative', 46.09, 21, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (59, 'Glucose', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.', 'Negative', 220.06, 466, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (60, 'HbA1c', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', '13.5-17.5 g/dL', 426.1, 447, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (61, 'Urinalysis', 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', '>30 ng/mL', 434.13, 398, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (62, 'COVID-19 PCR', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', '13.5-17.5 g/dL', 279.23, 308, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (63, 'Glucose', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', '70-100 mg/dL', 392.56, 105, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (64, 'Thyroid TSH', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', '70-100 mg/dL', 130.26, 336, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (65, 'Vitamin D', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', '13.5-17.5 g/dL', 90.2, 33, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (66, 'Urinalysis', 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '<5.7%', 439.51, 342, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (67, 'HbA1c', 'Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.', 'Negative', 123.54, 444, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (68, 'CBC', 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '>30 ng/mL', 114.77, 70, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (69, 'Urinalysis', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', '0.4-4.0 mIU/L', 258.86, 450, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (70, 'Urinalysis', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.', '70-100 mg/dL', 74.87, 219, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (71, 'HbA1c', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '70-100 mg/dL', 166.85, 494, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (72, 'Thyroid TSH', 'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '>30 ng/mL', 272.26, 283, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (73, 'COVID-19 PCR', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus.', '>30 ng/mL', 424.85, 137, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (74, 'Lipid Panel', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '0.4-4.0 mIU/L', 418.92, 468, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (75, 'HbA1c', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', 'Negative', 123.15, 46, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (76, 'Thyroid TSH', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', '0.4-4.0 mIU/L', 174.96, 202, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (77, 'Glucose', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '>30 ng/mL', 84.69, 212, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (78, 'Vitamin D', 'Sed ante. Vivamus tortor.', '<5.7%', 445.29, 103, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (79, 'CBC', 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', 'Negative', 351.21, 254, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (80, 'COVID-19 PCR', 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', '70-100 mg/dL', 413.98, 246, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (81, 'CBC', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', '70-100 mg/dL', 129.95, 209, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (82, 'Electrolyte Panel', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', '>30 ng/mL', 42.99, 229, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (83, 'COVID-19 PCR', 'In sagittis dui vel nisl. Duis ac nibh.', '70-100 mg/dL', 176.6, 57, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (84, 'Electrolyte Panel', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '>30 ng/mL', 442.57, 262, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (85, 'HbA1c', 'In blandit ultrices enim.', '<5.7%', 351.48, 413, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (86, 'Vitamin D', 'Cras in purus eu magna vulputate luctus.', '13.5-17.5 g/dL', 329.47, 326, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (87, 'Urinalysis', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', '70-100 mg/dL', 247.18, 309, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (88, 'COVID-19 PCR', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '0.4-4.0 mIU/L', 101.88, 283, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (89, 'Thyroid TSH', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', '70-100 mg/dL', 440.94, 334, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (90, 'Electrolyte Panel', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '>30 ng/mL', 342.79, 375, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (91, 'Urinalysis', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '70-100 mg/dL', 383.29, 102, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (92, 'Urinalysis', 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', '0.4-4.0 mIU/L', 46.34, 185, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (93, 'Thyroid TSH', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 'Negative', 305.25, 397, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (94, 'HbA1c', 'Proin risus.', '0.4-4.0 mIU/L', 371.41, 117, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (95, 'CBC', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '0.4-4.0 mIU/L', 49.55, 66, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (96, 'Electrolyte Panel', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.', '0.4-4.0 mIU/L', 155.25, 466, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (97, 'Electrolyte Panel', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 'Negative', 301.69, 47, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (98, 'Vitamin D', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', '0.4-4.0 mIU/L', 285.73, 134, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (99, 'Vitamin D', 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '0.4-4.0 mIU/L', 219.39, 147, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (100, 'HbA1c', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 'Negative', 195.18, 23, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (101, 'CBC', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', '13.5-17.5 g/dL', 120.2, 337, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (102, 'Lipid Panel', 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.', '<5.7%', 271.83, 54, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (103, 'Thyroid TSH', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', '70-100 mg/dL', 349.87, 492, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (104, 'Urinalysis', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 'Negative', 308.08, 279, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (105, 'CBC', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '70-100 mg/dL', 70.07, 40, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (106, 'Electrolyte Panel', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 'Negative', 114.89, 80, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (107, 'Urinalysis', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', '13.5-17.5 g/dL', 191.19, 445, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (108, 'CBC', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', '>30 ng/mL', 397.14, 259, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (109, 'Glucose', 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', 'Negative', 397.48, 73, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (110, 'Thyroid TSH', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '>30 ng/mL', 40.54, 131, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (111, 'Electrolyte Panel', 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', '<5.7%', 192.06, 419, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (112, 'Electrolyte Panel', 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 'Negative', 91.44, 157, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (113, 'Urinalysis', 'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.', '70-100 mg/dL', 300.68, 51, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (114, 'Lipid Panel', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '13.5-17.5 g/dL', 417.32, 422, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (115, 'HbA1c', 'Maecenas ut massa quis augue luctus tincidunt.', '>30 ng/mL', 226.47, 486, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (116, 'HbA1c', 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '70-100 mg/dL', 310.39, 310, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (117, 'Electrolyte Panel', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', '<5.7%', 74.12, 414, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (118, 'Glucose', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', '13.5-17.5 g/dL', 254.25, 356, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (119, 'Lipid Panel', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', '70-100 mg/dL', 140.03, 307, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (120, 'Thyroid TSH', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.', '0.4-4.0 mIU/L', 264.93, 19, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (121, 'COVID-19 PCR', 'In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', '13.5-17.5 g/dL', 388.18, 133, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (122, 'Urinalysis', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', '0.4-4.0 mIU/L', 367.15, 191, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (123, 'Thyroid TSH', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.', '70-100 mg/dL', 435.69, 300, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (124, 'Lipid Panel', 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '>30 ng/mL', 40.97, 437, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (125, 'CBC', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '<5.7%', 169.77, 448, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (126, 'Urinalysis', 'Maecenas rhoncus aliquam lacus.', '<5.7%', 130.99, 336, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (127, 'Lipid Panel', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', '>30 ng/mL', 279.27, 131, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (128, 'Lipid Panel', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat.', '0.4-4.0 mIU/L', 78.87, 487, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (129, 'Electrolyte Panel', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', 'Negative', 361.39, 389, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (130, 'Vitamin D', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', '>30 ng/mL', 178.53, 59, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (131, 'Vitamin D', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.', '<5.7%', 281.09, 318, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (132, 'HbA1c', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', '70-100 mg/dL', 285.8, 225, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (133, 'CBC', 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', '13.5-17.5 g/dL', 72.37, 378, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (134, 'COVID-19 PCR', 'Integer ac neque. Duis bibendum.', 'Negative', 295.78, 459, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (135, 'HbA1c', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', 'Negative', 119.55, 283, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (136, 'Urinalysis', 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', '<5.7%', 324.74, 326, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (137, 'Vitamin D', 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', '70-100 mg/dL', 248.27, 489, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (138, 'COVID-19 PCR', 'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', 'Negative', 80.81, 381, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (139, 'Urinalysis', 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '>30 ng/mL', 349.86, 455, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (140, 'HbA1c', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', '>30 ng/mL', 183.1, 220, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (141, 'Urinalysis', 'Nullam varius. Nulla facilisi.', '13.5-17.5 g/dL', 71.95, 222, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (142, 'HbA1c', 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.', '<5.7%', 217.3, 122, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (143, 'Vitamin D', 'Integer tincidunt ante vel ipsum.', '>30 ng/mL', 51.26, 356, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (144, 'Lipid Panel', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', '70-100 mg/dL', 260.7, 424, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (145, 'Vitamin D', 'Vivamus vestibulum sagittis sapien.', '70-100 mg/dL', 213.23, 204, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (146, 'Vitamin D', 'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', '13.5-17.5 g/dL', 376.7, 209, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (147, 'Thyroid TSH', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '<5.7%', 219.16, 198, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (148, 'CBC', 'Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', '<5.7%', 302.9, 176, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (149, 'Electrolyte Panel', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', '<5.7%', 221.25, 214, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (150, 'Glucose', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '0.4-4.0 mIU/L', 183.3, 182, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (151, 'Thyroid TSH', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '13.5-17.5 g/dL', 309.49, 308, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (152, 'Electrolyte Panel', 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', '>30 ng/mL', 109.17, 25, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (153, 'COVID-19 PCR', 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', '0.4-4.0 mIU/L', 104.09, 181, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (154, 'Lipid Panel', 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', 'Negative', 400.31, 36, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (155, 'Lipid Panel', 'Nulla tellus. In sagittis dui vel nisl.', '70-100 mg/dL', 341.9, 343, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (156, 'Vitamin D', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', '<5.7%', 231.87, 366, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (157, 'CBC', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', '0.4-4.0 mIU/L', 446.79, 187, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (158, 'HbA1c', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 'Negative', 45.47, 340, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (159, 'Vitamin D', 'Nulla justo.', '70-100 mg/dL', 420.04, 467, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (160, 'HbA1c', 'Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', '>30 ng/mL', 176.08, 313, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (161, 'Urinalysis', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', '>30 ng/mL', 121.57, 321, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (162, 'Urinalysis', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', '>30 ng/mL', 73.56, 237, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (163, 'Glucose', 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '<5.7%', 125.93, 223, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (164, 'Urinalysis', 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', '0.4-4.0 mIU/L', 172.59, 150, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (165, 'Lipid Panel', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna.', '13.5-17.5 g/dL', 437.87, 253, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (166, 'COVID-19 PCR', 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', '70-100 mg/dL', 223.59, 368, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (167, 'CBC', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl.', '<5.7%', 92.25, 434, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (168, 'Lipid Panel', 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', '<5.7%', 67.46, 430, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (169, 'CBC', 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', '70-100 mg/dL', 89.09, 55, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (170, 'HbA1c', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', '0.4-4.0 mIU/L', 140.28, 444, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (171, 'COVID-19 PCR', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', '13.5-17.5 g/dL', 380.79, 421, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (172, 'Thyroid TSH', 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '<5.7%', 76.78, 263, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (173, 'Electrolyte Panel', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', 'Negative', 103.04, 456, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (174, 'Thyroid TSH', 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', '0.4-4.0 mIU/L', 289.67, 58, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (175, 'Vitamin D', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', '>30 ng/mL', 49.55, 462, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (176, 'Urinalysis', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '0.4-4.0 mIU/L', 396.64, 221, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (177, 'Urinalysis', 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.', '70-100 mg/dL', 301.38, 58, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (178, 'Vitamin D', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', '13.5-17.5 g/dL', 42.96, 168, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (179, 'HbA1c', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 'Negative', 343.66, 221, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (180, 'Vitamin D', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 'Negative', 175.19, 125, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (181, 'Urinalysis', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '13.5-17.5 g/dL', 202.02, 115, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (182, 'Glucose', 'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', '>30 ng/mL', 319.01, 157, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (183, 'Thyroid TSH', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', '0.4-4.0 mIU/L', 48.1, 370, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (184, 'Vitamin D', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', '13.5-17.5 g/dL', 188.3, 473, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (185, 'Lipid Panel', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', '<5.7%', 154.04, 22, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (186, 'CBC', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '0.4-4.0 mIU/L', 99.77, 405, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (187, 'Urinalysis', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', 'Negative', 320.75, 141, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (188, 'Vitamin D', 'Morbi a ipsum. Integer a nibh. In quis justo.', '<5.7%', 310.57, 388, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (189, 'COVID-19 PCR', 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', '>30 ng/mL', 345.84, 60, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (190, 'HbA1c', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', '13.5-17.5 g/dL', 346.85, 101, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (191, 'Thyroid TSH', 'In blandit ultrices enim.', '13.5-17.5 g/dL', 305.76, 50, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (192, 'Electrolyte Panel', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', '13.5-17.5 g/dL', 270.84, 41, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (193, 'CBC', 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '13.5-17.5 g/dL', 180.31, 434, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (194, 'HbA1c', 'Morbi a ipsum. Integer a nibh. In quis justo.', '13.5-17.5 g/dL', 49.3, 188, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (195, 'Glucose', 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 'Negative', 414.68, 103, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (196, 'Glucose', 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '70-100 mg/dL', 193.49, 354, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (197, 'Glucose', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '70-100 mg/dL', 107.11, 70, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (198, 'CBC', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '13.5-17.5 g/dL', 283.74, 89, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (199, 'Thyroid TSH', 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 'Negative', 274.71, 227, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (200, 'Lipid Panel', 'Praesent id massa id nisl venenatis lacinia.', '70-100 mg/dL', 291.66, 487, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (201, 'CBC', 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '<5.7%', 81.21, 66, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (202, 'Vitamin D', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '0.4-4.0 mIU/L', 173.31, 326, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (203, 'Thyroid TSH', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', '13.5-17.5 g/dL', 224.74, 16, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (204, 'Urinalysis', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', '70-100 mg/dL', 131.64, 258, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (205, 'Glucose', 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '<5.7%', 269.77, 337, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (206, 'Glucose', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '0.4-4.0 mIU/L', 35.0, 353, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (207, 'Electrolyte Panel', 'Morbi vel lectus in quam fringilla rhoncus.', 'Negative', 317.31, 220, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (208, 'HbA1c', 'Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '0.4-4.0 mIU/L', 165.03, 381, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (209, 'HbA1c', 'Vivamus tortor. Duis mattis egestas metus.', 'Negative', 85.67, 288, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (210, 'Glucose', 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', '13.5-17.5 g/dL', 344.77, 325, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (211, 'Electrolyte Panel', 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '0.4-4.0 mIU/L', 223.78, 240, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (212, 'COVID-19 PCR', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', '>30 ng/mL', 297.55, 121, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (213, 'Thyroid TSH', 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', 'Negative', 355.03, 310, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (214, 'Urinalysis', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', '0.4-4.0 mIU/L', 59.14, 416, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (215, 'Glucose', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', '0.4-4.0 mIU/L', 36.77, 290, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (216, 'COVID-19 PCR', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', '13.5-17.5 g/dL', 429.51, 395, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (217, 'CBC', 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.', '13.5-17.5 g/dL', 271.38, 441, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (218, 'HbA1c', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', '13.5-17.5 g/dL', 286.75, 402, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (219, 'Thyroid TSH', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', '70-100 mg/dL', 81.87, 323, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (220, 'Urinalysis', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 'Negative', 364.22, 231, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (221, 'COVID-19 PCR', 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', '<5.7%', 237.43, 191, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (222, 'Lipid Panel', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '70-100 mg/dL', 240.14, 45, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (223, 'CBC', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', '13.5-17.5 g/dL', 350.68, 250, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (224, 'HbA1c', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.', '>30 ng/mL', 68.9, 166, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (225, 'Lipid Panel', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.', 'Negative', 234.56, 249, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (226, 'CBC', 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 'Negative', 258.1, 51, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (227, 'HbA1c', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', '70-100 mg/dL', 206.94, 261, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (228, 'HbA1c', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', '70-100 mg/dL', 338.59, 255, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (229, 'Glucose', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', '>30 ng/mL', 166.5, 338, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (230, 'Glucose', 'Praesent blandit. Nam nulla.', '<5.7%', 210.22, 36, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (231, 'Vitamin D', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', 'Negative', 130.73, 500, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (232, 'Urinalysis', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 'Negative', 272.94, 446, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (233, 'Vitamin D', 'In sagittis dui vel nisl. Duis ac nibh.', '>30 ng/mL', 337.84, 94, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (234, 'Thyroid TSH', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.', 'Negative', 253.8, 380, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (235, 'Glucose', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '<5.7%', 273.46, 201, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (236, 'CBC', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', '13.5-17.5 g/dL', 414.46, 197, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (237, 'Electrolyte Panel', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.', '13.5-17.5 g/dL', 224.37, 138, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (238, 'COVID-19 PCR', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', '<5.7%', 65.69, 322, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (239, 'Glucose', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 'Negative', 217.68, 225, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (240, 'Thyroid TSH', 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', '70-100 mg/dL', 443.84, 437, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (241, 'CBC', 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', '13.5-17.5 g/dL', 237.7, 226, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (242, 'Glucose', 'Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 'Negative', 146.68, 137, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (243, 'HbA1c', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', '<5.7%', 122.52, 242, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (244, 'COVID-19 PCR', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 'Negative', 152.98, 74, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (245, 'Lipid Panel', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', '70-100 mg/dL', 162.54, 39, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (246, 'Lipid Panel', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '<5.7%', 384.51, 460, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (247, 'HbA1c', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', 'Negative', 344.41, 372, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (248, 'COVID-19 PCR', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', 'Negative', 257.97, 473, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (249, 'CBC', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', '13.5-17.5 g/dL', 86.05, 390, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (250, 'Urinalysis', 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '70-100 mg/dL', 189.96, 489, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (251, 'Glucose', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', '13.5-17.5 g/dL', 116.54, 434, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (252, 'Urinalysis', 'Morbi a ipsum. Integer a nibh. In quis justo.', '70-100 mg/dL', 360.14, 5, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (253, 'CBC', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', '>30 ng/mL', 204.78, 468, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (254, 'CBC', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '<5.7%', 368.87, 137, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (255, 'Urinalysis', 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', '70-100 mg/dL', 264.47, 194, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (256, 'COVID-19 PCR', 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', '>30 ng/mL', 408.02, 41, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (257, 'HbA1c', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', '0.4-4.0 mIU/L', 285.63, 126, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (258, 'COVID-19 PCR', 'Fusce consequat. Nulla nisl.', '13.5-17.5 g/dL', 378.44, 152, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (259, 'Lipid Panel', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 'Negative', 202.7, 44, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (260, 'Thyroid TSH', 'In blandit ultrices enim.', 'Negative', 109.0, 351, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (261, 'CBC', 'Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', '0.4-4.0 mIU/L', 352.69, 445, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (262, 'Vitamin D', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 'Negative', 284.58, 123, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (263, 'Lipid Panel', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', '0.4-4.0 mIU/L', 375.4, 274, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (264, 'Lipid Panel', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '70-100 mg/dL', 285.15, 253, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (265, 'Lipid Panel', 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', '13.5-17.5 g/dL', 258.13, 426, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (266, 'Glucose', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', '0.4-4.0 mIU/L', 368.91, 96, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (267, 'Glucose', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', '>30 ng/mL', 270.49, 187, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (268, 'HbA1c', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', '0.4-4.0 mIU/L', 447.34, 427, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (269, 'Lipid Panel', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', '<5.7%', 349.44, 350, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (270, 'COVID-19 PCR', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', '13.5-17.5 g/dL', 77.96, 52, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (271, 'Lipid Panel', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', '70-100 mg/dL', 106.11, 268, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (272, 'Thyroid TSH', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.', '70-100 mg/dL', 356.17, 63, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (273, 'Urinalysis', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', '13.5-17.5 g/dL', 349.41, 318, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (274, 'Electrolyte Panel', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', '>30 ng/mL', 372.5, 237, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (275, 'Glucose', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '>30 ng/mL', 409.1, 313, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (276, 'Vitamin D', 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '70-100 mg/dL', 377.4, 137, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (277, 'HbA1c', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', '<5.7%', 156.05, 130, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (278, 'Vitamin D', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', '13.5-17.5 g/dL', 395.45, 2, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (279, 'HbA1c', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', '<5.7%', 281.97, 387, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (280, 'COVID-19 PCR', 'Phasellus in felis.', 'Negative', 301.72, 108, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (281, 'Vitamin D', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '70-100 mg/dL', 158.18, 486, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (282, 'COVID-19 PCR', 'Pellentesque eget nunc.', '70-100 mg/dL', 47.9, 158, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (283, 'Thyroid TSH', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', '>30 ng/mL', 130.52, 460, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (284, 'COVID-19 PCR', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 'Negative', 39.74, 80, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (285, 'Vitamin D', 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', '>30 ng/mL', 221.72, 284, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (286, 'Electrolyte Panel', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 'Negative', 367.07, 121, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (287, 'HbA1c', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '<5.7%', 309.79, 342, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (288, 'Urinalysis', 'Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 'Negative', 395.99, 293, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (289, 'HbA1c', 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.', 'Negative', 171.52, 378, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (290, 'Thyroid TSH', 'Duis bibendum. Morbi non quam nec dui luctus rutrum.', '>30 ng/mL', 238.28, 179, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (291, 'CBC', 'Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '70-100 mg/dL', 181.48, 493, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (292, 'HbA1c', 'Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', '>30 ng/mL', 246.15, 359, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (293, 'Glucose', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '13.5-17.5 g/dL', 120.41, 423, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (294, 'COVID-19 PCR', 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', '70-100 mg/dL', 382.49, 81, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (295, 'HbA1c', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '0.4-4.0 mIU/L', 396.19, 374, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (296, 'Electrolyte Panel', 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '70-100 mg/dL', 215.53, 435, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (297, 'Urinalysis', 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 'Negative', 239.47, 71, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (298, 'Thyroid TSH', 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', '<5.7%', 37.99, 136, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (299, 'Urinalysis', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', '>30 ng/mL', 187.45, 253, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (300, 'Lipid Panel', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', 'Negative', 51.45, 308, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (301, 'Thyroid TSH', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', '<5.7%', 130.05, 35, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (302, 'Vitamin D', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', '13.5-17.5 g/dL', 58.13, 208, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (303, 'Urinalysis', 'Etiam faucibus cursus urna. Ut tellus.', '70-100 mg/dL', 170.6, 101, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (304, 'COVID-19 PCR', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', '>30 ng/mL', 56.1, 261, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (305, 'HbA1c', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', '0.4-4.0 mIU/L', 429.06, 197, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (306, 'Thyroid TSH', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', '70-100 mg/dL', 299.39, 313, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (307, 'COVID-19 PCR', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', '70-100 mg/dL', 167.19, 168, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (308, 'Vitamin D', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.', '<5.7%', 394.94, 211, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (309, 'Thyroid TSH', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', '13.5-17.5 g/dL', 66.27, 50, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (310, 'Urinalysis', 'Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '70-100 mg/dL', 139.86, 90, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (311, 'Urinalysis', 'Duis aliquam convallis nunc.', '0.4-4.0 mIU/L', 338.98, 169, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (312, 'Vitamin D', 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 'Negative', 211.56, 474, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (313, 'COVID-19 PCR', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Negative', 81.75, 194, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (314, 'Urinalysis', 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '>30 ng/mL', 148.14, 437, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (315, 'Vitamin D', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', '70-100 mg/dL', 178.99, 207, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (316, 'CBC', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', '70-100 mg/dL', 178.41, 359, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (317, 'Lipid Panel', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.', '0.4-4.0 mIU/L', 201.16, 204, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (318, 'Thyroid TSH', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 'Negative', 49.12, 281, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (319, 'Lipid Panel', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', '13.5-17.5 g/dL', 350.99, 38, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (320, 'Thyroid TSH', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '<5.7%', 137.29, 453, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (321, 'CBC', 'Proin risus.', '70-100 mg/dL', 393.87, 187, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (322, 'COVID-19 PCR', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '13.5-17.5 g/dL', 292.4, 243, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (323, 'Lipid Panel', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.', '13.5-17.5 g/dL', 44.14, 127, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (324, 'Urinalysis', 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '13.5-17.5 g/dL', 424.87, 253, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (325, 'Vitamin D', 'Vivamus vel nulla eget eros elementum pellentesque.', '>30 ng/mL', 160.39, 43, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (326, 'Thyroid TSH', 'Cras in purus eu magna vulputate luctus.', '0.4-4.0 mIU/L', 323.45, 286, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (327, 'COVID-19 PCR', 'Integer non velit.', '70-100 mg/dL', 280.8, 312, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (328, 'HbA1c', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', '<5.7%', 313.53, 498, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (329, 'COVID-19 PCR', 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', '13.5-17.5 g/dL', 360.54, 385, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (330, 'Electrolyte Panel', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', 'Negative', 188.35, 184, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (331, 'Vitamin D', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', '70-100 mg/dL', 385.08, 378, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (332, 'Electrolyte Panel', 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '70-100 mg/dL', 122.33, 97, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (333, 'HbA1c', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', '>30 ng/mL', 250.66, 213, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (334, 'HbA1c', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '<5.7%', 388.48, 208, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (335, 'Urinalysis', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', 'Negative', 360.6, 79, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (336, 'Electrolyte Panel', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.', '70-100 mg/dL', 150.73, 467, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (337, 'HbA1c', 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.', '<5.7%', 296.49, 248, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (338, 'CBC', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '<5.7%', 170.96, 487, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (339, 'HbA1c', 'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', '70-100 mg/dL', 215.23, 399, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (340, 'Lipid Panel', 'Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.', 'Negative', 382.11, 361, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (341, 'CBC', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '13.5-17.5 g/dL', 132.59, 61, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (342, 'Electrolyte Panel', 'Morbi vel lectus in quam fringilla rhoncus.', '>30 ng/mL', 252.37, 428, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (343, 'Glucose', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', '70-100 mg/dL', 335.07, 464, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (344, 'Electrolyte Panel', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '70-100 mg/dL', 376.02, 294, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (345, 'CBC', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', 'Negative', 221.96, 391, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (346, 'COVID-19 PCR', 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '0.4-4.0 mIU/L', 285.03, 41, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (347, 'CBC', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', '0.4-4.0 mIU/L', 371.13, 210, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (348, 'Lipid Panel', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '13.5-17.5 g/dL', 339.91, 224, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (349, 'Electrolyte Panel', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', '70-100 mg/dL', 440.91, 306, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (350, 'Electrolyte Panel', 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '70-100 mg/dL', 445.25, 135, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (351, 'Urinalysis', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', '>30 ng/mL', 332.42, 10, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (352, 'Lipid Panel', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '70-100 mg/dL', 164.66, 118, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (353, 'Glucose', 'Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', '13.5-17.5 g/dL', 124.0, 275, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (354, 'Glucose', 'Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', '0.4-4.0 mIU/L', 218.66, 143, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (355, 'CBC', 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '13.5-17.5 g/dL', 223.46, 255, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (356, 'HbA1c', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '<5.7%', 291.06, 226, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (357, 'Electrolyte Panel', 'Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.', 'Negative', 386.41, 332, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (358, 'Lipid Panel', 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '<5.7%', 317.02, 322, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (359, 'Thyroid TSH', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.', '70-100 mg/dL', 43.81, 260, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (360, 'Urinalysis', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.', '<5.7%', 379.47, 440, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (361, 'Vitamin D', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', '13.5-17.5 g/dL', 335.87, 123, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (362, 'Glucose', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 'Negative', 361.56, 199, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (363, 'HbA1c', 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', '0.4-4.0 mIU/L', 40.38, 481, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (364, 'CBC', 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', '70-100 mg/dL', 42.42, 380, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (365, 'CBC', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.', '0.4-4.0 mIU/L', 196.21, 147, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (366, 'Thyroid TSH', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', 'Negative', 136.53, 170, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (367, 'Electrolyte Panel', 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', '<5.7%', 238.06, 279, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (368, 'Vitamin D', 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '>30 ng/mL', 411.64, 170, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (369, 'CBC', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.', '13.5-17.5 g/dL', 403.95, 131, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (370, 'COVID-19 PCR', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', 'Negative', 323.56, 239, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (371, 'Glucose', 'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', '0.4-4.0 mIU/L', 445.64, 162, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (372, 'Urinalysis', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', '>30 ng/mL', 230.44, 19, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (373, 'CBC', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '>30 ng/mL', 391.12, 378, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (374, 'Lipid Panel', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.', '0.4-4.0 mIU/L', 394.46, 256, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (375, 'Glucose', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '<5.7%', 275.35, 490, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (376, 'Electrolyte Panel', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', '<5.7%', 246.43, 224, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (377, 'Thyroid TSH', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', '70-100 mg/dL', 91.22, 157, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (378, 'COVID-19 PCR', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '0.4-4.0 mIU/L', 185.7, 292, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (379, 'Urinalysis', 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', '0.4-4.0 mIU/L', 233.72, 52, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (380, 'HbA1c', 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', '0.4-4.0 mIU/L', 34.22, 416, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (381, 'HbA1c', 'Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '13.5-17.5 g/dL', 150.9, 194, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (382, 'Lipid Panel', 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', '<5.7%', 419.44, 417, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (383, 'Electrolyte Panel', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', '13.5-17.5 g/dL', 123.92, 214, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (384, 'Electrolyte Panel', 'Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '13.5-17.5 g/dL', 318.14, 174, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (385, 'HbA1c', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.', '<5.7%', 145.83, 273, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (386, 'Electrolyte Panel', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', '<5.7%', 158.89, 484, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (387, 'Electrolyte Panel', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.', '13.5-17.5 g/dL', 319.42, 215, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (388, 'Urinalysis', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', '70-100 mg/dL', 154.53, 348, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (389, 'HbA1c', 'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', '70-100 mg/dL', 393.61, 127, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (390, 'Lipid Panel', 'Aliquam erat volutpat.', '<5.7%', 418.79, 471, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (391, 'Vitamin D', 'Morbi a ipsum.', '0.4-4.0 mIU/L', 345.65, 24, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (392, 'CBC', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 'Negative', 241.89, 14, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (393, 'CBC', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', '<5.7%', 320.81, 265, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (394, 'COVID-19 PCR', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.', '<5.7%', 117.97, 334, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (395, 'HbA1c', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', '70-100 mg/dL', 280.12, 238, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (396, 'Electrolyte Panel', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', '70-100 mg/dL', 217.57, 211, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (397, 'Urinalysis', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', '>30 ng/mL', 189.67, 299, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (398, 'Urinalysis', 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '0.4-4.0 mIU/L', 390.96, 440, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (399, 'Urinalysis', 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '>30 ng/mL', 381.61, 449, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (400, 'CBC', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', '13.5-17.5 g/dL', 401.93, 39, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (401, 'Thyroid TSH', 'Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.', '>30 ng/mL', 258.11, 91, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (402, 'Electrolyte Panel', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.', '>30 ng/mL', 166.11, 26, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (403, 'COVID-19 PCR', 'Curabitur in libero ut massa volutpat convallis.', '<5.7%', 318.73, 73, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (404, 'Thyroid TSH', 'Nunc purus. Phasellus in felis.', '>30 ng/mL', 438.67, 36, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (405, 'HbA1c', 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 'Negative', 409.11, 147, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (406, 'Urinalysis', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', '0.4-4.0 mIU/L', 36.52, 317, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (407, 'Thyroid TSH', 'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.', 'Negative', 324.89, 239, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (408, 'Glucose', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', '>30 ng/mL', 87.81, 469, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (409, 'Thyroid TSH', 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', '13.5-17.5 g/dL', 49.61, 8, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (410, 'Thyroid TSH', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', '0.4-4.0 mIU/L', 89.88, 122, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (411, 'HbA1c', 'Curabitur gravida nisi at nibh.', '13.5-17.5 g/dL', 389.56, 248, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (412, 'Thyroid TSH', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.', 'Negative', 351.18, 368, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (413, 'Lipid Panel', 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', '70-100 mg/dL', 300.21, 61, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (414, 'HbA1c', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.', '>30 ng/mL', 420.11, 469, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (415, 'COVID-19 PCR', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.', '>30 ng/mL', 387.4, 55, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (416, 'Glucose', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '>30 ng/mL', 319.75, 217, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (417, 'Urinalysis', 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', '13.5-17.5 g/dL', 401.31, 442, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (418, 'Glucose', 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', 'Negative', 159.15, 136, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (419, 'HbA1c', 'In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', '0.4-4.0 mIU/L', 161.34, 222, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (420, 'Electrolyte Panel', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', '70-100 mg/dL', 57.99, 344, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (421, 'Electrolyte Panel', 'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.', '0.4-4.0 mIU/L', 180.38, 120, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (422, 'CBC', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.', '<5.7%', 92.21, 375, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (423, 'Glucose', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', 'Negative', 302.44, 170, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (424, 'COVID-19 PCR', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 'Negative', 362.13, 191, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (425, 'HbA1c', 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui.', '13.5-17.5 g/dL', 194.25, 413, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (426, 'Thyroid TSH', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '>30 ng/mL', 230.2, 262, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (427, 'CBC', 'Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', '13.5-17.5 g/dL', 246.7, 189, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (428, 'HbA1c', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', '<5.7%', 433.25, 386, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (429, 'COVID-19 PCR', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', '70-100 mg/dL', 226.07, 483, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (430, 'COVID-19 PCR', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.', '<5.7%', 319.62, 476, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (431, 'Urinalysis', 'Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', 'Negative', 268.67, 12, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (432, 'Lipid Panel', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.', '0.4-4.0 mIU/L', 99.09, 154, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (433, 'Vitamin D', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', '70-100 mg/dL', 73.87, 494, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (434, 'Thyroid TSH', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 'Negative', 217.3, 459, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (435, 'CBC', 'In sagittis dui vel nisl. Duis ac nibh.', '13.5-17.5 g/dL', 250.15, 428, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (436, 'Urinalysis', 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', '13.5-17.5 g/dL', 224.69, 23, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (437, 'CBC', 'Quisque porta volutpat erat.', '0.4-4.0 mIU/L', 75.69, 6, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (438, 'Urinalysis', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '>30 ng/mL', 105.97, 266, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (439, 'Vitamin D', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '<5.7%', 44.54, 284, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (440, 'Thyroid TSH', 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.', '70-100 mg/dL', 214.82, 278, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (441, 'Vitamin D', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', '<5.7%', 217.29, 442, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (442, 'Vitamin D', 'Morbi vel lectus in quam fringilla rhoncus.', 'Negative', 338.49, 454, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (443, 'Urinalysis', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', '13.5-17.5 g/dL', 116.92, 106, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (444, 'Urinalysis', 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.', '13.5-17.5 g/dL', 70.81, 432, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (445, 'Lipid Panel', 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.', '0.4-4.0 mIU/L', 192.3, 52, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (446, 'Thyroid TSH', 'Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', '13.5-17.5 g/dL', 144.52, 142, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (447, 'Vitamin D', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 'Negative', 223.45, 222, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (448, 'HbA1c', 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', '0.4-4.0 mIU/L', 227.49, 29, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (449, 'Electrolyte Panel', 'Pellentesque at nulla. Suspendisse potenti.', '<5.7%', 173.54, 53, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (450, 'CBC', 'Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '13.5-17.5 g/dL', 413.27, 429, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (451, 'Urinalysis', 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', '<5.7%', 145.59, 229, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (452, 'CBC', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', '13.5-17.5 g/dL', 281.43, 20, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (453, 'HbA1c', 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.', '>30 ng/mL', 268.04, 415, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (454, 'Glucose', 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.', '>30 ng/mL', 35.97, 373, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (455, 'Urinalysis', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.', '70-100 mg/dL', 67.6, 105, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (456, 'COVID-19 PCR', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', '>30 ng/mL', 69.99, 92, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (457, 'Glucose', 'Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.', '>30 ng/mL', 420.4, 341, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (458, 'COVID-19 PCR', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.', '>30 ng/mL', 208.65, 2, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (459, 'Electrolyte Panel', 'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '>30 ng/mL', 279.94, 15, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (460, 'HbA1c', 'Nam nulla.', '0.4-4.0 mIU/L', 340.14, 241, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (461, 'CBC', 'Praesent lectus.', '70-100 mg/dL', 274.6, 268, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (462, 'Electrolyte Panel', 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.', '0.4-4.0 mIU/L', 291.48, 7, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (463, 'CBC', 'Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', '0.4-4.0 mIU/L', 213.93, 222, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (464, 'Vitamin D', 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.', 'Negative', 150.51, 166, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (465, 'COVID-19 PCR', 'Quisque porta volutpat erat.', '13.5-17.5 g/dL', 148.26, 72, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (466, 'COVID-19 PCR', 'Nullam molestie nibh in lectus.', '70-100 mg/dL', 200.19, 211, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (467, 'CBC', 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', '<5.7%', 65.43, 120, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (468, 'HbA1c', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', '>30 ng/mL', 114.62, 333, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (469, 'HbA1c', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', '>30 ng/mL', 102.11, 253, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (470, 'Glucose', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '0.4-4.0 mIU/L', 210.01, 435, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (471, 'Lipid Panel', 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', '>30 ng/mL', 207.17, 400, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (472, 'Thyroid TSH', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '>30 ng/mL', 178.55, 406, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (473, 'Glucose', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', '13.5-17.5 g/dL', 341.49, 375, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (474, 'HbA1c', 'Nullam molestie nibh in lectus. Pellentesque at nulla.', '>30 ng/mL', 217.81, 362, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (475, 'CBC', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Negative', 76.75, 75, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (476, 'Urinalysis', 'Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', '13.5-17.5 g/dL', 252.18, 322, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (477, 'Thyroid TSH', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', '0.4-4.0 mIU/L', 360.71, 323, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (478, 'Lipid Panel', 'Proin at turpis a pede posuere nonummy.', 'Negative', 278.97, 437, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (479, 'Vitamin D', 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '<5.7%', 314.72, 289, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (480, 'COVID-19 PCR', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 'Negative', 390.95, 92, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (481, 'Electrolyte Panel', 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.', 'Negative', 288.25, 186, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (482, 'Electrolyte Panel', 'Praesent lectus.', '0.4-4.0 mIU/L', 320.9, 363, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (483, 'Electrolyte Panel', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', '70-100 mg/dL', 186.67, 364, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (484, 'Thyroid TSH', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', '13.5-17.5 g/dL', 231.2, 2, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (485, 'Glucose', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.', '0.4-4.0 mIU/L', 418.35, 319, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (486, 'COVID-19 PCR', 'Suspendisse accumsan tortor quis turpis. Sed ante.', '>30 ng/mL', 71.25, 224, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (487, 'HbA1c', 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.', '13.5-17.5 g/dL', 94.32, 339, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (488, 'HbA1c', 'Pellentesque ultrices mattis odio.', '>30 ng/mL', 329.57, 184, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (489, 'Vitamin D', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', '<5.7%', 349.2, 81, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (490, 'Electrolyte Panel', 'Aliquam quis turpis eget elit sodales scelerisque.', '70-100 mg/dL', 327.4, 277, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (491, 'Vitamin D', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 'Negative', 162.64, 239, 'Blood');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (492, 'Vitamin D', 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '70-100 mg/dL', 283.04, 123, 'Swab');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (493, 'COVID-19 PCR', 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', '70-100 mg/dL', 71.11, 164, 'Urine');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (494, 'HbA1c', 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.', '0.4-4.0 mIU/L', 56.41, 454, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (495, 'Vitamin D', 'Etiam vel augue.', '>30 ng/mL', 311.33, 316, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (496, 'CBC', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.', '>30 ng/mL', 218.76, 2, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (497, 'HbA1c', 'Suspendisse ornare consequat lectus.', '>30 ng/mL', 197.96, 357, 'Plasma');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (498, 'Vitamin D', 'Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.', '<5.7%', 438.34, 461, 'Serum');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (499, 'Lipid Panel', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', '13.5-17.5 g/dL', 94.48, 41, 'Saliva');
-insert into LAB_TEST (test_id, test_name, description, normal_range, cost, equipment_id, sample_type) values (500, 'Electrolyte Panel', 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', '>30 ng/mL', 216.09, 336, 'Saliva');
+-- 500 records for LAB_TEST
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (1, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 367.2, 326, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (2, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 476.26, 313, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (3, 'Urinalysis', 'Urinalysis description', 'Normal', 350.44, 479, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (4, 'Lipid Panel', 'Lipid Panel description', 'Normal', 362.81, 401, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (5, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 133.55, 382, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (6, 'Urinalysis', 'Urinalysis description', 'Normal', 265.36, 422, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (7, 'Lipid Panel', 'Lipid Panel description', 'Normal', 315.79, 264, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (8, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 85.13, 447, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (9, 'Lipid Panel', 'Lipid Panel description', 'Normal', 361.86, 342, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (10, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 206.81, 337, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (11, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 156.27, 156, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (12, 'Liver Function Test', 'Liver Function Test description', 'Normal', 359.31, 191, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (13, 'Liver Function Test', 'Liver Function Test description', 'Normal', 184.08, 396, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (14, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 455.06, 476, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (15, 'Lipid Panel', 'Lipid Panel description', 'Normal', 214.22, 330, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (16, 'Thyroid Function', 'Thyroid Function description', 'Normal', 487.52, 441, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (17, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 287.81, 323, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (18, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 395.8, 214, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (19, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 170.34, 323, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (20, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 109.46, 280, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (21, 'Liver Function Test', 'Liver Function Test description', 'Normal', 77.01, 476, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (22, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 316.63, 452, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (23, 'Liver Function Test', 'Liver Function Test description', 'Normal', 498.3, 288, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (24, 'Liver Function Test', 'Liver Function Test description', 'Normal', 54.25, 185, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (25, 'Lipid Panel', 'Lipid Panel description', 'Normal', 319.0, 215, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (26, 'Glucose Test', 'Glucose Test description', 'Normal', 448.58, 194, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (27, 'Lipid Panel', 'Lipid Panel description', 'Normal', 357.84, 421, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (28, 'Glucose Test', 'Glucose Test description', 'Normal', 355.67, 255, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (29, 'Liver Function Test', 'Liver Function Test description', 'Normal', 493.86, 469, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (30, 'Urinalysis', 'Urinalysis description', 'Normal', 80.37, 305, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (31, 'Glucose Test', 'Glucose Test description', 'Normal', 292.9, 449, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (32, 'Thyroid Function', 'Thyroid Function description', 'Normal', 129.11, 438, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (33, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 406.08, 250, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (34, 'Thyroid Function', 'Thyroid Function description', 'Normal', 366.09, 441, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (35, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 165.37, 222, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (36, 'Glucose Test', 'Glucose Test description', 'Normal', 389.48, 355, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (37, 'Urinalysis', 'Urinalysis description', 'Normal', 218.38, 492, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (38, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 80.52, 11, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (39, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 261.04, 144, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (40, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 96.32, 156, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (41, 'Urinalysis', 'Urinalysis description', 'Normal', 320.29, 323, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (42, 'Liver Function Test', 'Liver Function Test description', 'Normal', 258.51, 380, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (43, 'Glucose Test', 'Glucose Test description', 'Normal', 309.43, 492, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (44, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 264.89, 327, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (45, 'Liver Function Test', 'Liver Function Test description', 'Normal', 68.61, 147, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (46, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 307.0, 259, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (47, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 420.27, 192, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (48, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 481.67, 130, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (49, 'Liver Function Test', 'Liver Function Test description', 'Normal', 395.94, 78, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (50, 'Thyroid Function', 'Thyroid Function description', 'Normal', 363.33, 227, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (51, 'Glucose Test', 'Glucose Test description', 'Normal', 220.92, 492, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (52, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 181.44, 147, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (53, 'Thyroid Function', 'Thyroid Function description', 'Normal', 104.98, 386, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (54, 'Urinalysis', 'Urinalysis description', 'Normal', 372.41, 79, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (55, 'Thyroid Function', 'Thyroid Function description', 'Normal', 461.26, 118, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (56, 'Liver Function Test', 'Liver Function Test description', 'Normal', 66.5, 351, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (57, 'Liver Function Test', 'Liver Function Test description', 'Normal', 356.3, 428, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (58, 'Glucose Test', 'Glucose Test description', 'Normal', 487.06, 409, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (59, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 292.44, 477, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (60, 'Liver Function Test', 'Liver Function Test description', 'Normal', 335.79, 435, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (61, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 307.72, 188, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (62, 'Glucose Test', 'Glucose Test description', 'Normal', 279.02, 229, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (63, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 388.57, 426, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (64, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 274.52, 8, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (65, 'Thyroid Function', 'Thyroid Function description', 'Normal', 287.37, 247, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (66, 'Urinalysis', 'Urinalysis description', 'Normal', 209.68, 416, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (67, 'Thyroid Function', 'Thyroid Function description', 'Normal', 409.55, 423, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (68, 'Lipid Panel', 'Lipid Panel description', 'Normal', 365.71, 169, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (69, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 60.64, 337, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (70, 'Glucose Test', 'Glucose Test description', 'Normal', 138.77, 336, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (71, 'Urinalysis', 'Urinalysis description', 'Normal', 278.67, 242, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (72, 'Liver Function Test', 'Liver Function Test description', 'Normal', 490.26, 289, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (73, 'Liver Function Test', 'Liver Function Test description', 'Normal', 83.11, 235, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (74, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 413.97, 156, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (75, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 246.12, 389, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (76, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 356.87, 261, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (77, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 104.53, 173, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (78, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 399.68, 322, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (79, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 358.66, 436, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (80, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 105.43, 455, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (81, 'Urinalysis', 'Urinalysis description', 'Normal', 422.73, 459, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (82, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 339.39, 49, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (83, 'Thyroid Function', 'Thyroid Function description', 'Normal', 359.48, 335, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (84, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 243.4, 275, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (85, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 129.72, 343, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (86, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 174.49, 276, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (87, 'Glucose Test', 'Glucose Test description', 'Normal', 366.65, 55, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (88, 'Thyroid Function', 'Thyroid Function description', 'Normal', 270.38, 309, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (89, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 460.29, 137, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (90, 'Lipid Panel', 'Lipid Panel description', 'Normal', 390.14, 235, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (91, 'Liver Function Test', 'Liver Function Test description', 'Normal', 224.7, 48, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (92, 'Glucose Test', 'Glucose Test description', 'Normal', 359.56, 298, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (93, 'Lipid Panel', 'Lipid Panel description', 'Normal', 52.99, 219, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (94, 'Urinalysis', 'Urinalysis description', 'Normal', 418.29, 451, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (95, 'Urinalysis', 'Urinalysis description', 'Normal', 480.08, 352, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (96, 'Glucose Test', 'Glucose Test description', 'Normal', 258.7, 238, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (97, 'Liver Function Test', 'Liver Function Test description', 'Normal', 428.84, 300, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (98, 'Urinalysis', 'Urinalysis description', 'Normal', 163.4, 397, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (99, 'Glucose Test', 'Glucose Test description', 'Normal', 405.19, 200, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (100, 'Thyroid Function', 'Thyroid Function description', 'Normal', 273.28, 355, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (101, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 493.95, 365, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (102, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 75.26, 375, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (103, 'Lipid Panel', 'Lipid Panel description', 'Normal', 314.36, 473, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (104, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 76.84, 238, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (105, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 85.58, 38, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (106, 'Thyroid Function', 'Thyroid Function description', 'Normal', 123.95, 500, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (107, 'Thyroid Function', 'Thyroid Function description', 'Normal', 497.36, 377, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (108, 'Urinalysis', 'Urinalysis description', 'Normal', 383.64, 373, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (109, 'Thyroid Function', 'Thyroid Function description', 'Normal', 307.92, 475, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (110, 'Lipid Panel', 'Lipid Panel description', 'Normal', 70.5, 144, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (111, 'Glucose Test', 'Glucose Test description', 'Normal', 294.27, 436, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (112, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 454.41, 66, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (113, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 431.02, 273, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (114, 'Liver Function Test', 'Liver Function Test description', 'Normal', 426.55, 152, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (115, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 76.95, 444, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (116, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 427.8, 272, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (117, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 261.33, 471, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (118, 'Lipid Panel', 'Lipid Panel description', 'Normal', 235.51, 358, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (119, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 428.6, 332, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (120, 'Urinalysis', 'Urinalysis description', 'Normal', 195.73, 117, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (121, 'Urinalysis', 'Urinalysis description', 'Normal', 236.34, 132, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (122, 'Thyroid Function', 'Thyroid Function description', 'Normal', 238.95, 272, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (123, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 168.97, 449, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (124, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 72.14, 400, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (125, 'Liver Function Test', 'Liver Function Test description', 'Normal', 378.3, 149, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (126, 'Urinalysis', 'Urinalysis description', 'Normal', 392.54, 108, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (127, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 73.87, 465, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (128, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 317.02, 107, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (129, 'Lipid Panel', 'Lipid Panel description', 'Normal', 471.13, 23, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (130, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 317.93, 254, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (131, 'Thyroid Function', 'Thyroid Function description', 'Normal', 63.46, 199, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (132, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 340.24, 493, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (133, 'Urinalysis', 'Urinalysis description', 'Normal', 220.03, 4, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (134, 'Liver Function Test', 'Liver Function Test description', 'Normal', 152.76, 371, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (135, 'Glucose Test', 'Glucose Test description', 'Normal', 451.12, 304, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (136, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 317.65, 249, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (137, 'Urinalysis', 'Urinalysis description', 'Normal', 425.71, 458, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (138, 'Liver Function Test', 'Liver Function Test description', 'Normal', 50.73, 157, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (139, 'Thyroid Function', 'Thyroid Function description', 'Normal', 357.35, 40, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (140, 'Urinalysis', 'Urinalysis description', 'Normal', 358.43, 433, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (141, 'Thyroid Function', 'Thyroid Function description', 'Normal', 173.81, 22, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (142, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 341.66, 495, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (143, 'Glucose Test', 'Glucose Test description', 'Normal', 245.3, 186, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (144, 'Glucose Test', 'Glucose Test description', 'Normal', 364.3, 160, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (145, 'Thyroid Function', 'Thyroid Function description', 'Normal', 251.25, 279, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (146, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 169.72, 20, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (147, 'Urinalysis', 'Urinalysis description', 'Normal', 499.42, 105, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (148, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 111.06, 423, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (149, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 78.89, 179, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (150, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 484.96, 54, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (151, 'Lipid Panel', 'Lipid Panel description', 'Normal', 345.37, 196, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (152, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 431.87, 300, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (153, 'Lipid Panel', 'Lipid Panel description', 'Normal', 131.14, 445, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (154, 'Thyroid Function', 'Thyroid Function description', 'Normal', 419.15, 101, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (155, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 263.49, 478, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (156, 'Liver Function Test', 'Liver Function Test description', 'Normal', 86.62, 151, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (157, 'Urinalysis', 'Urinalysis description', 'Normal', 147.89, 92, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (158, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 158.32, 455, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (159, 'Glucose Test', 'Glucose Test description', 'Normal', 368.79, 15, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (160, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 349.04, 478, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (161, 'Lipid Panel', 'Lipid Panel description', 'Normal', 354.42, 21, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (162, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 337.22, 131, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (163, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 308.9, 248, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (164, 'Urinalysis', 'Urinalysis description', 'Normal', 169.14, 5, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (165, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 484.47, 198, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (166, 'Glucose Test', 'Glucose Test description', 'Normal', 134.5, 320, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (167, 'Urinalysis', 'Urinalysis description', 'Normal', 181.1, 245, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (168, 'Lipid Panel', 'Lipid Panel description', 'Normal', 137.23, 441, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (169, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 401.13, 318, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (170, 'Glucose Test', 'Glucose Test description', 'Normal', 233.49, 346, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (171, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 416.83, 238, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (172, 'Thyroid Function', 'Thyroid Function description', 'Normal', 160.61, 66, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (173, 'Urinalysis', 'Urinalysis description', 'Normal', 308.1, 315, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (174, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 406.62, 218, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (175, 'Liver Function Test', 'Liver Function Test description', 'Normal', 158.44, 270, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (176, 'Glucose Test', 'Glucose Test description', 'Normal', 436.21, 479, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (177, 'Lipid Panel', 'Lipid Panel description', 'Normal', 235.23, 419, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (178, 'Thyroid Function', 'Thyroid Function description', 'Normal', 58.84, 79, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (179, 'Thyroid Function', 'Thyroid Function description', 'Normal', 127.41, 209, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (180, 'Liver Function Test', 'Liver Function Test description', 'Normal', 290.17, 207, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (181, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 351.86, 363, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (182, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 282.94, 107, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (183, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 318.4, 229, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (184, 'Glucose Test', 'Glucose Test description', 'Normal', 102.56, 378, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (185, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 220.99, 365, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (186, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 125.41, 283, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (187, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 468.23, 264, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (188, 'Urinalysis', 'Urinalysis description', 'Normal', 451.58, 56, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (189, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 451.94, 180, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (190, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 106.63, 29, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (191, 'Lipid Panel', 'Lipid Panel description', 'Normal', 61.67, 128, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (192, 'Liver Function Test', 'Liver Function Test description', 'Normal', 239.26, 153, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (193, 'Thyroid Function', 'Thyroid Function description', 'Normal', 97.44, 181, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (194, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 280.48, 260, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (195, 'Urinalysis', 'Urinalysis description', 'Normal', 448.37, 243, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (196, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 311.79, 38, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (197, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 398.28, 43, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (198, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 139.02, 318, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (199, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 382.92, 101, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (200, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 270.57, 472, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (201, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 370.16, 171, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (202, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 88.37, 370, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (203, 'Lipid Panel', 'Lipid Panel description', 'Normal', 71.48, 217, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (204, 'Glucose Test', 'Glucose Test description', 'Normal', 476.83, 381, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (205, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 489.08, 258, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (206, 'Lipid Panel', 'Lipid Panel description', 'Normal', 233.91, 19, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (207, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 223.79, 51, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (208, 'Thyroid Function', 'Thyroid Function description', 'Normal', 107.87, 339, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (209, 'Thyroid Function', 'Thyroid Function description', 'Normal', 352.85, 240, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (210, 'Liver Function Test', 'Liver Function Test description', 'Normal', 380.47, 298, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (211, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 437.07, 394, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (212, 'Thyroid Function', 'Thyroid Function description', 'Normal', 456.61, 27, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (213, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 482.52, 217, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (214, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 478.79, 18, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (215, 'Urinalysis', 'Urinalysis description', 'Normal', 458.95, 419, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (216, 'Urinalysis', 'Urinalysis description', 'Normal', 84.89, 274, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (217, 'Urinalysis', 'Urinalysis description', 'Normal', 57.78, 209, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (218, 'Urinalysis', 'Urinalysis description', 'Normal', 479.0, 284, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (219, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 481.95, 94, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (220, 'Urinalysis', 'Urinalysis description', 'Normal', 62.3, 203, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (221, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 170.05, 244, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (222, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 127.98, 474, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (223, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 304.49, 300, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (224, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 413.66, 373, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (225, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 313.3, 143, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (226, 'Liver Function Test', 'Liver Function Test description', 'Normal', 140.87, 146, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (227, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 76.38, 98, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (228, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 266.86, 48, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (229, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 86.88, 384, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (230, 'Thyroid Function', 'Thyroid Function description', 'Normal', 352.97, 146, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (231, 'Thyroid Function', 'Thyroid Function description', 'Normal', 348.98, 487, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (232, 'Urinalysis', 'Urinalysis description', 'Normal', 493.17, 326, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (233, 'Liver Function Test', 'Liver Function Test description', 'Normal', 346.01, 104, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (234, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 497.63, 433, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (235, 'Lipid Panel', 'Lipid Panel description', 'Normal', 163.47, 265, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (236, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 335.0, 185, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (237, 'Liver Function Test', 'Liver Function Test description', 'Normal', 327.92, 497, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (238, 'Liver Function Test', 'Liver Function Test description', 'Normal', 215.01, 435, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (239, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 499.43, 247, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (240, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 308.7, 310, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (241, 'Urinalysis', 'Urinalysis description', 'Normal', 323.29, 72, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (242, 'Liver Function Test', 'Liver Function Test description', 'Normal', 485.3, 79, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (243, 'Liver Function Test', 'Liver Function Test description', 'Normal', 94.46, 23, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (244, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 176.15, 215, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (245, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 415.21, 375, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (246, 'Liver Function Test', 'Liver Function Test description', 'Normal', 166.73, 43, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (247, 'Thyroid Function', 'Thyroid Function description', 'Normal', 477.31, 241, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (248, 'Lipid Panel', 'Lipid Panel description', 'Normal', 160.6, 62, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (249, 'Glucose Test', 'Glucose Test description', 'Normal', 188.49, 317, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (250, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 369.66, 85, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (251, 'Liver Function Test', 'Liver Function Test description', 'Normal', 361.53, 167, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (252, 'Thyroid Function', 'Thyroid Function description', 'Normal', 318.35, 478, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (253, 'Glucose Test', 'Glucose Test description', 'Normal', 439.58, 451, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (254, 'Lipid Panel', 'Lipid Panel description', 'Normal', 407.62, 278, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (255, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 86.81, 104, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (256, 'Liver Function Test', 'Liver Function Test description', 'Normal', 465.92, 91, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (257, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 84.61, 293, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (258, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 206.34, 305, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (259, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 385.98, 62, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (260, 'Glucose Test', 'Glucose Test description', 'Normal', 317.52, 466, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (261, 'Urinalysis', 'Urinalysis description', 'Normal', 90.75, 442, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (262, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 386.33, 336, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (263, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 353.43, 489, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (264, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 60.15, 297, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (265, 'Thyroid Function', 'Thyroid Function description', 'Normal', 272.44, 228, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (266, 'Thyroid Function', 'Thyroid Function description', 'Normal', 272.79, 264, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (267, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 309.61, 236, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (268, 'Thyroid Function', 'Thyroid Function description', 'Normal', 196.36, 292, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (269, 'Thyroid Function', 'Thyroid Function description', 'Normal', 475.8, 285, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (270, 'Glucose Test', 'Glucose Test description', 'Normal', 417.98, 476, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (271, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 447.04, 74, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (272, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 143.43, 490, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (273, 'Lipid Panel', 'Lipid Panel description', 'Normal', 392.91, 111, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (274, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 347.45, 494, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (275, 'Thyroid Function', 'Thyroid Function description', 'Normal', 402.75, 50, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (276, 'Glucose Test', 'Glucose Test description', 'Normal', 101.09, 234, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (277, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 327.17, 362, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (278, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 399.31, 19, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (279, 'Urinalysis', 'Urinalysis description', 'Normal', 313.69, 166, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (280, 'Urinalysis', 'Urinalysis description', 'Normal', 274.06, 274, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (281, 'Thyroid Function', 'Thyroid Function description', 'Normal', 421.44, 160, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (282, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 396.7, 422, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (283, 'Urinalysis', 'Urinalysis description', 'Normal', 455.72, 397, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (284, 'Liver Function Test', 'Liver Function Test description', 'Normal', 369.08, 89, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (285, 'Urinalysis', 'Urinalysis description', 'Normal', 88.77, 47, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (286, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 339.53, 424, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (287, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 473.92, 172, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (288, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 88.08, 151, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (289, 'Urinalysis', 'Urinalysis description', 'Normal', 137.16, 413, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (290, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 72.85, 229, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (291, 'Glucose Test', 'Glucose Test description', 'Normal', 134.95, 3, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (292, 'Urinalysis', 'Urinalysis description', 'Normal', 426.86, 9, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (293, 'Glucose Test', 'Glucose Test description', 'Normal', 474.91, 202, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (294, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 479.09, 96, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (295, 'Thyroid Function', 'Thyroid Function description', 'Normal', 447.48, 286, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (296, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 159.66, 498, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (297, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 300.6, 329, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (298, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 175.77, 186, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (299, 'Lipid Panel', 'Lipid Panel description', 'Normal', 309.2, 79, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (300, 'Urinalysis', 'Urinalysis description', 'Normal', 218.0, 328, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (301, 'Urinalysis', 'Urinalysis description', 'Normal', 191.64, 454, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (302, 'Urinalysis', 'Urinalysis description', 'Normal', 56.17, 284, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (303, 'Thyroid Function', 'Thyroid Function description', 'Normal', 467.98, 450, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (304, 'Glucose Test', 'Glucose Test description', 'Normal', 493.9, 220, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (305, 'Urinalysis', 'Urinalysis description', 'Normal', 142.38, 40, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (306, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 450.63, 443, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (307, 'Thyroid Function', 'Thyroid Function description', 'Normal', 51.22, 256, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (308, 'Liver Function Test', 'Liver Function Test description', 'Normal', 381.99, 254, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (309, 'Lipid Panel', 'Lipid Panel description', 'Normal', 440.0, 430, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (310, 'Glucose Test', 'Glucose Test description', 'Normal', 248.05, 387, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (311, 'Liver Function Test', 'Liver Function Test description', 'Normal', 361.96, 120, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (312, 'Glucose Test', 'Glucose Test description', 'Normal', 325.79, 229, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (313, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 214.6, 450, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (314, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 225.26, 6, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (315, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 84.79, 221, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (316, 'Thyroid Function', 'Thyroid Function description', 'Normal', 85.24, 100, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (317, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 281.89, 147, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (318, 'Lipid Panel', 'Lipid Panel description', 'Normal', 436.75, 416, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (319, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 347.37, 222, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (320, 'Thyroid Function', 'Thyroid Function description', 'Normal', 254.29, 87, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (321, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 299.65, 323, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (322, 'Thyroid Function', 'Thyroid Function description', 'Normal', 336.24, 444, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (323, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 491.81, 281, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (324, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 95.67, 332, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (325, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 311.11, 50, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (326, 'Liver Function Test', 'Liver Function Test description', 'Normal', 272.6, 366, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (327, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 183.44, 225, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (328, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 287.49, 460, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (329, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 401.1, 354, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (330, 'Urinalysis', 'Urinalysis description', 'Normal', 342.02, 290, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (331, 'Liver Function Test', 'Liver Function Test description', 'Normal', 471.67, 371, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (332, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 316.82, 304, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (333, 'Thyroid Function', 'Thyroid Function description', 'Normal', 282.16, 374, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (334, 'Urinalysis', 'Urinalysis description', 'Normal', 499.36, 4, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (335, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 307.91, 348, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (336, 'Urinalysis', 'Urinalysis description', 'Normal', 172.8, 79, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (337, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 493.21, 490, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (338, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 365.47, 163, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (339, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 343.67, 187, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (340, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 71.18, 340, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (341, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 95.55, 125, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (342, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 366.29, 194, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (343, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 449.59, 98, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (344, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 474.13, 258, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (345, 'Thyroid Function', 'Thyroid Function description', 'Normal', 215.15, 372, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (346, 'Glucose Test', 'Glucose Test description', 'Normal', 356.17, 305, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (347, 'Liver Function Test', 'Liver Function Test description', 'Normal', 437.12, 344, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (348, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 397.44, 356, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (349, 'Thyroid Function', 'Thyroid Function description', 'Normal', 132.85, 402, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (350, 'Lipid Panel', 'Lipid Panel description', 'Normal', 51.97, 435, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (351, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 415.7, 292, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (352, 'Thyroid Function', 'Thyroid Function description', 'Normal', 498.73, 76, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (353, 'Thyroid Function', 'Thyroid Function description', 'Normal', 426.4, 421, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (354, 'Liver Function Test', 'Liver Function Test description', 'Normal', 96.17, 209, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (355, 'Glucose Test', 'Glucose Test description', 'Normal', 248.24, 239, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (356, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 66.78, 390, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (357, 'Urinalysis', 'Urinalysis description', 'Normal', 354.22, 247, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (358, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 384.86, 440, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (359, 'Lipid Panel', 'Lipid Panel description', 'Normal', 298.43, 470, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (360, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 273.66, 357, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (361, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 193.66, 374, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (362, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 459.04, 190, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (363, 'Urinalysis', 'Urinalysis description', 'Normal', 66.06, 197, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (364, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 210.38, 32, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (365, 'Liver Function Test', 'Liver Function Test description', 'Normal', 396.16, 261, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (366, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 431.24, 133, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (367, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 466.58, 311, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (368, 'Lipid Panel', 'Lipid Panel description', 'Normal', 449.44, 232, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (369, 'Glucose Test', 'Glucose Test description', 'Normal', 307.06, 298, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (370, 'Liver Function Test', 'Liver Function Test description', 'Normal', 274.72, 213, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (371, 'Thyroid Function', 'Thyroid Function description', 'Normal', 74.95, 179, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (372, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 346.97, 1, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (373, 'Lipid Panel', 'Lipid Panel description', 'Normal', 261.55, 454, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (374, 'Liver Function Test', 'Liver Function Test description', 'Normal', 475.61, 319, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (375, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 72.31, 144, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (376, 'Glucose Test', 'Glucose Test description', 'Normal', 91.36, 96, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (377, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 252.68, 408, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (378, 'Glucose Test', 'Glucose Test description', 'Normal', 115.5, 126, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (379, 'Urinalysis', 'Urinalysis description', 'Normal', 366.14, 360, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (380, 'Glucose Test', 'Glucose Test description', 'Normal', 261.29, 121, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (381, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 374.82, 110, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (382, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 186.61, 457, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (383, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 444.46, 397, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (384, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 94.56, 16, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (385, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 104.15, 145, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (386, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 486.7, 209, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (387, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 132.51, 405, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (388, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 308.27, 292, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (389, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 280.17, 55, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (390, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 72.16, 36, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (391, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 361.76, 404, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (392, 'Glucose Test', 'Glucose Test description', 'Normal', 162.5, 323, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (393, 'Liver Function Test', 'Liver Function Test description', 'Normal', 328.35, 450, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (394, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 202.63, 448, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (395, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 214.25, 426, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (396, 'Liver Function Test', 'Liver Function Test description', 'Normal', 105.03, 88, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (397, 'Thyroid Function', 'Thyroid Function description', 'Normal', 328.94, 93, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (398, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 89.46, 461, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (399, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 292.57, 141, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (400, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 311.03, 344, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (401, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 169.55, 314, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (402, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 367.11, 205, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (403, 'Thyroid Function', 'Thyroid Function description', 'Normal', 164.94, 469, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (404, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 492.68, 334, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (405, 'Liver Function Test', 'Liver Function Test description', 'Normal', 52.61, 5, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (406, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 305.61, 331, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (407, 'Urinalysis', 'Urinalysis description', 'Normal', 326.51, 358, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (408, 'Glucose Test', 'Glucose Test description', 'Normal', 149.14, 150, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (409, 'Liver Function Test', 'Liver Function Test description', 'Normal', 474.61, 9, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (410, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 190.07, 149, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (411, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 411.32, 243, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (412, 'Urinalysis', 'Urinalysis description', 'Normal', 442.04, 277, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (413, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 156.21, 106, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (414, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 373.24, 271, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (415, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 431.02, 71, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (416, 'Urinalysis', 'Urinalysis description', 'Normal', 325.36, 435, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (417, 'Lipid Panel', 'Lipid Panel description', 'Normal', 466.88, 305, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (418, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 377.71, 26, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (419, 'Thyroid Function', 'Thyroid Function description', 'Normal', 211.72, 498, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (420, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 351.07, 342, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (421, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 212.32, 302, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (422, 'Urinalysis', 'Urinalysis description', 'Normal', 140.61, 236, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (423, 'Lipid Panel', 'Lipid Panel description', 'Normal', 454.98, 121, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (424, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 166.76, 500, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (425, 'Thyroid Function', 'Thyroid Function description', 'Normal', 238.47, 11, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (426, 'Liver Function Test', 'Liver Function Test description', 'Normal', 188.04, 4, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (427, 'Urinalysis', 'Urinalysis description', 'Normal', 79.29, 106, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (428, 'Urinalysis', 'Urinalysis description', 'Normal', 388.86, 100, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (429, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 467.9, 353, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (430, 'Urinalysis', 'Urinalysis description', 'Normal', 101.02, 71, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (431, 'Liver Function Test', 'Liver Function Test description', 'Normal', 364.41, 35, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (432, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 286.32, 223, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (433, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 348.82, 9, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (434, 'Urinalysis', 'Urinalysis description', 'Normal', 263.8, 398, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (435, 'Lipid Panel', 'Lipid Panel description', 'Normal', 395.74, 362, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (436, 'Urinalysis', 'Urinalysis description', 'Normal', 102.82, 313, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (437, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 89.79, 336, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (438, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 173.57, 409, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (439, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 124.99, 472, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (440, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 186.77, 368, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (441, 'Thyroid Function', 'Thyroid Function description', 'Normal', 402.46, 149, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (442, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 297.54, 354, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (443, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 276.14, 95, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (444, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 218.18, 220, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (445, 'Liver Function Test', 'Liver Function Test description', 'Normal', 86.44, 399, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (446, 'Liver Function Test', 'Liver Function Test description', 'Normal', 55.89, 30, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (447, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 495.81, 10, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (448, 'Lipid Panel', 'Lipid Panel description', 'Normal', 135.92, 415, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (449, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 58.23, 101, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (450, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 219.4, 308, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (451, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 389.25, 267, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (452, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 297.23, 130, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (453, 'Liver Function Test', 'Liver Function Test description', 'Normal', 261.2, 372, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (454, 'Thyroid Function', 'Thyroid Function description', 'Normal', 84.51, 156, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (455, 'Liver Function Test', 'Liver Function Test description', 'Normal', 137.15, 214, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (456, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 411.81, 121, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (457, 'Liver Function Test', 'Liver Function Test description', 'Normal', 470.88, 323, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (458, 'Glucose Test', 'Glucose Test description', 'Normal', 348.41, 127, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (459, 'Urinalysis', 'Urinalysis description', 'Normal', 396.44, 201, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (460, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 424.83, 62, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (461, 'Thyroid Function', 'Thyroid Function description', 'Normal', 414.81, 185, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (462, 'Lipid Panel', 'Lipid Panel description', 'Normal', 396.55, 52, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (463, 'Lipid Panel', 'Lipid Panel description', 'Normal', 297.85, 22, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (464, 'Lipid Panel', 'Lipid Panel description', 'Normal', 116.96, 161, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (465, 'Thyroid Function', 'Thyroid Function description', 'Normal', 222.38, 273, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (466, 'Thyroid Function', 'Thyroid Function description', 'Normal', 190.46, 63, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (467, 'Thyroid Function', 'Thyroid Function description', 'Normal', 354.14, 326, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (468, 'Liver Function Test', 'Liver Function Test description', 'Normal', 96.82, 135, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (469, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 54.9, 12, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (470, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 418.01, 410, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (471, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 324.44, 441, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (472, 'Liver Function Test', 'Liver Function Test description', 'Normal', 186.54, 397, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (473, 'Liver Function Test', 'Liver Function Test description', 'Normal', 440.29, 431, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (474, 'Lipid Panel', 'Lipid Panel description', 'Normal', 327.84, 329, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (475, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 113.09, 198, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (476, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 191.31, 275, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (477, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 258.31, 173, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (478, 'Lipid Panel', 'Lipid Panel description', 'Normal', 457.64, 261, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (479, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 253.42, 97, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (480, 'Liver Function Test', 'Liver Function Test description', 'Normal', 322.38, 169, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (481, 'Urinalysis', 'Urinalysis description', 'Normal', 458.42, 250, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (482, 'Urinalysis', 'Urinalysis description', 'Normal', 109.18, 495, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (483, 'Electrolyte Panel', 'Electrolyte Panel description', 'Normal', 484.69, 312, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (484, 'Hemoglobin A1c', 'Hemoglobin A1c description', 'Normal', 110.51, 225, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (485, 'Glucose Test', 'Glucose Test description', 'Normal', 187.2, 72, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (486, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 103.69, 11, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (487, 'Kidney Function Test', 'Kidney Function Test description', 'Normal', 247.98, 325, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (488, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 426.93, 186, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (489, 'Lipid Panel', 'Lipid Panel description', 'Normal', 245.35, 481, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (490, 'Lipid Panel', 'Lipid Panel description', 'Normal', 459.11, 362, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (491, 'Lipid Panel', 'Lipid Panel description', 'Normal', 81.09, 100, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (492, 'Liver Function Test', 'Liver Function Test description', 'Normal', 262.53, 142, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (493, 'Liver Function Test', 'Liver Function Test description', 'Normal', 388.25, 110, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (494, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 435.93, 223, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (495, 'Lipid Panel', 'Lipid Panel description', 'Normal', 468.75, 62, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (496, 'Vitamin D Test', 'Vitamin D Test description', 'Normal', 81.48, 440, 'Saliva');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (497, 'Lipid Panel', 'Lipid Panel description', 'Normal', 211.33, 455, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (498, 'Liver Function Test', 'Liver Function Test description', 'Normal', 198.97, 261, 'Urine');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (499, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 359.29, 245, 'Blood');
+INSERT INTO LAB_TEST 
+(test_id, test_name, description, normal_range, cost, equipment_id, sample_type)
+VALUES (500, 'Complete Blood Count', 'Complete Blood Count description', 'Normal', 355.08, 305, 'Urine');
