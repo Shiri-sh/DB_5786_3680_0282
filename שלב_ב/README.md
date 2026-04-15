@@ -43,7 +43,6 @@ FROM LAB_TECHNICIAN tech
 ORDER BY total_results DESC;
 </pre>
 
-Execution Screenshot:
 ![select 1](./images/select/select_1.png)
 
 ---
@@ -103,7 +102,6 @@ LIMIT 5;
 </pre>
 
 
-Execution Screenshot:
 ![select 2](./images/select/select_2.png)
 
 ---
@@ -159,7 +157,6 @@ ORDER BY days_since_maintenance DESC;
 </pre>
 
 
-Execution Screenshot:
 ![select 5](./images/select/select_5.png)
 
 ---
@@ -233,7 +230,6 @@ JOIN LAB_TECHNICIAN tech ON r.technician_id = tech.technician_id
 ORDER BY r.result_date DESC;
 </pre>
 
-Execution Screenshot:
 ![select 7](./images/select/select_7.png)
 
 ---
@@ -279,7 +275,6 @@ GROUP BY o.lab_order_id, o.status
 HAVING COUNT(r.result_id) > 0;
 </pre>
 
-Execution Screenshot:
 ![select 3](./images/select/select_3.png)
 
 ---
@@ -299,7 +294,6 @@ AND status != 'COMPLETED'
 AND order_date < CURRENT_DATE - INTERVAL '2 days';
 </pre>
 
-Execution Screenshot:
 ![select 6](./images/select/select_6.png)
 
 ---
@@ -321,7 +315,6 @@ GROUP BY year, month
 ORDER BY year, month;
 </pre>
 
-Execution Screenshot:
 ![ select 4](./images/select/select_4.png)
 
 ---
@@ -348,7 +341,6 @@ JOIN LAB_TEST t ON ot.test_id = t.test_id
 ORDER BY o.order_date DESC;
 </pre>
 
-Execution Screenshot:
 ![ select 8](./images/select/select_8.png)
 
 ---
@@ -366,7 +358,6 @@ Execution Screenshot:
 המחיקה מתבצעת במספר שלבים, בהתאם לתלויות בין הטבלאות, על מנת לשמור על שלמות הנתונים (תחילה תוצאות, לאחר מכן בדיקות ולבסוף ההזמנות).
 
 <pre>
-
 
 -- delete from deepest table first
 DELETE FROM LAB_RESULT
