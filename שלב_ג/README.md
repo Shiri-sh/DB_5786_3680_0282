@@ -1,75 +1,157 @@
 <div dir="rtl">
 
-# שלב ג' - אינטגרציה ומבטים (שיטת Foreign Tables)
+# 🔗 שלב 3 – אינטגרציה ומבטים (Integration & Views)
 
-## 1. הקדמה
-בשלב זה ביצענו אינטגרציה בין בסיס הנתונים שלנו לבין בסיס נתונים של צוות אחר. בהתאם להנחיות המרצה, בחרנו ב**שיטת ב' (Foreign Tables)**. 
-שיטה זו מאפשרת גישה ישירה לנתונים של האגף השני ללא צורך בייבוא פיזי או שכפול של המידע, תוך שימוש ב-`PostgreSQL Foreign Data Wrapper (FDW)`.
+📜 שלב זה מתמקד באינטגרציה בין בסיס הנתונים של **מחלקת המעבדות (LABS)** לבין בסיס הנתונים של **ניהול כוח האדם (STAFF)** — מרכיב חיוני במערכת הניהול הכוללת של המרכז הרפואי. המטרה היא לבנות מבנה מאוחד המאפשר מבט מקיף על פעילות המעבדה, תוך שיוך כל בדיקה והזמנה לצוות הרפואי הרלוונטי.
 
----
-
-## 2. תהליך האינטגרציה הטכני (תיעוד ושקיפות)
-כדי להבטיח שקיפות מלאה של התהליך, להלן השלבים הטכניים שבוצעו בליווי צילומי מסך מה-pgAdmin:
-
-### א. טעינת הנתונים והגדרת ה-Extension
-* טענו את קובץ הגיבוי של הצוות השני לסכמה נפרדת.
-* הפעלנו את המודול המאפשר עבודה עם טבלאות זרות.
-> **צילום מסך 1:** הצגת שתי הסכמות בעץ המערכת (Browser) והפעלת ה-Extension.
-
-### ב. הגדרת שרת זר (Foreign Server) ומיפוי משתמשים
-יצרנו ישות המייצגת את השרת המרוחק (גם אם הוא מקומי) והגדרנו הרשאות גישה.
-* **פקודה מרכזית:** `CREATE SERVER` ו-`CREATE USER MAPPING`.
-> **צילום מסך 2:** אישור יצירת השרת הזר תחת תיקיית "Foreign Servers".
-
-### ג. ייבוא הטבלה הזרה
-ייבאנו את מבנה הטבלה (לדוגמה: טבלת רופאים) כך שנוכל לתשאל אותה כאילו היא חלק מהסכמה שלנו.
-* **פקודה מרכזית:** `IMPORT FOREIGN SCHEMA` או `CREATE FOREIGN TABLE`.
-> **צילום מסך 3:** הצגת הטבלה תחת התיקייה "Foreign Tables" בסכמה המרכזית.
+כחלק מאינטגרציה זו, נוצרו מבטי SQL (Views) הן מנקודת המבט של המחלקה שלנו והן מנקודת המבט של המחלקה השותפה. מבטים אלו מספקים גישה יעילה ומותאמת לתפקיד לנתונים המשולבים, ומקלים על שליפה וניתוח של המידע הרלוונטי לצרכים התפעוליים של כל צד.
 
 ---
 
-## 3. אינטגרציה ועיצוב המודל
-לאחר יצירת החיבור הטכני, הגדרנו את הקשר הלוגי: קישור עמודת ה-`DoctorID` מהטבלה המקורית שלנו לטבלה הזרה.
+## 🗂️ דיאגרמות ERD ו-DSD
 
-* **החלטות שהתקבלו:** הוחלט להשאיר את הנתונים בסכמות נפרדות כדי לשמור על עצמאות כל אגף, אך לאפשר "JOIN" לצורך דוחות משולבים.
-* **תרשים ERD משותף:**
-> [כאן יש לצרף תמונה של תרשים ה-ERD המציג את הקשר בין הטבלאות]
+### ERD (מחלקת מעבדות - LABS)
+> **TODO:** הוסיפי כאן את תמונת ה-ERD המקורית שלכם.
+![ERD](images/Stage3/LABS_ERD.jpg)
 
----
+### ERD (מחלקת כוח אדם - STAFF)
+> **TODO:** הוסיפי כאן את תמונת ה-ERD שקיבלתם מהקבוצה השנייה.
+![ERD](images/Stage3/STAFF_ERD.jpg)
 
-## 4. מבטים (Views)
-יצרנו שלושה מבטים המציגים זוויות שונות של המערכת המשולבת:
-
-### מבט 1: נקודת מבט אגף מקורי
-* **תיאור:** שליפת נתונים מורכבת מהטבלאות שלנו בלבד.
-* **צילום מסך:** פלט של `SELECT *` (10 רשומות ראשונות).
-
-
-
-### מבט 2: נקודת מבט אגף שהתקבל (Foreign View)
-* **תיאור:** שליפת נתונים מהטבלה הזרה שקיבלנו מהצוות השני.
-* **צילום מסך:** פלט של `SELECT *` (10 רשומות ראשונות).
-
-### מבט 3: מבט אינטגרטיבי (Integration View)
-* **תיאור:** מבט המבצע `JOIN` בין הטבלה שלנו לטבלה הזרה. זהו לב האינטגרציה.
-* **צילום מסך:** קוד השאילתא ופלט המשלב נתונים משני המקורות.
+### ERD משולב (Integration)
+> **TODO:** צרפי תרשים המראה את הקשר בין Lab_Order ל-Staff.
+![ERD_Integration](images/Stage3/Integrated_ERD.png)
 
 ---
 
-## 5. שאילתות על המבטים
-לכל מבט נכתבו שתי שאילתות בעלות משמעות עסקית:
+## 🧠 החלטות אינטגרציה
 
-1. **שאילתה על מבט משולב 1:** * **תיאור:** [למשל: סינון הזמנות לפי מומחיות רופא מהאגף הזר].
-   * **תוצאה:** [קוד וצילום פלט].
-2. **שאילתה על מבט משולב 2:**
-   * **תיאור:** [למשל: סיכום כמותי של נתונים].
-   * **תוצאה:** [קוד וצילום פלט].
+- האינטגרציה בוצעה באמצעות **PostgreSQL's `postgres_fdw`** (Foreign Data Wrapper) המאפשר שאילתות ישירות מול בסיס הנתונים המרוחק.
+- טבלאות מרוחקות הוגדרו כ**טבלאות זרות (Foreign Tables)** בבסיס הנתונים המקומי לצורך אינטגרציה לוגית בזמן אמת.
+- הוחלט להשתמש ב-**LEFT JOIN** במבטים המשולבים כדי להבטיח שכל הזמנות המעבדה יוצגו, גם אם אין התאמה מלאה ב-ID מול טבלת הצוות הזר (בשל חוסר תיאום בנתוני המקור).
+- **שקיפות:** כל השלבים הטכניים תועדו להלן כדי להראות את תהליך החיבור בין המערכות.
 
 ---
 
-## 6. קבצים מצורפים בתיקיית "שלב ג"
-* `Integrate.sql`: פקודות ליצירת ה-Extension, השרת הזר והטבלאות הזרות.
-* `Views.sql`: פקודות ליצירת המבטים והשאילתות עליהם.
-* `backup3`: קובץ גיבוי של בסיס הנתונים לאחר ביצוע האינטגרציה.
+## 📝 תהליך האינטגרציה ופקודות SQL
 
-</div>
+> פקודות ה-SQL הבאות שימשו בתהליך האינטגרציה. לכל פקודה מצורף הסבר קצר על תפקידה.
+
+### 1. הפעלת ה-Foreign Data Wrapper
+הרחבה זו מאפשרת ל-PostgreSQL לגשת לטבלאות מבסיס נתונים אחר.
+
+```sql
+CREATE EXTENSION IF NOT EXISTS postgres_fdw;
+```
+
+2. הגדרת החיבור לשרת המרוחק
+פקודה זו מגדירה את השרת החיצוני (ה-Database של הקבוצה השנייה).
+```sql
+CREATE SERVER staff_mgmt_server
+FOREIGN DATA WRAPPER postgres_fdw
+OPTIONS (host 'localhost', dbname 'HopitalLocalDB', port '5432');
+```
+3. יצירת מיפוי משתמש (User Mapping)
+הגדרה כיצד המשתמש המקומי יתחבר למסד הנתונים המרוחק.
+```sql
+CREATE USER MAPPING FOR current_user
+SERVER staff_mgmt_server
+OPTIONS (user 'MyUser', password 'pass123');
+```
+4. גישה לטבלת הצוות המרוחקת
+יצירת טבלה זרה המייצגת את טבלת ה-Staff מהאגף השני
+
+```sql
+CREATE FOREIGN TABLE staff_remote (
+    "StaffId" INTEGER,
+    "FirstName" VARCHAR(50),
+    "LastName" VARCHAR(50),
+    "Phone" VARCHAR(20),
+    "Status" VARCHAR(20),
+    "Email" VARCHAR(100),
+    "HireDate" DATE
+) SERVER staff_mgmt_server
+OPTIONS (schema_name 'public', table_name 'STAFF');
+```
+### מבטים (Views) ושאילתות אנליטיות
+סעיף זה מציג את מבטי ה-SQL שנוצרו כחלק משלב 3, המספקים תובנות עבור מחלקת המעבדות ומחלקת כוח האדם.
+
+---
+
+מבט 1 – מחלקת מעבדות: סקירת הזמנות ובדיקות
+תיאור: מבט זה משלב נתונים פנימיים של המעבדה כדי להציג את פרטי הבדיקות שהוזמנו ועלויותיהן
+```sql
+CREATE OR REPLACE VIEW view_labs_internal AS
+SELECT 
+    t.test_name, 
+    t.cost, 
+    o.order_date, 
+    o.status AS order_status
+FROM LAB_TEST t
+JOIN LAB_ORDER_TEST ot ON t.test_id = ot.test_id
+JOIN LAB_ORDER o ON ot.lab_order_id = o.lab_order_id;
+```
+![view1](images/Stage3/view_1.jpg)
+
+---
+מבט 2 – מבט אינטגרטיבי: שיוך הזמנות לרופאים (STAFF)
+תיאור: מבט זה מבצע את האינטגרציה בפועל. הוא מחבר בין הזמנת מעבדה (מתוך LABS) לבין הרופא שהזמין אותה (מתוך STAFF הזר).
+```sql
+CREATE OR REPLACE VIEW view_integrated_lab_results AS
+SELECT 
+    lo.lab_order_id,
+    lo.order_date,
+    sr."FirstName" || ' ' || sr."LastName" AS ordering_doctor,
+    sr."Email" AS doctor_contact,
+    lo.status AS lab_status,
+    lo.priority
+FROM LAB_ORDER lo
+LEFT JOIN staff_remote sr ON lo.doctor_id = sr."StaffId";
+```
+![view2](images/Stage3/view_2.jpg)
+
+---
+מבט 3 -  נקודת מבט של צוות חיצוני
+תיאור: מבט זה מספק מדריך של הצוות הרפואי המעורב
+```sql
+CREATE OR REPLACE VIEW view_external_staff_directory AS
+SELECT "StaffId", "FirstName", "LastName", "Email", "Status", "HireDate"
+FROM staff_remote
+```
+![view3](images/Stage3/view_3.jpg)
+
+---
+
+שאילתה 1
+מצא את כל ההזמנות שבוצעו על ידי רופאים בכירים (שנשכרו לפני 2024)
+```sql
+SELECT * FROM view_integrated_lab_results r
+JOIN view_external_staff_directory s ON r.ordering_doctor = (s."FirstName" || ' ' || s."LastName")
+WHERE s."HireDate" < '2024-01-01';
+```
+![query1](images/Stage3/query_1.jpg)
+
+---
+
+שאילתה 2 
+סיכום סדרי עדיפויות במעבדה לפי רופא מזמין
+```sql
+SELECT ordering_doctor, priority, COUNT(*) as total_orders
+FROM view_integrated_lab_results
+WHERE ordering_doctor IS NOT NULL
+GROUP BY ordering_doctor, priority;
+```
+![query2](images/Stage3/query_2.jpg)
+
+---
+
+## סיכום
+בשלב אינטגרציה זה:
+
+בוצע חיבור טכני בין שני בסיסי נתונים נפרדים באמצעות Foreign Data Wrappers.
+
+הוקם גשר לוגי המאפשר שיוך בזמן אמת של פעולות מעבדה לאנשי צוות.
+
+תועדו כל השלבים להבטחת שקיפות מלאה כנדרש.
+
+נוצרו כלים אנליטיים (Views) המאפשרים הפקת תובנות משולבות משני העולמות.
