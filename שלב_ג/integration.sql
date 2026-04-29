@@ -5,13 +5,12 @@
 -- Enable the extension to allow cross-database communication
 CREATE EXTENSION IF NOT EXISTS postgres_fdw;
 
--- Create the foreign server object
+-- Create the foreign server object (Updated with correct dbname)
 CREATE SERVER staff_mgmt_server
 FOREIGN DATA WRAPPER postgres_fdw
-OPTIONS (host 'localhost', dbname 'HopitalLocalDB', port '5432');
+OPTIONS (host 'localhost', dbname 'Hospital', port '5432');
 
 -- Map your local user to the remote server credentials
--- Use the password you use to login to pgAdmin
 CREATE USER MAPPING FOR current_user
 SERVER staff_mgmt_server
 OPTIONS (user 'MyUser', password 'pass123');
@@ -20,8 +19,6 @@ OPTIONS (user 'MyUser', password 'pass123');
 -- STEP 2: Create Foreign Tables (Linking to the STAFF schema)
 -- =====================================================================
 
--- This table represents the 'Staff' table from the other group's database
--- We define only the columns we need for integration
 CREATE FOREIGN TABLE staff_remote (
     staffid INTEGER,
     firstname VARCHAR(50),
@@ -33,51 +30,63 @@ CREATE FOREIGN TABLE staff_remote (
 OPTIONS (schema_name 'public', table_name 'staff');
 
 -- =====================================================================
--- STEP 3: Database Integration (Local LABS schema)
+-- STEP 3: Database Integration Documentation
 -- =====================================================================
 
--- Ensure our local Lab_Order table has a column to link with the Staff ID
--- Based on your ERD, we use doctor_id to reference their StaffID
--- We can add a comment to document this design decision
-COMMENT ON COLUMN Lab_Order.doctor_id IS 'References StaffID from the remote Staff Management system';
+COMMENT ON COLUMN labs.lab_order.doctor_id IS 'References StaffID from the remote Staff Management system';
 
 -- =====================================================================
--- STEP 4: Creating Views for the Report (Requirements 7-8)
+-- STEP 4: Creating Views (Requirement 7)
 -- =====================================================================
 
--- VIEW 1: Local Perspective (Our Labs data)
-CREATE OR REPLACE VIEW view_labs_internal AS
-SELECT t.test_name, t.cost, o.order_date, o.status
-FROM Lab_Test t
-JOIN Lab_Order_Test ot ON t.test_id = ot.test_id
-JOIN Lab_Order o ON ot.lab_order_id = o.lab_order_id;
-
--- VIEW 2: Remote Perspective (The Staff data we received)
-CREATE OR REPLACE VIEW view_external_staff_directory AS
-SELECT staffid, firstname, lastname, email, status
-FROM staff_remote;
-
--- VIEW 3: Integrated Perspective (The JOIN between both systems)
--- This view connects a lab order to the specific doctor from the Staff DB
-CREATE OR REPLACE VIEW view_integrated_lab_results AS
+-- VIEW 1: Lab Test & Equipment Status (Labs perspective)
+CREATE OR REPLACE VIEW labs.view_test_equipment_status AS
 SELECT 
-    lo.lab_order_id,
-    lo.order_date,
-    sr.firstname || ' ' || sr.lastname AS doctor_name,
-    sr.email AS doctor_contact,
-    lo.status AS order_status
-FROM Lab_Order lo
-LEFT JOIN staff_remote sr ON lo.doctor_id = sr.staffid;
+    t.test_name,
+    t.sample_type,
+    e.equipment_name,
+    e.maintenance_date
+FROM labs.lab_test t
+JOIN labs.diagnostic_equipment e ON t.equipment_id = e.equipment_id;
+
+-- VIEW 2: Remote Staff Directory (Remote perspective)
+CREATE OR REPLACE VIEW labs.view_remote_staff_directory AS
+SELECT 
+    firstname || ' ' || lastname AS full_name,
+    email,
+    status
+FROM staff_remote
+WHERE status = 'Active';
+
+-- VIEW 3: Integrated Lab Orders with Doctors (Integration perspective)
+CREATE OR REPLACE VIEW labs.view_lab_orders_with_doctors AS
+SELECT 
+    o.lab_order_id,
+    o.order_date,
+    o.status AS order_status,
+    s.firstname || ' ' || s.lastname AS doctor_name,
+    s.phone AS doctor_phone
+FROM labs.lab_order o
+JOIN staff_remote s ON o.doctor_id = s.staffid;
 
 -- =====================================================================
--- STEP 5: Sample Queries on Views (For README documentation)
+-- STEP 5: Sample Queries on Views (Requirement 8)
 -- =====================================================================
 
--- Query 1: Find all lab orders assigned to a specific doctor from the Staff database
-SELECT * FROM view_integrated_lab_results 
-WHERE doctor_name IS NOT NULL;
+-- Queries for View 1 (Equipment Status)
+-- 1. Find tests using equipment needing maintenance
+SELECT test_name, equipment_name FROM labs.view_test_equipment_status WHERE maintenance_date < '2026-04-01';
+-- 2. Count tests per equipment
+SELECT equipment_name, COUNT(test_name) FROM labs.view_test_equipment_status GROUP BY equipment_name;
 
--- Query 2: Summary of lab orders per doctor status
-SELECT doctor_name, order_status 
-FROM view_integrated_lab_results 
-WHERE order_status = 'Completed';
+-- Queries for View 2 (Remote Staff)
+-- 1. Find contact for a specific doctor
+SELECT email FROM labs.view_remote_staff_directory WHERE full_name LIKE 'Guy%';
+-- 2. List all active remote staff
+SELECT * FROM labs.view_remote_staff_directory;
+
+-- Queries for View 3 (Integrated Results)
+-- 1. Show urgent pending orders and their doctors
+SELECT lab_order_id, doctor_name, doctor_phone FROM labs.view_lab_orders_with_doctors WHERE order_status = 'ORDERED';
+-- 2. Total orders summary per doctor
+SELECT doctor_name, COUNT(lab_order_id) as total_orders FROM labs.view_lab_orders_with_doctors GROUP BY doctor_name;
