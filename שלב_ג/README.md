@@ -1,157 +1,176 @@
-<div dir="rtl">
+# 🔗 Stage 3 – Integration & Views
 
-# 🔗 שלב 3 – אינטגרציה ומבטים (Integration & Views)
-
-📜 שלב זה מתמקד באינטגרציה בין בסיס הנתונים של **מחלקת המעבדות (LABS)** לבין בסיס הנתונים של **ניהול כוח האדם (STAFF)** — מרכיב חיוני במערכת הניהול הכוללת של המרכז הרפואי. המטרה היא לבנות מבנה מאוחד המאפשר מבט מקיף על פעילות המעבדה, תוך שיוך כל בדיקה והזמנה לצוות הרפואי הרלוונטי.
-
-כחלק מאינטגרציה זו, נוצרו מבטי SQL (Views) הן מנקודת המבט של המחלקה שלנו והן מנקודת המבט של המחלקה השותפה. מבטים אלו מספקים גישה יעילה ומותאמת לתפקיד לנתונים המשולבים, ומקלים על שליפה וניתוח של המידע הרלוונטי לצרכים התפעוליים של כל צד.
+This stage focuses on the integration between the **Laboratory Department (LABS)** database and the **Staff Management (STAFF)** database—a vital component of the Medical Center’s overall management system. The goal is to build a unified structure that allows a comprehensive view of laboratory activity while associating every test and order with the relevant medical personnel from the external department.
 
 ---
 
-## 🗂️ דיאגרמות ERD ו-DSD
+## 🗂️ ERD and DSD Diagrams
 
-### ERD (מחלקת מעבדות - LABS)
-> **TODO:** הוסיפי כאן את תמונת ה-ERD המקורית שלכם.
-![ERD](images/Stage3/LABS_ERD.jpg)
+### 1. Laboratory Department (LABS) - Original ERD/DSD
+> **TODO:** Insert the original ERD/DSD image of the Labs department.
+![LABS_ERD](images/Stage3/LABS_ERD.jpg)
 
-### ERD (מחלקת כוח אדם - STAFF)
-> **TODO:** הוסיפי כאן את תמונת ה-ERD שקיבלתם מהקבוצה השנייה.
-![ERD](images/Stage3/STAFF_ERD.jpg)
+### 2. Staff Management (STAFF) - External ERD/DSD
+> **TODO:** Insert the ERD/DSD image received from the partner group.
+![STAFF_ERD](images/Stage3/STAFF_ERD.jpg)
 
-### ERD משולב (Integration)
-> **TODO:** צרפי תרשים המראה את הקשר בין Lab_Order ל-Staff.
-![ERD_Integration](images/Stage3/Integrated_ERD.png)
-
----
-
-## 🧠 החלטות אינטגרציה
-
-- האינטגרציה בוצעה באמצעות **PostgreSQL's `postgres_fdw`** (Foreign Data Wrapper) המאפשר שאילתות ישירות מול בסיס הנתונים המרוחק.
-- טבלאות מרוחקות הוגדרו כ**טבלאות זרות (Foreign Tables)** בבסיס הנתונים המקומי לצורך אינטגרציה לוגית בזמן אמת.
-- הוחלט להשתמש ב-**LEFT JOIN** במבטים המשולבים כדי להבטיח שכל הזמנות המעבדה יוצגו, גם אם אין התאמה מלאה ב-ID מול טבלת הצוות הזר (בשל חוסר תיאום בנתוני המקור).
-- **שקיפות:** כל השלבים הטכניים תועדו להלן כדי להראות את תהליך החיבור בין המערכות.
+### 3. Integrated ERD
+> **TODO:** Insert a diagram showing the logical link between `labs.lab_order` and the remote `staff`.
+![Integrated_ERD](images/Stage3/Integrated_ERD.png)
 
 ---
 
-## 📝 תהליך האינטגרציה ופקודות SQL
+## 🧠 Integration Decisions
 
-> פקודות ה-SQL הבאות שימשו בתהליך האינטגרציה. לכל פקודה מצורף הסבר קצר על תפקידה.
+*   **Technology:** Integration was implemented using **PostgreSQL's `postgres_fdw`** (Foreign Data Wrapper), enabling real-time cross-database communication without duplicating data.
+*   **Schema Isolation:** All local tables remain within the `labs` schema to prevent naming conflicts with the external `public` schema.
+*   **Linking Key:** The `doctor_id` column in the `lab_order` table was designated as the integration point, referencing the `staffid` from the remote database.
+*   **Data Integrity:** A `LEFT JOIN` strategy was adopted for integrated views to ensure that lab orders are never omitted, even if a doctor's record is missing in the remote system.
 
-### 1. הפעלת ה-Foreign Data Wrapper
-הרחבה זו מאפשרת ל-PostgreSQL לגשת לטבלאות מבסיס נתונים אחר.
+---
 
+## 📝 Integration Process and SQL Commands
+
+### 1. Enabling the Wrapper
+Enables the extension required for cross-server communication.
 ```sql
 CREATE EXTENSION IF NOT EXISTS postgres_fdw;
 ```
-
-2. הגדרת החיבור לשרת המרוחק
-פקודה זו מגדירה את השרת החיצוני (ה-Database של הקבוצה השנייה).
+---
+### 2. Foreign Server Definition
+Defines the connection to the external Medical Center database.
 ```sql
 CREATE SERVER staff_mgmt_server
 FOREIGN DATA WRAPPER postgres_fdw
-OPTIONS (host 'localhost', dbname 'HopitalLocalDB', port '5432');
+OPTIONS (host 'localhost', dbname 'Hospital', port '5432');
 ```
-3. יצירת מיפוי משתמש (User Mapping)
-הגדרה כיצד המשתמש המקומי יתחבר למסד הנתונים המרוחק.
+---
+3. User Mapping
+Maps local credentials to the remote database to allow secure access.
+
 ```sql
 CREATE USER MAPPING FOR current_user
 SERVER staff_mgmt_server
 OPTIONS (user 'MyUser', password 'pass123');
 ```
-4. גישה לטבלת הצוות המרוחקת
-יצירת טבלה זרה המייצגת את טבלת ה-Staff מהאגף השני
+
+---
+4. Remote Table Linkage
+Creates a virtual "Foreign Table" representing the staff from the other department.
 
 ```sql
 CREATE FOREIGN TABLE staff_remote (
-    "StaffId" INTEGER,
-    "FirstName" VARCHAR(50),
-    "LastName" VARCHAR(50),
-    "Phone" VARCHAR(20),
-    "Status" VARCHAR(20),
-    "Email" VARCHAR(100),
-    "HireDate" DATE
+    staffid INTEGER,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    status VARCHAR(20)
 ) SERVER staff_mgmt_server
-OPTIONS (schema_name 'public', table_name 'STAFF');
+OPTIONS (schema_name 'public', table_name 'staff');
 ```
-### מבטים (Views) ושאילתות אנליטיות
-סעיף זה מציג את מבטי ה-SQL שנוצרו כחלק משלב 3, המספקים תובנות עבור מחלקת המעבדות ומחלקת כוח האדם.
-
 ---
+## 📊 SQL Views & Analytical Queries
 
-מבט 1 – מחלקת מעבדות: סקירת הזמנות ובדיקות
-תיאור: מבט זה משלב נתונים פנימיים של המעבדה כדי להציג את פרטי הבדיקות שהוזמנו ועלויותיהן
+### View 1: Equipment Maintenance Status
+Description: A management view linking tests to the specific diagnostic equipment used, including maintenance schedules.
+
 ```sql
-CREATE OR REPLACE VIEW view_labs_internal AS
-SELECT 
-    t.test_name, 
-    t.cost, 
-    o.order_date, 
-    o.status AS order_status
-FROM LAB_TEST t
-JOIN LAB_ORDER_TEST ot ON t.test_id = ot.test_id
-JOIN LAB_ORDER o ON ot.lab_order_id = o.lab_order_id;
+CREATE OR REPLACE VIEW labs.view_test_equipment_status AS
+SELECT t.test_name, t.sample_type, e.equipment_name, e.maintenance_date
+FROM labs.lab_test t
+JOIN labs.diagnostic_equipment e ON t.equipment_id = e.equipment_id;
 ```
-![view1](images/Stage3/view_1.jpg)
+Data Sample: ``` SELECT * FROM labs.view_test_equipment_status LIMIT 10;```
 
----
-מבט 2 – מבט אינטגרטיבי: שיוך הזמנות לרופאים (STAFF)
-תיאור: מבט זה מבצע את האינטגרציה בפועל. הוא מחבר בין הזמנת מעבדה (מתוך LABS) לבין הרופא שהזמין אותה (מתוך STAFF הזר).
+TODO: Insert screenshot of result.
+
+#### Queries on View 1:
+Query 1.1: Identify tests using equipment that requires maintenance (Before April 2026).
+
 ```sql
-CREATE OR REPLACE VIEW view_integrated_lab_results AS
-SELECT 
-    lo.lab_order_id,
-    lo.order_date,
-    sr."FirstName" || ' ' || sr."LastName" AS ordering_doctor,
-    sr."Email" AS doctor_contact,
-    lo.status AS lab_status,
-    lo.priority
-FROM LAB_ORDER lo
-LEFT JOIN staff_remote sr ON lo.doctor_id = sr."StaffId";
+SELECT test_name, equipment_name 
+FROM labs.view_test_equipment_status 
+WHERE maintenance_date < '2026-04-01';
 ```
-![view2](images/Stage3/view_2.jpg)
+TODO: Insert screenshot of output.
 
----
-מבט 3 -  נקודת מבט של צוות חיצוני
-תיאור: מבט זה מספק מדריך של הצוות הרפואי המעורב
+Query 1.2: Count the number of distinct tests performed by each piece of equipment.
+
 ```sql
-CREATE OR REPLACE VIEW view_external_staff_directory AS
-SELECT "StaffId", "FirstName", "LastName", "Email", "Status", "HireDate"
+SELECT equipment_name, COUNT(test_name) AS tests_count
+FROM labs.view_test_equipment_status 
+GROUP BY equipment_name;
+```
+TODO: Insert screenshot of output.
+
+### View 2: Remote Staff Directory
+Description: Provides an updated directory of "Active" medical staff from the external Staff Management department.
+
+```sql
+CREATE OR REPLACE VIEW labs.view_remote_staff_directory AS
+SELECT firstname || ' ' || lastname AS full_name, email, status
 FROM staff_remote
+WHERE status = 'Active';
 ```
-![view3](images/Stage3/view_3.jpg)
+Data Sample: ``` SELECT * FROM labs.view_remote_staff_directory LIMIT 10;```
 
----
+TODO: Insert screenshot of result.
 
-שאילתה 1
-מצא את כל ההזמנות שבוצעו על ידי רופאים בכירים (שנשכרו לפני 2024)
+#### Queries on View 2:
+Query 2.1: Search for a specific doctor's contact information by name.
+
 ```sql
-SELECT * FROM view_integrated_lab_results r
-JOIN view_external_staff_directory s ON r.ordering_doctor = (s."FirstName" || ' ' || s."LastName")
-WHERE s."HireDate" < '2024-01-01';
+SELECT email FROM labs.view_remote_staff_directory 
+WHERE full_name LIKE 'Guy%';
 ```
-![query1](images/Stage3/query_1.jpg)
+TODO: Insert screenshot of output.
 
----
+Query 2.2: Retrieve a full mailing list of all active remote medical personnel.
 
-שאילתה 2 
-סיכום סדרי עדיפויות במעבדה לפי רופא מזמין
 ```sql
-SELECT ordering_doctor, priority, COUNT(*) as total_orders
-FROM view_integrated_lab_results
-WHERE ordering_doctor IS NOT NULL
-GROUP BY ordering_doctor, priority;
+SELECT full_name, email FROM labs.view_remote_staff_directory;
 ```
-![query2](images/Stage3/query_2.jpg)
+TODO: Insert screenshot of output.
 
----
+### View 3: Integrated Lab Orders with Doctors
+Description: The primary integration view. It joins local lab orders with the external doctor's identity and contact details.
 
-## סיכום
-בשלב אינטגרציה זה:
+```sql
+CREATE OR REPLACE VIEW labs.view_lab_orders_with_doctors AS
+SELECT o.lab_order_id, o.order_date, o.status AS order_status,
+       s.firstname || ' ' || s.lastname AS doctor_name, s.phone AS doctor_phone
+FROM labs.lab_order o
+JOIN staff_remote s ON o.doctor_id = s.staffid;
+```
+Data Sample: SELECT * FROM labs.view_lab_orders_with_doctors LIMIT 10;
 
-בוצע חיבור טכני בין שני בסיסי נתונים נפרדים באמצעות Foreign Data Wrappers.
+TODO: Insert screenshot of result.
 
-הוקם גשר לוגי המאפשר שיוך בזמן אמת של פעולות מעבדה לאנשי צוות.
+#### Queries on View 3:
+Query 3.1: List all "URGENT" orders currently in "ORDERED" status to facilitate immediate contact with the doctor.
 
-תועדו כל השלבים להבטחת שקיפות מלאה כנדרש.
+```sql
+SELECT lab_order_id, doctor_name, doctor_phone 
+FROM labs.view_lab_orders_with_doctors 
+WHERE order_status = 'ORDERED';
+```
+TODO: Insert screenshot of output.
 
-נוצרו כלים אנליטיים (Views) המאפשרים הפקת תובנות משולבות משני העולמות.
+Query 3.2: Summarize the total number of lab orders submitted by each doctor.
+
+```sql
+SELECT doctor_name, COUNT(lab_order_id) AS total_orders 
+FROM labs.view_lab_orders_with_doctors 
+GROUP BY doctor_name;
+```
+TODO: Insert screenshot of output.
+
+## Summary
+#### In this integration phase:
+
+1. Technical Connectivity: A robust connection was established between separate databases using FDW.
+
+2. Logical Bridge: Real-time synchronization allows lab operations to be directly attributed to the correct medical staff.
+
+3. Analytical Tools: Four diverse views and eight queries were developed to provide operational insights from both internal and integrated perspectives.
