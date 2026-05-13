@@ -6,17 +6,14 @@ This stage focuses on the integration between the **Laboratory Department (LABS)
 
 ## 🗂️ ERD and DSD Diagrams
 
-### 1. Laboratory Department (LABS) - Original ERD/DSD
-> **TODO:** Insert the original ERD/DSD image of the Labs department.
-![LABS_ERD](images/Stage3/LABS_ERD.jpg)
+### Staff Management (STAFF) - External ERD/DSD
+![](images/staff_managment_DSD.png)
+![](images/staff_managment_ERD.png)
 
-### 2. Staff Management (STAFF) - External ERD/DSD
-> **TODO:** Insert the ERD/DSD image received from the partner group.
-![STAFF_ERD](images/Stage3/STAFF_ERD.jpg)
 
-### 3. Integrated ERD
+### Integrated ERD
 > **TODO:** Insert a diagram showing the logical link between `labs.lab_order` and the remote `staff`.
-![Integrated_ERD](images/Stage3/Integrated_ERD.png)
+![](images/Stage3/Integrated_ERD.png)
 
 ---
 
@@ -83,7 +80,7 @@ JOIN labs.diagnostic_equipment e ON t.equipment_id = e.equipment_id;
 ```
 Data Sample: ``` SELECT * FROM labs.view_test_equipment_status LIMIT 10;```
 
-TODO: Insert screenshot of result.
+![](images/v1.png)
 
 #### Queries on View 1:
 Query 1.1: Identify tests using equipment that requires maintenance (Before April 2026).
@@ -93,7 +90,7 @@ SELECT test_name, equipment_name
 FROM labs.view_test_equipment_status 
 WHERE maintenance_date < '2026-04-01';
 ```
-TODO: Insert screenshot of output.
+![](images/q1v1.png)
 
 Query 1.2: Count the number of distinct tests performed by each piece of equipment.
 
@@ -102,7 +99,7 @@ SELECT equipment_name, COUNT(test_name) AS tests_count
 FROM labs.view_test_equipment_status 
 GROUP BY equipment_name;
 ```
-TODO: Insert screenshot of output.
+![](images/q2v1.png)
 
 ### View 2: Remote Staff Directory
 Description: Provides an updated directory of "Active" medical staff from the external Staff Management department.
@@ -115,7 +112,7 @@ WHERE status = 'Active';
 ```
 Data Sample: ``` SELECT * FROM labs.view_remote_staff_directory LIMIT 10;```
 
-TODO: Insert screenshot of result.
+![](images/v2.png)
 
 #### Queries on View 2:
 Query 2.1: Search for a specific doctor's contact information by name.
@@ -124,14 +121,14 @@ Query 2.1: Search for a specific doctor's contact information by name.
 SELECT email FROM labs.view_remote_staff_directory 
 WHERE full_name LIKE 'Guy%';
 ```
-TODO: Insert screenshot of output.
+![](images/q1v2.png)
 
 Query 2.2: Retrieve a full mailing list of all active remote medical personnel.
 
 ```sql
 SELECT full_name, email FROM labs.view_remote_staff_directory;
 ```
-TODO: Insert screenshot of output.
+![](images/q2v2.png)
 
 ### View 3: Integrated Lab Orders with Doctors
 Description: The primary integration view. It joins local lab orders with the external doctor's identity and contact details.
@@ -145,7 +142,7 @@ JOIN staff_remote s ON o.doctor_id = s.staffid;
 ```
 Data Sample: SELECT * FROM labs.view_lab_orders_with_doctors LIMIT 10;
 
-TODO: Insert screenshot of result.
+![](images/v3.png)
 
 #### Queries on View 3:
 Query 3.1: List all "URGENT" orders currently in "ORDERED" status to facilitate immediate contact with the doctor.
@@ -155,7 +152,7 @@ SELECT lab_order_id, doctor_name, doctor_phone
 FROM labs.view_lab_orders_with_doctors 
 WHERE order_status = 'ORDERED';
 ```
-TODO: Insert screenshot of output.
+![](images/q1v3.png)
 
 Query 3.2: Summarize the total number of lab orders submitted by each doctor.
 
@@ -164,7 +161,7 @@ SELECT doctor_name, COUNT(lab_order_id) AS total_orders
 FROM labs.view_lab_orders_with_doctors 
 GROUP BY doctor_name;
 ```
-TODO: Insert screenshot of output.
+![](images/q2v3.png)
 
 ## Summary
 #### In this integration phase:
