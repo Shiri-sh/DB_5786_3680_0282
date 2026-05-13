@@ -15,8 +15,8 @@ This stage focuses on the integration between the **Laboratory Department (LABS)
 ![](images/erd_both.png)
 
 ### Integrated DSD
-> **TODO:** Insert a diagram showing the logical link between `labs.lab_order` and the remote `staff`.
-![](images/Stage3/Integrated_ERD.png)
+![](images/dsd_both.png)
+
 ---
 
 ## 🧠 Integration Decisions
