@@ -307,13 +307,11 @@ Anonymous `DO` blocks exercise functions, procedures, and triggers. Run them in 
 DO $$
 DECLARE
     v_total_cost DECIMAL;
-    v_order_id INT := 1; -- נניח לבדיקה
+    v_order_id INT := 1; 
 BEGIN
-    -- זימון פונקציה
     v_total_cost := fn_calculate_order_total(v_order_id);
     RAISE NOTICE 'The total cost for order % is %', v_order_id, v_total_cost;
     
-    -- זימון פרוצדורה
     CALL pr_update_all_order_prices();
     RAISE NOTICE 'All order prices have been synchronized.';
 END $$;
@@ -336,14 +334,12 @@ END $$;
 DO $$
 DECLARE
     v_cursor REFCURSOR;
-    v_doc_id INT := 101; -- רופא לדוגמה מה-Staff
+    v_doc_id INT := 101;
 BEGIN
-    -- זימון פונקציה (שמחזירה RefCursor)
     v_cursor := fn_get_doctor_workload(v_doc_id);
     RAISE NOTICE 'Cursor for doctor % is ready.', v_doc_id;
 
-    -- זימון פרוצדורה
-    CALL pr_promote_technicians(5, 100); -- טכנאים עם 5 בדיקות מקבלים 100 נקודות
+    CALL pr_promote_technicians(5, 100);
 END $$;
 ```
 
