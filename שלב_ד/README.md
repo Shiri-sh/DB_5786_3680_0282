@@ -223,7 +223,7 @@ WHERE status = 'COMPLETED';
 
 **Screenshot (Block C):**
 
-> TODO: Add screenshot of the pgAdmin error proving the trigger blocked the update.
+![update_comleted_order](images/update_comleted_order.png)
 
 ---
 
@@ -288,7 +288,8 @@ WHERE lab_order_id = 1;
 
 **Screenshot (`trg_after_test_added`):**
 
-> TODO: Add screenshot(s) showing the before/after `SELECT` results (Data Output) proving `total_price` updated after the `INSERT`.
+![before_inser_cal](images/before_inser_cal.png)
+![after_insert_cal](images/after_insert_cal.png)
 
 ---
 
@@ -319,7 +320,8 @@ END $$;
 
 **Screenshot (Block A):**
 
-> TODO: Add pgAdmin **Messages** / **Data Output** screenshot after running Block A.
+![total_price_main](images/total_price_main.png)
+![total_price_main_1](images/total_price_main_1.png)
 
 ---
 
@@ -345,7 +347,7 @@ END $$;
 
 **Screenshot (Block B):**
 
-> TODO: Add screenshot showing notices after running Block B.
+![bonus_workers_main](images/bonus_workers_main.png)
 
 ---
 
