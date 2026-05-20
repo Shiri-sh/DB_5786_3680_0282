@@ -144,7 +144,7 @@ $$ LANGUAGE plpgsql;
 
 ### `pr_promote_technicians`
 
-Awards bonus points to technicians who completed at least `p_min_tests` results.
+Encapsulates HR-style promotion rules inside the database: technicians who meet a minimum number of completed lab results receive bonus points in one transactional batch.
 
 | Parameter | Meaning |
 |-----------|---------|
@@ -152,6 +152,8 @@ Awards bonus points to technicians who completed at least `p_min_tests` results.
 | `p_bonus_amount` | Points added per qualifying technician (must be ≥ 0) |
 
 **PL/pgSQL features:** aggregate cursor (`GROUP BY` / `HAVING`), input validation (`RAISE EXCEPTION`), multi-row `UPDATE`, `RAISE NOTICE`.
+
+**Procedure definition**
 
 ```sql
 CREATE OR REPLACE PROCEDURE pr_promote_technicians(p_min_tests INT, p_bonus_amount INT)
@@ -209,16 +211,32 @@ BEFORE UPDATE ON labs.LAB_ORDER
 FOR EACH ROW EXECUTE FUNCTION fn_trg_check_status();
 ```
 
+This update **should fail** if status protection is installed:
+
+```sql
+UPDATE LAB_ORDER
+SET status = 'IN_PROGRESS'
+WHERE status = 'COMPLETED';
+```
+
+**Expected:** Error from `fn_trg_check_status` — transaction rejected for a completed order.
+
+**Screenshot (Block C):**
+
+> TODO: Add screenshot of the pgAdmin error proving the trigger blocked the update.
+
 ---
 
 ### Auto price calculation — `trg_after_test_added`
 
-After a row is inserted into `LAB_ORDER_TEST`, recalculates and updates `LAB_ORDER.total_price` for that order.
+After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically and refreshes `LAB_ORDER.total_price` by calling `fn_calculate_order_total`. No application code is required for bookkeeping when tests are added to an order.
 
 | Object | Type | Event |
 |--------|------|-------|
 | `fn_trg_update_price` | Trigger function | `AFTER INSERT` on `labs.LAB_ORDER_TEST` |
 | `trg_after_test_added` | Trigger | Per row |
+
+**Trigger definition**
 
 ```sql
 CREATE OR REPLACE FUNCTION fn_trg_update_price() 
@@ -235,6 +253,42 @@ CREATE TRIGGER trg_after_test_added
 AFTER INSERT ON labs.LAB_ORDER_TEST
 FOR EACH ROW EXECUTE FUNCTION fn_trg_update_price();
 ```
+
+**How it works**
+
+- `NEW.lab_order_id` — the order that received the new test row.
+- `fn_calculate_order_total(NEW.lab_order_id)` — sums test costs for that order (same snapshot logic as in the function section).
+- `UPDATE LAB_ORDER …` — writes the new total into `total_price` immediately after insert.
+
+**Verification — demonstrate the trigger step by step**
+
+Run in order on a known order (example uses `lab_order_id = 1`). Adjust IDs if your data differs.
+
+```sql
+-- Step 1: Before insert — record the current cached total
+SELECT lab_order_id, total_price 
+FROM LAB_ORDER 
+WHERE lab_order_id = 1;
+
+-- Step 2: Insert — adding a test to the order fires trg_after_test_added
+INSERT INTO LAB_ORDER_TEST (lab_order_id, test_id) 
+VALUES (1, 2);
+
+-- Step 3: After insert — total_price should reflect the new test (via trigger)
+SELECT lab_order_id, total_price 
+FROM LAB_ORDER 
+WHERE lab_order_id = 1;
+```
+
+| Step | What you are checking |
+|------|------------------------|
+| Before `SELECT` | Baseline `total_price` before the new line item exists |
+| `INSERT` | Links order `1` to test `2`; trigger recalculates in the same transaction |
+| After `SELECT` | `total_price` should increase (or change) to match the sum from `fn_calculate_order_total` |
+
+**Screenshot (`trg_after_test_added`):**
+
+> TODO: Add screenshot(s) showing the before/after `SELECT` results (Data Output) proving `total_price` updated after the `INSERT`.
 
 ---
 
@@ -296,24 +350,6 @@ END $$;
 **Screenshot (Block B):**
 
 > TODO: Add screenshot showing notices after running Block B.
-
----
-
-### Block C – Trigger integrity
-
-This update **should fail** if status protection is installed:
-
-```sql
-UPDATE LAB_ORDER
-SET status = 'IN_PROGRESS'
-WHERE status = 'COMPLETED';
-```
-
-**Expected:** Error from `fn_trg_check_status` — transaction rejected for a completed order.
-
-**Screenshot (Block C):**
-
-> TODO: Add screenshot of the pgAdmin error proving the trigger blocked the update.
 
 ---
 

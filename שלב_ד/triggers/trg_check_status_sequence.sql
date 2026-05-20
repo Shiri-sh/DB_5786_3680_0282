@@ -11,3 +11,9 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER trg_status_protection
 BEFORE UPDATE ON labs.LAB_ORDER
 FOR EACH ROW EXECUTE FUNCTION fn_trg_check_status();
+
+
+-- בשאילתה הזו ננסה לעדכן ישירות הזמנה סגורה
+UPDATE LAB_ORDER 
+SET status = 'IN_PROGRESS' 
+WHERE status = 'COMPLETED';
