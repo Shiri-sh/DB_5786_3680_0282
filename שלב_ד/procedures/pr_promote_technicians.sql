@@ -8,13 +8,13 @@ BEGIN
         RAISE EXCEPTION 'Bonus cannot be negative';
     END IF;
 
-    FOR v_tech_id, v_count IN 
+    FOR v_tech_id, v_count IN   
         SELECT technician_id, COUNT(*) 
-        FROM LAB_RESULT 
+        FROM labs.LAB_RESULT 
         GROUP BY technician_id 
         HAVING COUNT(*) >= p_min_tests 
     LOOP
-        UPDATE LAB_TECHNICIAN 
+        UPDATE labs.LAB_TECHNICIAN 
         SET bonus_points = bonus_points + p_bonus_amount
         WHERE technician_id = v_tech_id;
         

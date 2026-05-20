@@ -6,9 +6,9 @@ DECLARE
     -- Explicit Cursor
     cur_tests CURSOR FOR 
         SELECT t.cost 
-        FROM LAB_TEST t
-        JOIN LAB_ORDER_TEST ot ON t.test_id = ot.test_id
-        WHERE ot.lab_order_id = p_order_id;
+        FROM labs.LAB_TEST t
+        JOIN labs.LAB_ORDER_TEST ot ON t.test_id = ot.test_id
+        WHERE ot.lab_order_id = p_order_id ;
 BEGIN
     OPEN cur_tests;
     LOOP
