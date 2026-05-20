@@ -350,7 +350,7 @@ END $$;
 **Screenshot (Block B):**
 
 ![bonus_workers_main](images/bonus_workers_main.png)
-![bonus_workers_main_1](images/bonus_workers_main_1.png)
+![bonus_workers_main_1](images/bonus_worker_main_1.png)
 
 
 ---
