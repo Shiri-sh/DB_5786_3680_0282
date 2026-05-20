@@ -42,6 +42,8 @@ ALTER TABLE labs.LAB_ORDER ADD COLUMN total_price DECIMAL(10, 2) DEFAULT 0;
 ALTER TABLE labs.LAB_TECHNICIAN ADD COLUMN bonus_points INT DEFAULT 0;
 ```
 
+![total_price](images/alter_total_price.png)
+![bonus_points](images/alter_bonus_points.png)
 ---
 
 ## Functions
@@ -348,6 +350,8 @@ END $$;
 **Screenshot (Block B):**
 
 ![bonus_workers_main](images/bonus_workers_main.png)
+![bonus_workers_main_1](images/bonus_workers_main_1.png)
+
 
 ---
 
