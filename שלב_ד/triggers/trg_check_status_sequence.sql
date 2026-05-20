@@ -9,5 +9,5 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_status_protection
-BEFORE UPDATE ON LAB_ORDER
+BEFORE UPDATE ON labs.LAB_ORDER
 FOR EACH ROW EXECUTE FUNCTION fn_trg_check_status();
