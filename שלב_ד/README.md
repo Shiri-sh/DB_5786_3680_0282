@@ -201,8 +201,8 @@ Blocks changing an order out of `COMPLETED` status so finished lab reports canno
 CREATE OR REPLACE FUNCTION fn_trg_check_status() 
 RETURNS TRIGGER AS $$
 BEGIN
-    IF OLD.status = 'COMPLETED' AND NEW.status != 'COMPLETED' THEN
-        RAISE EXCEPTION 'Cannot change status once an order is COMPLETED';
+    IF OLD.status = 'COMPLETED' THEN
+        RAISE EXCEPTION 'Transaction Rejected: This laboratory order is COMPLETED and locked. No modifications are allowed.';
     END IF;
     RETURN NEW;
 END;
@@ -231,7 +231,7 @@ WHERE status = 'COMPLETED';
 
 ### Auto price calculation — `trg_after_test_added`
 
-After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically and refreshes `LAB_ORDER.total_price` by calling `fn_calculate_order_total`. No application code is required for bookkeeping when tests are added to an order.
+After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically and refreshes `LAB_ORDER.total_price` by adding the price of the inserted test. No application code is required for bookkeeping when tests are added to an order.
 
 | Object | Type | Event |
 |--------|------|-------|
@@ -243,10 +243,17 @@ After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically a
 ```sql
 CREATE OR REPLACE FUNCTION fn_trg_update_price() 
 RETURNS TRIGGER AS $$
+DECLARE
+    v_new_test_cost DECIMAL(10,2);
 BEGIN
+    SELECT cost INTO v_new_test_cost 
+    FROM LAB_TEST 
+    WHERE test_id = NEW.test_id;
+
     UPDATE LAB_ORDER 
-    SET total_price = fn_calculate_order_total(NEW.lab_order_id)
+    SET total_price = COALESCE(total_price, 0) + v_new_test_cost
     WHERE lab_order_id = NEW.lab_order_id;
+    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
@@ -259,7 +266,7 @@ FOR EACH ROW EXECUTE FUNCTION fn_trg_update_price();
 **How it works**
 
 - `NEW.lab_order_id` — the order that received the new test row.
-- `fn_calculate_order_total(NEW.lab_order_id)` — sums test costs for that order (same snapshot logic as in the function section).
+- `SET total_price = COALESCE(total_price, 0) + v_new_test_cost` - add the new test price to the total
 - `UPDATE LAB_ORDER …` — writes the new total into `total_price` immediately after insert.
 
 **Verification — demonstrate the trigger step by step**
@@ -342,6 +349,15 @@ DECLARE
 BEGIN
     v_cursor := fn_get_doctor_workload(v_doc_id);
     RAISE NOTICE 'Cursor for doctor % is ready.', v_doc_id;
+
+    LOOP
+        FETCH v_cursor INTO v_order_id, v_order_date, v_priority;
+        EXIT WHEN NOT FOUND; -- תנאי יציאה כשהסמן מתרוקן
+        
+        RAISE NOTICE 'Urgent Order ID: %, Date: %, Priority: %', v_order_id, v_order_date, v_priority;
+    END LOOP;
+    
+    CLOSE v_cursor; 
 
     CALL pr_promote_technicians(5, 100);
 END $$;
