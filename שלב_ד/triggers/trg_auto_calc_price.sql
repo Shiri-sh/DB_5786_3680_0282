@@ -1,9 +1,16 @@
 CREATE OR REPLACE FUNCTION fn_trg_update_price() 
 RETURNS TRIGGER AS $$
+DECLARE
+    v_new_test_cost DECIMAL(10,2);
 BEGIN
+    SELECT cost INTO v_new_test_cost 
+    FROM LAB_TEST 
+    WHERE test_id = NEW.test_id;
+
     UPDATE LAB_ORDER 
-    SET total_price = fn_calculate_order_total(NEW.lab_order_id)
+    SET total_price = COALESCE(total_price, 0) + v_new_test_cost
     WHERE lab_order_id = NEW.lab_order_id;
+    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;

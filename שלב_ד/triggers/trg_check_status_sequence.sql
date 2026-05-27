@@ -1,8 +1,8 @@
 CREATE OR REPLACE FUNCTION fn_trg_check_status() 
 RETURNS TRIGGER AS $$
 BEGIN
-    IF OLD.status = 'COMPLETED' AND NEW.status != 'COMPLETED' THEN
-        RAISE EXCEPTION 'Cannot change status once an order is COMPLETED';
+    IF OLD.status = 'COMPLETED' THEN
+        RAISE EXCEPTION 'Transaction Rejected: This laboratory order is COMPLETED and locked. No modifications are allowed.';
     END IF;
     RETURN NEW;
 END;

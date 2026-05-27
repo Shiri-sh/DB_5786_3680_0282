@@ -1,12 +1,19 @@
 DO $$
 DECLARE
     v_cursor REFCURSOR;
-    v_doc_id INT := 101; -- רופא לדוגמה מה-Staff
+    v_doc_id INT := 101;
 BEGIN
-    -- זימון פונקציה (שמחזירה RefCursor)
     v_cursor := fn_get_doctor_workload(v_doc_id);
     RAISE NOTICE 'Cursor for doctor % is ready.', v_doc_id;
 
-    -- זימון פרוצדורה
-    CALL pr_promote_technicians(5, 100); -- טכנאים עם 5 בדיקות מקבלים 100 נקודות
+    LOOP
+        FETCH v_cursor INTO v_order_id, v_order_date, v_priority;
+        EXIT WHEN NOT FOUND; -- תנאי יציאה כשהסמן מתרוקן
+        
+        RAISE NOTICE 'Urgent Order ID: %, Date: %, Priority: %', v_order_id, v_order_date, v_priority;
+    END LOOP;
+    
+    CLOSE v_cursor; 
+
+    CALL pr_promote_technicians(5, 100);
 END $$;
