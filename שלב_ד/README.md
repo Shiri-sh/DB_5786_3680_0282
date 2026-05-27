@@ -42,6 +42,8 @@ ALTER TABLE labs.LAB_ORDER ADD COLUMN total_price DECIMAL(10, 2) DEFAULT 0;
 ALTER TABLE labs.LAB_TECHNICIAN ADD COLUMN bonus_points INT DEFAULT 0;
 ```
 
+![total_price](images/alter_total_price.png)
+![bonus_points](images/alter_bonus_points.png)
 ---
 
 ## Functions
@@ -199,8 +201,8 @@ Blocks changing an order out of `COMPLETED` status so finished lab reports canno
 CREATE OR REPLACE FUNCTION fn_trg_check_status() 
 RETURNS TRIGGER AS $$
 BEGIN
-    IF OLD.status = 'COMPLETED' AND NEW.status != 'COMPLETED' THEN
-        RAISE EXCEPTION 'Cannot change status once an order is COMPLETED';
+    IF OLD.status = 'COMPLETED' THEN
+        RAISE EXCEPTION 'Transaction Rejected: This laboratory order is COMPLETED and locked. No modifications are allowed.';
     END IF;
     RETURN NEW;
 END;
@@ -223,13 +225,13 @@ WHERE status = 'COMPLETED';
 
 **Screenshot (Block C):**
 
-> TODO: Add screenshot of the pgAdmin error proving the trigger blocked the update.
+![update_comleted_order](images/update_comleted_order.png)
 
 ---
 
 ### Auto price calculation — `trg_after_test_added`
 
-After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically and refreshes `LAB_ORDER.total_price` by calling `fn_calculate_order_total`. No application code is required for bookkeeping when tests are added to an order.
+After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically and refreshes `LAB_ORDER.total_price` by adding the price of the inserted test. No application code is required for bookkeeping when tests are added to an order.
 
 | Object | Type | Event |
 |--------|------|-------|
@@ -241,10 +243,17 @@ After a row is inserted into `LAB_ORDER_TEST`, the trigger fires automatically a
 ```sql
 CREATE OR REPLACE FUNCTION fn_trg_update_price() 
 RETURNS TRIGGER AS $$
+DECLARE
+    v_new_test_cost DECIMAL(10,2);
 BEGIN
+    SELECT cost INTO v_new_test_cost 
+    FROM LAB_TEST 
+    WHERE test_id = NEW.test_id;
+
     UPDATE LAB_ORDER 
-    SET total_price = fn_calculate_order_total(NEW.lab_order_id)
+    SET total_price = COALESCE(total_price, 0) + v_new_test_cost
     WHERE lab_order_id = NEW.lab_order_id;
+    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
@@ -257,7 +266,7 @@ FOR EACH ROW EXECUTE FUNCTION fn_trg_update_price();
 **How it works**
 
 - `NEW.lab_order_id` — the order that received the new test row.
-- `fn_calculate_order_total(NEW.lab_order_id)` — sums test costs for that order (same snapshot logic as in the function section).
+- `SET total_price = COALESCE(total_price, 0) + v_new_test_cost` - add the new test price to the total
 - `UPDATE LAB_ORDER …` — writes the new total into `total_price` immediately after insert.
 
 **Verification — demonstrate the trigger step by step**
@@ -288,7 +297,8 @@ WHERE lab_order_id = 1;
 
 **Screenshot (`trg_after_test_added`):**
 
-> TODO: Add screenshot(s) showing the before/after `SELECT` results (Data Output) proving `total_price` updated after the `INSERT`.
+![before_inser_cal](images/before_inser_cal.png)
+![after_insert_cal](images/after_insert_cal.png)
 
 ---
 
@@ -307,13 +317,11 @@ Anonymous `DO` blocks exercise functions, procedures, and triggers. Run them in 
 DO $$
 DECLARE
     v_total_cost DECIMAL;
-    v_order_id INT := 1; -- נניח לבדיקה
+    v_order_id INT := 1; 
 BEGIN
-    -- זימון פונקציה
     v_total_cost := fn_calculate_order_total(v_order_id);
     RAISE NOTICE 'The total cost for order % is %', v_order_id, v_total_cost;
     
-    -- זימון פרוצדורה
     CALL pr_update_all_order_prices();
     RAISE NOTICE 'All order prices have been synchronized.';
 END $$;
@@ -321,7 +329,8 @@ END $$;
 
 **Screenshot (Block A):**
 
-> TODO: Add pgAdmin **Messages** / **Data Output** screenshot after running Block A.
+![total_price_main](images/total_price_main.png)
+![total_price_main_1](images/total_price_main_1.png)
 
 ---
 
@@ -336,20 +345,29 @@ END $$;
 DO $$
 DECLARE
     v_cursor REFCURSOR;
-    v_doc_id INT := 101; -- רופא לדוגמה מה-Staff
+    v_doc_id INT := 101;
 BEGIN
-    -- זימון פונקציה (שמחזירה RefCursor)
     v_cursor := fn_get_doctor_workload(v_doc_id);
     RAISE NOTICE 'Cursor for doctor % is ready.', v_doc_id;
 
-    -- זימון פרוצדורה
-    CALL pr_promote_technicians(5, 100); -- טכנאים עם 5 בדיקות מקבלים 100 נקודות
+    LOOP
+        FETCH v_cursor INTO v_order_id, v_order_date, v_priority;
+        EXIT WHEN NOT FOUND; -- תנאי יציאה כשהסמן מתרוקן
+        
+        RAISE NOTICE 'Urgent Order ID: %, Date: %, Priority: %', v_order_id, v_order_date, v_priority;
+    END LOOP;
+    
+    CLOSE v_cursor; 
+
+    CALL pr_promote_technicians(5, 100);
 END $$;
 ```
 
 **Screenshot (Block B):**
 
-> TODO: Add screenshot showing notices after running Block B.
+![bonus_workers_main](images/bonus_workers_main.png)
+![bonus_workers_main_1](images/bonus_worker_main_1.png)
+
 
 ---
 
