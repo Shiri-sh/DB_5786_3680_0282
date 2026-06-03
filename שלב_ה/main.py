@@ -78,6 +78,7 @@ class LabApplication(ctk.CTk):
             on_toggle_theme=self._toggle_theme,
             db_status=self._db_version,
         )
+        self._current_view.pack(fill="both", expand=True)
 
     def show_crud(self, module_key: str) -> None:
         if not self._table_configs or module_key not in self._table_configs:

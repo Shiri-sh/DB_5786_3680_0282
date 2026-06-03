@@ -182,8 +182,8 @@ class AnalyticsView(ctk.CTkFrame):
         schema = self.db.schema
         sql = f"""
             SELECT t.test_name, COUNT(*) AS usage_count
-            FROM "{schema}"."LAB_ORDER_TEST" ot
-            JOIN "{schema}"."LAB_TEST" t ON ot.test_id = t.test_id
+            FROM "{schema}"."lab_order_test" ot
+            JOIN "{schema}"."lab_test" t ON ot.test_id = t.test_id
             GROUP BY t.test_name
             ORDER BY usage_count DESC
             LIMIT 5
@@ -198,7 +198,7 @@ class AnalyticsView(ctk.CTkFrame):
                             'Doctor #' || o.doctor_id::text) AS doctor,
                    o.order_date, o.status, o.priority,
                    CURRENT_DATE - o.order_date AS days_open
-            FROM "{schema}"."LAB_ORDER" o
+            FROM "{schema}"."lab_order" o
             LEFT JOIN staff_remote d ON o.doctor_id = d.staffid
             WHERE o.priority = 'URGENT'
               AND o.status != 'COMPLETED'
@@ -219,7 +219,7 @@ class AnalyticsView(ctk.CTkFrame):
                 SELECT lab_order_id,
                        COALESCE(total_price, 0) AS total_price,
                        status, priority
-                FROM "{schema}"."LAB_ORDER"
+                FROM "{schema}"."lab_order"
                 ORDER BY lab_order_id
                 LIMIT 100
             """
@@ -254,7 +254,7 @@ class AnalyticsView(ctk.CTkFrame):
                                 'Staff #' || t.staff_id::text) AS technician,
                        t.certification,
                        COALESCE(t.bonus_points, 0) AS bonus_points
-                FROM "{schema}"."LAB_TECHNICIAN" t
+                FROM "{schema}"."lab_technician" t
                 LEFT JOIN staff_remote s ON t.staff_id = s.staffid
                 ORDER BY t.bonus_points DESC
                 LIMIT 50
