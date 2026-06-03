@@ -1,4 +1,4 @@
-"""Startup screen when the database is unreachable."""
+"""Startup screen when the database is unreachable, in English."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from utils.theme import FONT_BODY, FONT_HEADING, FONT_SMALL, PAD_X, PAD_Y
 
 
 class ConnectionErrorView(ctk.CTkFrame):
-    """Troubleshooting guide when Docker / PostgreSQL is unavailable."""
+    """Troubleshooting guide when Docker / PostgreSQL is unavailable, in English."""
 
     def __init__(
         self,
@@ -30,7 +30,7 @@ class ConnectionErrorView(ctk.CTkFrame):
 
         ctk.CTkLabel(
             self,
-            text="The application could not reach your PostgreSQL server.",
+            text="The application could not reach the hospital database server.",
             font=FONT_BODY,
         ).pack(pady=4)
 
@@ -38,8 +38,12 @@ class ConnectionErrorView(ctk.CTkFrame):
         details.pack(padx=PAD_X, pady=12)
         details.insert(
             "1.0",
-            f"Host: {config.host}\nPort: {config.port}\nDatabase: {config.name}\n"
-            f"User: {config.user}\nSchema: {config.schema}\n\nError:\n{error_message}",
+            f"Host: {config.host}\n"
+            f"Port: {config.port}\n"
+            f"Database: {config.name}\n"
+            f"User: {config.user}\n"
+            f"Schema: {config.schema}\n\n"
+            f"Error details:\n{error_message}",
         )
         details.configure(state="disabled")
 
@@ -48,18 +52,21 @@ class ConnectionErrorView(ctk.CTkFrame):
         steps.insert(
             "1.0",
             "Troubleshooting steps:\n\n"
-            "1. Verify Docker is running:  docker ps\n"
-            "2. Start the lab stack:      docker compose up -d db\n"
-            "3. Confirm port 5432 is mapped to localhost (see docker-compose.yml)\n"
-            "4. If the GUI runs inside Docker, set DB_HOST=db (the service name)\n"
-            "5. If the GUI runs on your host, set DB_HOST=localhost\n"
-            "6. Copy .env.example to .env and match DB_USER / DB_PASSWORD / DB_NAME "
-            "with your compose secrets\n"
-            "7. Ensure Stage 3 FDW (staff_remote) and Stage 4 objects are deployed\n"
-            "8. Test manually:  psql -h localhost -U <user> -d <dbname> -c '\\dt labs.*'",
+            "1. Verify Docker is running on your system.\n"
+            "2. Start the database stack using:  docker compose up -d db\n"
+            "3. Confirm port 5432 is mapped to localhost.\n"
+            "4. If the app runs inside Docker, set the host configuration parameter to 'db'.\n"
+            "5. If the app runs on your host machine, set the host parameter to 'localhost'.\n"
+            "6. Copy .env.example to .env and match the connection credentials.\n"
+            "7. Ensure Stage 3 FDW tables (staff_remote) and Stage 4 routines are deployed on the server."
         )
         steps.configure(state="disabled")
 
-        ctk.CTkButton(self, text="Retry Connection", width=200, command=on_retry).pack(
-            pady=PAD_Y
-        )
+        ctk.CTkButton(
+            self, 
+            text="Retry Connection 🔄", 
+            width=200, 
+            fg_color="#1f538d",
+            hover_color="#14375e",
+            command=on_retry
+        ).pack(pady=PAD_Y)

@@ -1,4 +1,4 @@
-"""Reusable CRUD screen with smart lookup and FK dropdowns."""
+"""Reusable CRUD screen with smart lookup and FK dropdowns in English."""
 
 from __future__ import annotations
 
@@ -13,9 +13,42 @@ from utils import dialogs
 from utils.theme import FONT_BODY, FONT_HEADING, FONT_SMALL, PAD_X, PAD_Y
 from views.crud.table_configs import FieldConfig, TableConfig, editable_columns
 
+COLUMN_TRANSLATIONS = {
+    "equipment_id": "Equipment ID",
+    "equipment_name": "Equipment Name",
+    "department": "Department",
+    "maintenance_date": "Maintenance Date",
+    "test_id": "Test ID",
+    "test_name": "Test Name",
+    "description": "Description",
+    "normal_range": "Normal Range",
+    "cost": "Cost",
+    "sample_type": "Sample Type",
+    "equipment": "Equipment",
+    "lab_order_id": "Order ID",
+    "visit_id": "Visit ID",
+    "doctor": "Referring Doctor",
+    "order_date": "Order Date",
+    "status": "Status",
+    "priority": "Priority",
+    "total_price": "Total Price",
+    "technician_id": "Technician ID",
+    "staff_member": "Staff Member",
+    "certification": "Certification",
+    "bonus_points": "Bonus Points",
+    "lab_order_test_id": "Line Item ID",
+    "lab_order": "Lab Order",
+    "test": "Test Name",
+    "result_id": "Result ID",
+    "order_test": "Order / Test Line",
+    "technician": "Technician",
+    "result_value": "Result Value",
+    "result_date": "Result Date"
+}
+
 
 class GenericCrudView(ctk.CTkFrame):
-    """Create / read / update / delete for a single laboratory table."""
+    """Create / read / update / delete for a single laboratory table in English."""
 
     def __init__(
         self,
@@ -38,9 +71,14 @@ class GenericCrudView(ctk.CTkFrame):
     def _build_ui(self) -> None:
         header = ctk.CTkFrame(self, fg_color="transparent")
         header.pack(fill="x", padx=PAD_X, pady=(PAD_Y, 8))
-        ctk.CTkButton(header, text="← Back", width=90, command=self.on_back).pack(
-            side="left"
-        )
+        ctk.CTkButton(
+            header, 
+            text="← Back to Dashboard", 
+            width=160, 
+            fg_color="gray30",
+            hover_color="gray40",
+            command=self.on_back
+        ).pack(side="left")
         ctk.CTkLabel(
             header, text=self.config.title, font=FONT_HEADING
         ).pack(side="left", padx=16)
@@ -48,11 +86,11 @@ class GenericCrudView(ctk.CTkFrame):
         body = ctk.CTkFrame(self)
         body.pack(fill="both", expand=True, padx=PAD_X, pady=8)
 
-        left = ctk.CTkFrame(body, width=360)
+        left = ctk.CTkFrame(body, width=380)
         left.pack(side="left", fill="y", padx=(0, 12), pady=4)
         left.pack_propagate(False)
 
-        ctk.CTkLabel(left, text="Smart Update Lookup", font=FONT_BODY).pack(
+        ctk.CTkLabel(left, text="Search Record to Update", font=FONT_BODY).pack(
             anchor="w", padx=12, pady=(12, 4)
         )
         lookup_row = ctk.CTkFrame(left, fg_color="transparent")
@@ -61,41 +99,72 @@ class GenericCrudView(ctk.CTkFrame):
             lookup_row, placeholder_text=f"Enter {self.config.lookup_label}"
         )
         self.lookup_entry.pack(side="left", fill="x", expand=True, padx=(0, 8))
-        ctk.CTkButton(lookup_row, text="Load", width=70, command=self.load_record).pack(
-            side="left"
-        )
+        ctk.CTkButton(
+            lookup_row, 
+            text="Load 🔍", 
+            width=70, 
+            command=self.load_record
+        ).pack(side="left")
 
-        ctk.CTkLabel(left, text="Record Form", font=FONT_BODY).pack(
+        ctk.CTkLabel(left, text="Record Details Form", font=FONT_BODY).pack(
             anchor="w", padx=12, pady=(16, 4)
         )
-        self.form_scroll = ctk.CTkScrollableFrame(left, width=330)
+        self.form_scroll = ctk.CTkScrollableFrame(left, width=350)
         self.form_scroll.pack(fill="both", expand=True, padx=8, pady=4)
         self._build_form_fields()
 
         btn_row = ctk.CTkFrame(left, fg_color="transparent")
         btn_row.pack(fill="x", padx=12, pady=12)
-        ctk.CTkButton(btn_row, text="Create", command=self.create_record).pack(
-            side="left", padx=4
-        )
-        ctk.CTkButton(btn_row, text="Update", command=self.update_record).pack(
-            side="left", padx=4
-        )
+        
         ctk.CTkButton(
-            btn_row, text="Delete", fg_color="#8B2942", hover_color="#6B1F32",
+            btn_row, 
+            text="Create ➕", 
+            width=75,
+            fg_color="#27ae60",
+            hover_color="#2196f3",
+            command=self.create_record
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Update 💾", 
+            width=75,
+            fg_color="#2980b9",
+            hover_color="#1f538d",
+            command=self.update_record
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Delete 🗑️", 
+            width=75,
+            fg_color="#8B2942", 
+            hover_color="#6B1F32",
             command=self.delete_record,
-        ).pack(side="left", padx=4)
-        ctk.CTkButton(btn_row, text="Clear", fg_color="gray30", command=self.clear_form).pack(
-            side="left", padx=4
-        )
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Clear 🧹", 
+            width=75,
+            fg_color="gray30", 
+            hover_color="gray40",
+            command=self.clear_form
+        ).pack(side="left", padx=3)
 
         right = ctk.CTkFrame(body)
         right.pack(side="left", fill="both", expand=True)
+        
+        header_row = ctk.CTkFrame(right, fg_color="transparent")
+        header_row.pack(fill="x", padx=8, pady=8)
+        
         ctk.CTkLabel(
-            right, text="All Records (human-readable FKs)", font=FONT_BODY
-        ).pack(anchor="w", padx=8, pady=8)
+            header_row, text="Registered Records", font=FONT_BODY
+        ).pack(side="left", anchor="w")
+        
         ctk.CTkButton(
-            right, text="Refresh Grid", width=120, command=self.refresh_grid
-        ).pack(anchor="e", padx=8)
+            header_row, text="Refresh Table 🔄", width=130, command=self.refresh_grid
+        ).pack(side="right", anchor="e")
 
         tree_frame = ctk.CTkFrame(right)
         tree_frame.pack(fill="both", expand=True, padx=8, pady=8)
@@ -158,7 +227,7 @@ class GenericCrudView(ctk.CTkFrame):
         return ctk.CTkEntry(self.form_scroll)
 
     def _create_fk_combo(self, field: FieldConfig) -> ctk.CTkComboBox:
-        combo = ctk.CTkComboBox(self.form_scroll, values=["Loading…"])
+        combo = ctk.CTkComboBox(self.form_scroll, values=["Loading..."])
         try:
             rows = self.db.get_fk_options(field.fk_query or "")
             display_values: list[str] = []
@@ -212,8 +281,9 @@ class GenericCrudView(ctk.CTkFrame):
         columns = list(rows[0].keys())
         self.tree["columns"] = columns
         for col in columns:
-            self.tree.heading(col, text=col.replace("_", " ").title())
-            self.tree.column(col, width=max(100, len(col) * 12), anchor="w")
+            translated_text = COLUMN_TRANSLATIONS.get(col, col.replace("_", " ").title())
+            self.tree.heading(col, text=translated_text)
+            self.tree.column(col, width=max(120, len(translated_text) * 12), anchor="w")
 
         for row in rows:
             values = [self._format_cell(row[c]) for c in columns]
@@ -222,7 +292,7 @@ class GenericCrudView(ctk.CTkFrame):
     def load_record(self) -> None:
         pk_raw = self.lookup_entry.get().strip()
         if not pk_raw:
-            dialogs.show_warning(self.winfo_toplevel(), "Enter a record ID to load.")
+            dialogs.show_warning(self.winfo_toplevel(), "Please enter a record ID to load.")
             return
         try:
             pk_val = int(pk_raw)
@@ -255,7 +325,9 @@ class GenericCrudView(ctk.CTkFrame):
                 if label:
                     widget.set(label)
             elif field.field_type == "choice":
-                widget.set(str(value) if value is not None else "")
+                db_val = str(value) if value is not None else ""
+                matching_choice = next((c for c in field.choices if c.startswith(db_val)), db_val)
+                widget.set(matching_choice)
             elif field.field_type == "readonly":
                 widget.configure(state="normal")
                 widget.delete(0, "end")
@@ -283,7 +355,7 @@ class GenericCrudView(ctk.CTkFrame):
             new_id = result[list(result.keys())[0]] if result else "?"
             dialogs.show_success(
                 self.winfo_toplevel(),
-                f"Created {self.config.title} (ID: {new_id}).",
+                f"Record created successfully in {self.config.title} (ID: {new_id}).",
             )
             self.clear_form()
             self.refresh_grid()
@@ -297,7 +369,7 @@ class GenericCrudView(ctk.CTkFrame):
             if not pk_raw:
                 dialogs.show_warning(
                     self.winfo_toplevel(),
-                    "Load a record first or enter its ID in the lookup field.",
+                    "Please load a record first or enter its ID in the search box.",
                 )
                 return
             try:
@@ -323,7 +395,7 @@ class GenericCrudView(ctk.CTkFrame):
         if pk is None:
             pk_raw = self.lookup_entry.get().strip()
             if not pk_raw:
-                dialogs.show_warning(self.winfo_toplevel(), "Select or load a record to delete.")
+                dialogs.show_warning(self.winfo_toplevel(), "Please select or load a record to delete.")
                 return
             try:
                 pk = int(pk_raw)
@@ -333,12 +405,12 @@ class GenericCrudView(ctk.CTkFrame):
 
         if not dialogs.confirm(
             self.winfo_toplevel(),
-            f"Permanently delete {self.config.title} #{pk}?",
+            f"Are you sure you want to permanently delete record #{pk} from {self.config.title}?",
         ):
             return
         try:
             self.db.execute(self.config.delete_sql, (pk,))
-            dialogs.show_success(self.winfo_toplevel(), "Record deleted.")
+            dialogs.show_success(self.winfo_toplevel(), "Record deleted successfully.")
             self.clear_form()
             self.refresh_grid()
         except DatabaseError as exc:
@@ -375,7 +447,7 @@ class GenericCrudView(ctk.CTkFrame):
                 return None, None
             if raw is None and field.required:
                 dialogs.show_warning(
-                    self.winfo_toplevel(), f"'{field.label}' is required."
+                    self.winfo_toplevel(), f"Field '{field.label}' is required."
                 )
                 return None, None
             cols.append(field.column)
@@ -391,7 +463,7 @@ class GenericCrudView(ctk.CTkFrame):
                 return None
             if label not in id_map:
                 raise ValueError(
-                    f"Selected '{field.label}' value '{label}' is invalid or not in the options list."
+                    f"Selected value '{label}' for '{field.label}' is invalid or not in the options list."
                 )
             return id_map[label]
         if field.field_type == "choice":
@@ -400,7 +472,7 @@ class GenericCrudView(ctk.CTkFrame):
                 return None
             if label not in field.choices:
                 raise ValueError(
-                    f"Selected '{field.label}' value '{label}' is invalid. Options are: {', '.join(field.choices)}"
+                    f"Selected value '{label}' for '{field.label}' is invalid. Options are: {', '.join(field.choices)}"
                 )
             return label
         if field.field_type == "readonly":

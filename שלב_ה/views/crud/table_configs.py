@@ -1,4 +1,4 @@
-"""Declarative metadata for each laboratory table."""
+"""Declarative metadata for each laboratory table in English."""
 
 from __future__ import annotations
 
@@ -167,7 +167,7 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
                 FieldConfig("visit_id", "Visit ID", "int"),
                 FieldConfig(
                     "doctor_id",
-                    "Doctor",
+                    "Referring Doctor",
                     "fk",
                     fk_query="""
                         SELECT staffid, firstname || ' ' || lastname || ' (ID: ' || staffid || ')' AS full_name

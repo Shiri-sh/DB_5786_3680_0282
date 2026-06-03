@@ -1,4 +1,4 @@
-"""Advanced queries and Stage 4 PL/pgSQL invocation."""
+"""Advanced queries and PL/pgSQL routines view in English."""
 
 from __future__ import annotations
 
@@ -11,10 +11,11 @@ from tkinter import ttk
 from db_manager import DatabaseError, DatabaseManager
 from utils import dialogs
 from utils.theme import FONT_BODY, FONT_HEADING, FONT_SUBHEADING, FONT_SMALL, PAD_X, PAD_Y
+from views.crud.generic_crud import COLUMN_TRANSLATIONS
 
 
 class AnalyticsView(ctk.CTkFrame):
-    """Stage 2 analytical queries and Stage 4 procedures/functions."""
+    """Stage 2 analytical queries and Stage 4 procedures/functions in English."""
 
     def __init__(
         self,
@@ -36,7 +37,7 @@ class AnalyticsView(ctk.CTkFrame):
         
         ctk.CTkButton(
             header, 
-            text="← חזרה", 
+            text="← Back", 
             width=90, 
             font=FONT_SUBHEADING,
             fg_color="gray30",
@@ -46,17 +47,17 @@ class AnalyticsView(ctk.CTkFrame):
         
         ctk.CTkLabel(
             header, 
-            text="לוח ניתוח נתונים וניהול מערכת", 
+            text="Data Analytics & Administration", 
             font=FONT_HEADING
         ).pack(side="left", padx=16)
 
         tabs = ctk.CTkTabview(self)
         tabs.pack(fill="both", expand=True, padx=PAD_X, pady=8)
 
-        tab_queries = tabs.add("דוחות אנליטיים")
-        tab_proc = tabs.add("פעולות מערכת")
-        tab_fn = tabs.add("עומס עבודה")
-        tab_custom = tabs.add("שאילתה חופשית")
+        tab_queries = tabs.add("Analytical Reports")
+        tab_proc = tabs.add("System Actions")
+        tab_fn = tabs.add("Workload")
+        tab_custom = tabs.add("Free Query")
 
         self._build_queries_tab(tab_queries)
         self._build_procedures_tab(tab_proc)
@@ -66,7 +67,7 @@ class AnalyticsView(ctk.CTkFrame):
         result_frame = ctk.CTkFrame(self)
         result_frame.pack(fill="both", expand=True, padx=PAD_X, pady=(0, PAD_Y))
 
-        ctk.CTkLabel(result_frame, text="תוצאות שליפה", font=FONT_SUBHEADING).pack(
+        ctk.CTkLabel(result_frame, text="Query Results", font=FONT_SUBHEADING).pack(
             anchor="w", padx=12, pady=8
         )
         inner = ctk.CTkFrame(result_frame)
@@ -115,11 +116,12 @@ class AnalyticsView(ctk.CTkFrame):
             text_color=("#2c3e50", "#3498db"),
         ).pack(anchor="w", padx=14, pady=(10, 4))
         
+        # High contrast readable description text
         ctk.CTkLabel(
             card,
             text=desc,
             font=FONT_SMALL,
-            text_color=("gray60", "gray70"),
+            text_color=("gray10", "gray90"),
             wraplength=480,
             justify="left",
         ).pack(anchor="w", padx=14, pady=(0, 10))
@@ -132,14 +134,14 @@ class AnalyticsView(ctk.CTkFrame):
         # Card 1: Popular Tests
         card_popular = self._create_card(
             parent,
-            "📊 חמשת הבדיקות הנפוצות ביותר",
-            "דוח מנהלים המנתח את הביקוש לבדיקות מעבדה בבית החולים ומציג את חמש הבדיקות המובילות לפי כמות ההזמנות שבוצעו בפועל."
+            "📊 Top 5 Popular Tests",
+            "Executive report analyzing lab test demand to display the top 5 most frequently ordered tests based on total order records."
         )
         card_popular.grid(row=0, column=0, padx=12, pady=12, sticky="nsew")
         
         ctk.CTkButton(
             card_popular,
-            text="הפק דוח פופולריות בדיקות",
+            text="Generate Popularity Report",
             font=FONT_BODY,
             fg_color="#3498db",
             hover_color="#2980b9",
@@ -149,14 +151,14 @@ class AnalyticsView(ctk.CTkFrame):
         # Card 2: Urgent Pending Orders
         card_urgent = self._create_card(
             parent,
-            "⚠️ ניטור הזמנות דחופות בהמתנה",
-            "כלי פיקוח ובקרה המציג את כל הזמנות המעבדה הדחופות שטרם הושלמו וממתינות לטיפול מעל 48 שעות, לצורך מניעת עיכובים בטיפול רפואי."
+            "⚠️ Urgent Pending Orders",
+            "Monitoring report displaying urgent laboratory orders that have remained uncompleted for over 48 hours to prevent diagnostic delays."
         )
         card_urgent.grid(row=0, column=1, padx=12, pady=12, sticky="nsew")
 
         ctk.CTkButton(
             card_urgent,
-            text="שלוף הזמנות מעוכבות",
+            text="Retrieve Delayed Orders",
             font=FONT_BODY,
             fg_color="#e74c3c",
             hover_color="#c0392b",
@@ -170,14 +172,14 @@ class AnalyticsView(ctk.CTkFrame):
         # Card 1: Price Sync
         card_price = self._create_card(
             parent,
-            "🔄 עדכון וסנכרון מחירים גלובלי",
-            "פעולת מערכת המחשבת מחדש ומעדכנת באופן אוטומטי את המחיר הכולל של כל ההזמנות במערכת על בסיס עלות בדיקות המעבדה שבוצעו בפועל."
+            "🔄 Global Price Synchronization",
+            "System procedure to automatically recalculate and update total order prices based on active test line item costs."
         )
         card_price.grid(row=0, column=0, padx=12, pady=12, sticky="nsew")
 
         ctk.CTkButton(
             card_price,
-            text="הרץ סנכרון מחירי הזמנות",
+            text="Run Global Price Sync",
             font=FONT_BODY,
             fg_color="#2ecc71",
             hover_color="#27ae60",
@@ -187,27 +189,27 @@ class AnalyticsView(ctk.CTkFrame):
         # Card 2: Promote Technicians
         card_promote = self._create_card(
             parent,
-            "🎁 חלוקת בונוסים לטכנאים מצטיינים",
-            "תהליך הוקרה המעניק באופן אוטומטי נקודות בונוס לטכנאים מוסמכים שביצעו בהצלחה מספר בדיקות מעבדה מעבר ליעד המוגדר במערכת."
+            "🎁 Technician Bonus Promotion",
+            "Administrative process to grant bonus points to certified lab technicians who successfully complete orders beyond the system target."
         )
         card_promote.grid(row=0, column=1, padx=12, pady=12, sticky="nsew")
 
         form = ctk.CTkFrame(card_promote, fg_color="transparent")
         form.pack(anchor="w", padx=14, pady=(0, 10))
         
-        ctk.CTkLabel(form, text="יעד בדיקות:", font=FONT_SMALL).grid(row=0, column=0, padx=(0, 4))
+        ctk.CTkLabel(form, text="Target Orders:", font=FONT_SMALL).grid(row=0, column=0, padx=(0, 4))
         self.min_tests_entry = ctk.CTkEntry(form, width=70, font=FONT_SMALL)
         self.min_tests_entry.insert(0, "5")
         self.min_tests_entry.grid(row=0, column=1, padx=4)
         
-        ctk.CTkLabel(form, text="נקודות בונוס:", font=FONT_SMALL).grid(row=0, column=2, padx=(10, 4))
+        ctk.CTkLabel(form, text="Bonus Points:", font=FONT_SMALL).grid(row=0, column=2, padx=(10, 4))
         self.bonus_entry = ctk.CTkEntry(form, width=70, font=FONT_SMALL)
         self.bonus_entry.insert(0, "10")
         self.bonus_entry.grid(row=0, column=3, padx=4)
 
         ctk.CTkButton(
             card_promote,
-            text="בצע חלוקת בונוסים לטכנאים",
+            text="Execute Bonus Promotion",
             font=FONT_BODY,
             fg_color="#9b59b6",
             hover_color="#8e44ad",
@@ -219,23 +221,23 @@ class AnalyticsView(ctk.CTkFrame):
 
         card_workload = self._create_card(
             parent,
-            "🔍 בדיקת עומס עבודה פעיל לרופא",
-            "בחר רופא מרשימת הצוות הרפואי כדי לקבל דוח מפורט של כל הזמנות המעבדה הדחופות והפעילות המשויכות אליו ישירות במערכת."
+            "🔍 Doctor Active Workload Search",
+            "Select a physician from the medical staff list to retrieve their active and urgent laboratory orders."
         )
         card_workload.pack(fill="x", padx=12, pady=12)
 
         row = ctk.CTkFrame(card_workload, fg_color="transparent")
         row.pack(anchor="w", padx=14, pady=(0, 14))
         
-        ctk.CTkLabel(row, text="בחירת רופא:", font=FONT_BODY).pack(side="left", padx=(0, 8))
+        ctk.CTkLabel(row, text="Select Doctor:", font=FONT_BODY).pack(side="left", padx=(0, 8))
         self.doctor_combo = ctk.CTkComboBox(
-            row, values=["טוען רופאים…"], width=320, font=FONT_BODY
+            row, values=["Loading doctors..."], width=320, font=FONT_BODY
         )
         self.doctor_combo.pack(side="left", padx=8)
         
         ctk.CTkButton(
             row,
-            text="שלוף עומס עבודה לרופא",
+            text="Fetch Workload",
             font=FONT_BODY,
             fg_color="#34495e",
             hover_color="#2c3e50",
@@ -247,18 +249,18 @@ class AnalyticsView(ctk.CTkFrame):
 
         card_custom = self._create_card(
             parent,
-            "⚡ שאילתת שליפת נתונים מותאמת אישית",
-            "כלי מנהל מערכת להרצת שאילתות חיפוש ושליפה חופשיות מול בסיס הנתונים לצרכים מיוחדים. מותרות שאילתות SELECT בלבד."
+            "⚡ Custom Database Query Builder",
+            "Administrator tool to execute custom search and retrieval statements. Only SELECT queries are permitted."
         )
         card_custom.pack(fill="both", expand=True, padx=12, pady=12)
 
         self.custom_query_text = ctk.CTkTextbox(card_custom, height=80, font=FONT_SMALL)
         self.custom_query_text.pack(fill="both", expand=True, padx=14, pady=(0, 10))
-        self.custom_query_text.insert("1.0", "SELECT * FROM labs.lab_order LIMIT 10;")
+        self.custom_query_text.insert("1.0", "SELECT test_name, cost, normal_range FROM labs.lab_test LIMIT 10;")
 
         ctk.CTkButton(
             card_custom,
-            text="הרץ שאילתה",
+            text="Execute Query",
             font=FONT_BODY,
             fg_color="#16a085",
             hover_color="#117a65",
@@ -280,13 +282,13 @@ class AnalyticsView(ctk.CTkFrame):
                 labels.append(display_name)
                 self._doctor_map[display_name] = row["staffid"]
             if not labels:
-                labels = ["(אין רופאים במאגר הצוות)"]
+                labels = ["(No doctors in database)"]
             self.doctor_combo.configure(values=labels)
             self.doctor_combo.set(labels[0])
             self._setup_combobox_autocomplete(self.doctor_combo, labels)
         except DatabaseError:
-            self.doctor_combo.configure(values=["(מאגר צוות רפואי אינו זמין)"])
-            self.doctor_combo.set("(מאגר צוות רפואי אינו זמין)")
+            self.doctor_combo.configure(values=["(Staff registry unavailable)"])
+            self.doctor_combo.set("(Staff registry unavailable)")
 
     def _setup_combobox_autocomplete(self, combo: ctk.CTkComboBox, original_values: list[str]) -> None:
         def on_keyrelease(event: Any) -> None:
@@ -298,7 +300,7 @@ class AnalyticsView(ctk.CTkFrame):
             else:
                 typed_lower = typed.lower()
                 filtered = [v for v in original_values if typed_lower in v.lower()]
-            combo.configure(values=filtered if filtered else ["(אין התאמות)"])
+            combo.configure(values=filtered if filtered else ["(No matches)"])
             try:
                 combo._open_dropdown_menu()
             except Exception:
@@ -310,23 +312,23 @@ class AnalyticsView(ctk.CTkFrame):
     def run_popular_tests(self) -> None:
         schema = self.db.schema
         sql = f"""
-            SELECT t.test_name AS "שם הבדיקה", COUNT(*) AS "כמות הזמנות"
+            SELECT t.test_name AS "Test Name", COUNT(*) AS "Order Count"
             FROM "{schema}"."lab_order_test" ot
             JOIN "{schema}"."lab_test" t ON ot.test_id = t.test_id
             GROUP BY t.test_name
-            ORDER BY "כמות הזמנות" DESC
+            ORDER BY "Order Count" DESC
             LIMIT 5
         """
-        self._run_and_display(sql, title="הבדיקות הפופולריות ביותר")
+        self._run_and_display(sql, title="Most Popular Tests")
 
     def run_urgent_monitoring(self) -> None:
         schema = self.db.schema
         sql = f"""
-            SELECT o.lab_order_id AS "מזהה הזמנה",
+            SELECT o.lab_order_id AS "Order ID",
                    COALESCE(d.firstname || ' ' || d.lastname,
-                            'Doctor #' || o.doctor_id::text) AS "שם הרופא",
-                   o.order_date AS "תאריך הזמנה", o.status AS "סטטוס", o.priority AS "עדיפות",
-                   CURRENT_DATE - o.order_date AS "ימים בהמתנה"
+                            'Doctor #' || o.doctor_id::text) AS "Doctor Name",
+                   o.order_date AS "Order Date", o.status AS "Status", o.priority AS "Priority",
+                   CURRENT_DATE - o.order_date AS "Days Pending"
             FROM "{schema}"."lab_order" o
             LEFT JOIN staff_remote d ON o.doctor_id = d.staffid
             WHERE o.priority = 'URGENT'
@@ -334,25 +336,25 @@ class AnalyticsView(ctk.CTkFrame):
               AND o.order_date < CURRENT_DATE - INTERVAL '2 days'
             ORDER BY o.order_date
         """
-        self._run_and_display(sql, title="הזמנות דחופות בהמתנה")
+        self._run_and_display(sql, title="Urgent Pending Orders")
 
     def run_price_sync(self) -> None:
         try:
             self.db.call_procedure("public.pr_update_all_order_prices")
             dialogs.show_success(
                 self.winfo_toplevel(),
-                "סנכרון המחירים הגלובלי הושלם בהצלחה. מעדכן את תצוגת ההזמנות...",
+                "Global order price synchronization completed. Refreshing prices...",
             )
             schema = self.db.schema
             sql = f"""
-                SELECT lab_order_id AS "מזהה הזמנה",
-                       COALESCE(total_price, 0) AS "מחיר כולל בשקלים",
-                       status AS "סטטוס", priority AS "עדיפות"
+                SELECT lab_order_id AS "Order ID",
+                       COALESCE(total_price, 0) AS "Total Price ($)",
+                       status AS "Status", priority AS "Priority"
                 FROM "{schema}"."lab_order"
                 ORDER BY lab_order_id
                 LIMIT 100
             """
-            self._run_and_display(sql, title="מחירי הזמנות מעודכנים")
+            self._run_and_display(sql, title="Updated Order Prices")
         except DatabaseError as exc:
             dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
 
@@ -362,33 +364,35 @@ class AnalyticsView(ctk.CTkFrame):
             bonus = int(self.bonus_entry.get().strip())
         except ValueError:
             dialogs.show_warning(
-                self.winfo_toplevel(), "יעד הבדיקות ונקודות הבונוס חייבים להיות מספרים שלמים."
+                self.winfo_toplevel(), "Target orders and bonus points must be integers."
             )
             return
         try:
+            notices = self.db.call_procedure("public.pr_promote_technicians", (min_tests, bonus))
+            # call_procedure doesn't return notices directly, let's use execute_many_notices instead
             notices = self.db.execute_many_notices(
                 "CALL public.pr_promote_technicians(%s, %s)",
                 (min_tests, bonus),
             )
-            lines = notices or ["תהליך חלוקת הבונוסים הסתיים בהצלחה."]
+            lines = notices or ["Bonus promotion completed successfully."]
             dialogs.DetailDialog(
                 self.winfo_toplevel(),
-                "יומן רישום חלוקת הבונוסים (RAISE NOTICE)",
+                "Technician bonus promotion logs (RAISE NOTICE)",
                 lines,
             )
             schema = self.db.schema
             sql = f"""
-                SELECT t.technician_id AS "מזהה טכנאי",
+                SELECT t.technician_id AS "Technician ID",
                        COALESCE(s.firstname || ' ' || s.lastname,
-                                'Staff #' || t.staff_id::text) AS "שם הטכנאי",
-                       t.certification AS "הסמכה",
-                       COALESCE(t.bonus_points, 0) AS "נקודות בונוס"
+                                'Staff #' || t.staff_id::text) AS "Technician Name",
+                       t.certification AS "Certification",
+                       COALESCE(t.bonus_points, 0) AS "Bonus Points"
                 FROM "{schema}"."lab_technician" t
                 LEFT JOIN staff_remote s ON t.staff_id = s.staffid
                 ORDER BY t.bonus_points DESC
                 LIMIT 50
             """
-            self._run_and_display(sql, title="נקודות הבונוס של הטכנאים")
+            self._run_and_display(sql, title="Technician Bonus Points")
         except DatabaseError as exc:
             dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
 
@@ -398,7 +402,7 @@ class AnalyticsView(ctk.CTkFrame):
         if doctor_id is None:
             dialogs.show_warning(
                 self.winfo_toplevel(),
-                "נא לבחור רופא תקין מתוך רשימת הצוות הרפואי.",
+                "Please select a valid doctor from the list.",
             )
             return
         try:
@@ -406,30 +410,29 @@ class AnalyticsView(ctk.CTkFrame):
             if not rows:
                 dialogs.show_info(
                     self.winfo_toplevel(),
-                    "עומס עבודה לרופא",
-                    f"לא נמצאו הזמנות דחופות פעילות עבור {name}.",
+                    "Doctor Workload",
+                    f"No active urgent orders found for {name}.",
                 )
-            # Fetch workload might return rows with different keys, rename keys to Hebrew for display
             renamed_rows = []
             for r in rows:
                 renamed_rows.append({
-                    "מזהה הזמנה": r.get("lab_order_id"),
-                    "תאריך הזמנה": r.get("order_date"),
-                    "עדיפות": r.get("priority")
+                    "Order ID": r.get("lab_order_id"),
+                    "Order Date": r.get("order_date"),
+                    "Priority": r.get("priority")
                 })
-            self._display_rows(renamed_rows, title=f"הזמנות פעילות — {name}")
+            self._display_rows(renamed_rows, title=f"Active Orders — {name}")
         except DatabaseError as exc:
             dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
 
     def run_custom_query(self) -> None:
         sql = self.custom_query_text.get("1.0", "end").strip()
         if not sql:
-            dialogs.show_warning(self.winfo_toplevel(), "נא להזין שאילתת SQL.")
+            dialogs.show_warning(self.winfo_toplevel(), "Please enter an SQL query.")
             return
         if not sql.lower().startswith("select"):
-            dialogs.show_warning(self.winfo_toplevel(), "לשמירה על אבטחת המידע, מותר להריץ שאילתות מסוג SELECT בלבד.")
+            dialogs.show_warning(self.winfo_toplevel(), "For security reasons, only SELECT queries are allowed.")
             return
-        self._run_and_display(sql, title="תוצאות שאילתה מותאמת אישית")
+        self._run_and_display(sql, title="Custom Query Results")
 
     def _run_and_display(self, sql: str, *, title: str) -> None:
         try:
@@ -443,14 +446,15 @@ class AnalyticsView(ctk.CTkFrame):
         if not rows:
             self.result_tree["columns"] = ("message",)
             self.result_tree.heading("message", text=title)
-            self.result_tree.insert("", "end", values=("לא נמצאו רשומות.",))
+            self.result_tree.insert("", "end", values=("No records found.",))
             return
 
         columns = list(rows[0].keys())
         self.result_tree["columns"] = columns
         for col in columns:
-            self.result_tree.heading(col, text=col.replace("_", " ").title())
-            self.result_tree.column(col, width=120, anchor="w")
+            translated = COLUMN_TRANSLATIONS.get(col.lower(), col.replace("_", " ").title())
+            self.result_tree.heading(col, text=translated)
+            self.result_tree.column(col, width=max(120, len(translated) * 12), anchor="w")
         for row in rows:
             self.result_tree.insert(
                 "",
