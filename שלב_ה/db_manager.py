@@ -152,6 +152,7 @@ class DatabaseManager:
     def fetch_doctor_workload(self, doctor_id: int) -> list[dict[str, Any]]:
         rows: list[dict[str, Any]] = []
         fn_candidates = [
+            "public.fn_get_doctor_workload(%s)",
             f"{self.schema}.fn_get_doctor_workload(%s)",
             "fn_get_doctor_workload(%s)",
         ]

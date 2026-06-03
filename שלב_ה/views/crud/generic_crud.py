@@ -144,9 +144,10 @@ class GenericCrudView(ctk.CTkFrame):
 
     def _create_field_widget(self, field: FieldConfig) -> Any:
         if field.field_type == "choice":
-            w = ctk.CTkComboBox(self.form_scroll, values=field.choices, state="readonly")
+            w = ctk.CTkComboBox(self.form_scroll, values=field.choices)
             if field.choices:
                 w.set(field.choices[0])
+            self._setup_combobox_autocomplete(w, field.choices)
             return w
         if field.field_type == "fk":
             return self._create_fk_combo(field)
@@ -157,7 +158,7 @@ class GenericCrudView(ctk.CTkFrame):
         return ctk.CTkEntry(self.form_scroll)
 
     def _create_fk_combo(self, field: FieldConfig) -> ctk.CTkComboBox:
-        combo = ctk.CTkComboBox(self.form_scroll, values=["Loading…"], state="readonly")
+        combo = ctk.CTkComboBox(self.form_scroll, values=["Loading…"])
         try:
             rows = self.db.get_fk_options(field.fk_query or "")
             display_values: list[str] = []
@@ -171,11 +172,31 @@ class GenericCrudView(ctk.CTkFrame):
             combo.configure(values=display_values)
             combo.set(display_values[0])
             self._fk_maps[field.column] = id_map
+            self._setup_combobox_autocomplete(combo, display_values)
         except Exception as exc:
             combo.configure(values=[f"(FK load failed: {exc})"])
             combo.set(combo.cget("values")[0])
             self._fk_maps[field.column] = {}
         return combo
+
+    def _setup_combobox_autocomplete(self, combo: ctk.CTkComboBox, original_values: list[str]) -> None:
+        def on_keyrelease(event: Any) -> None:
+            if event.keysym in ("Up", "Down", "Left", "Right", "Return", "Escape", "Tab"):
+                return
+            typed = combo.get()
+            if not typed:
+                filtered = original_values
+            else:
+                typed_lower = typed.lower()
+                filtered = [v for v in original_values if typed_lower in v.lower()]
+            combo.configure(values=filtered if filtered else ["(No matches)"])
+            try:
+                combo._open_dropdown_menu()
+            except Exception:
+                pass
+            combo.focus()
+
+        combo.bind("<KeyRelease>", on_keyrelease)
 
     def refresh_grid(self) -> None:
         try:
@@ -347,7 +368,11 @@ class GenericCrudView(ctk.CTkFrame):
         cols: list[str] = []
         vals: list[Any] = []
         for field in editable_columns(self.config, creating=creating):
-            raw = self._read_field(field)
+            try:
+                raw = self._read_field(field)
+            except ValueError as exc:
+                dialogs.show_warning(self.winfo_toplevel(), str(exc))
+                return None, None
             if raw is None and field.required:
                 dialogs.show_warning(
                     self.winfo_toplevel(), f"'{field.label}' is required."
@@ -360,24 +385,40 @@ class GenericCrudView(ctk.CTkFrame):
     def _read_field(self, field: FieldConfig) -> Any:
         widget = self._widgets[field.column]
         if field.field_type == "fk":
-            label = widget.get()
-            mapped = self._fk_maps.get(field.column, {}).get(label)
-            return mapped
+            label = widget.get().strip()
+            id_map = self._fk_maps.get(field.column, {})
+            if not label:
+                return None
+            if label not in id_map:
+                raise ValueError(
+                    f"Selected '{field.label}' value '{label}' is invalid or not in the options list."
+                )
+            return id_map[label]
         if field.field_type == "choice":
-            return widget.get()
+            label = widget.get().strip()
+            if not label:
+                return None
+            if label not in field.choices:
+                raise ValueError(
+                    f"Selected '{field.label}' value '{label}' is invalid. Options are: {', '.join(field.choices)}"
+                )
+            return label
         if field.field_type == "readonly":
             return None
         text = widget.get().strip()
-        if not text and not field.required:
+        if not text:
             return None
-        if field.field_type == "int":
-            return int(text)
-        if field.field_type == "float":
-            return float(text)
-        if field.field_type == "date":
-            return date.fromisoformat(text)
-        if field.field_type == "datetime":
-            return datetime.fromisoformat(text.replace(" ", "T", 1))
+        try:
+            if field.field_type == "int":
+                return int(text)
+            if field.field_type == "float":
+                return float(text)
+            if field.field_type == "date":
+                return date.fromisoformat(text)
+            if field.field_type == "datetime":
+                return datetime.fromisoformat(text.replace(" ", "T", 1))
+        except ValueError:
+            raise ValueError(f"Invalid format for '{field.label}'.")
         return text
 
     @staticmethod

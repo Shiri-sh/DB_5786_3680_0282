@@ -34,6 +34,7 @@ class TableConfig:
 def build_table_configs(schema: str) -> dict[str, TableConfig]:
     s = schema
     staff_name = "COALESCE(st.firstname || ' ' || st.lastname, 'Staff #' || t.staff_id::text)"
+    tech_staff_name = "COALESCE(st.firstname || ' ' || st.lastname, 'Staff #' || tech.staff_id::text)"
     doctor_name = "COALESCE(d.firstname || ' ' || d.lastname, 'Doctor #' || o.doctor_id::text)"
     order_label = "o.lab_order_id::text || ' — ' || o.status || ' (' || o.priority || ')'"
     lot_label = (
@@ -48,9 +49,12 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
             pk="equipment_id",
             lookup_label="Equipment ID",
             list_sql=f"""
-                SELECT equipment_id, equipment_name, department_id, maintenance_date
-                FROM "{s}"."diagnostic_equipment"
-                ORDER BY equipment_id
+                SELECT eq.equipment_id, eq.equipment_name,
+                       COALESCE(d.deptname, 'Dept #' || eq.department_id::text) AS department,
+                       eq.maintenance_date
+                FROM "{s}"."diagnostic_equipment" eq
+                LEFT JOIN public.departments d ON eq.department_id = d.deptid
+                ORDER BY eq.equipment_id
             """,
             fetch_sql=f"""
                 SELECT equipment_id, equipment_name, department_id, maintenance_date
@@ -70,7 +74,14 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
             fields=[
                 FieldConfig("equipment_id", "Equipment ID", "readonly", readonly_on_create=True),
                 FieldConfig("equipment_name", "Equipment Name"),
-                FieldConfig("department_id", "Department ID", "int"),
+                FieldConfig(
+                    "department_id",
+                    "Department",
+                    "fk",
+                    fk_query="""
+                        SELECT deptid, deptname FROM public.departments ORDER BY deptname
+                    """,
+                ),
                 FieldConfig("maintenance_date", "Maintenance Date", "date"),
             ],
         ),
@@ -80,7 +91,7 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
             pk="test_id",
             lookup_label="Test ID",
             list_sql=f"""
-                SELECT t.test_id, t.test_name, t.cost, t.sample_type,
+                SELECT t.test_id, t.test_name, t.cost, t.normal_range, t.sample_type,
                        COALESCE(e.equipment_name, '—') AS equipment
                 FROM "{s}"."lab_test" t
                 LEFT JOIN "{s}"."diagnostic_equipment" e ON t.equipment_id = e.equipment_id
@@ -159,7 +170,7 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
                     "Doctor",
                     "fk",
                     fk_query="""
-                        SELECT staffid, firstname || ' ' || lastname AS full_name
+                        SELECT staffid, firstname || ' ' || lastname || ' (ID: ' || staffid || ')' AS full_name
                         FROM staff_remote ORDER BY full_name
                     """,
                 ),
@@ -215,8 +226,8 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
                     "Staff Member",
                     "fk",
                     fk_query="""
-                        SELECT staffid, firstname || ' ' || lastname
-                        FROM staff_remote ORDER BY 2
+                        SELECT staffid, firstname || ' ' || lastname || ' (ID: ' || staffid || ')' AS full_name
+                        FROM staff_remote ORDER BY full_name
                     """,
                 ),
                 FieldConfig("certification", "Certification"),
@@ -280,7 +291,7 @@ def build_table_configs(schema: str) -> dict[str, TableConfig]:
             lookup_label="Result ID",
             list_sql=f"""
                 SELECT r.result_id, {lot_label} AS order_test,
-                       {staff_name} AS technician,
+                       {tech_staff_name} AS technician,
                        r.result_value, r.result_date
                 FROM "{s}"."lab_result" r
                 JOIN "{s}"."lab_order_test" lot ON r.lab_order_test_id = lot.lab_order_test_id
