@@ -72,7 +72,7 @@
 
 ### 2. ניהול נתונים (CRUD)
 מסך גנרי חכם המאפשר ניהול של כל 6 הטבלאות במערכת:
-* **טבלאות נתמכות:** הזמנות מעבדה (`LAB_ORDER`), בדיקות מעבדה (`LAB_TEST`), תוצאות בדיקה (`LAB_RESULT`), טכנאי מעבדה (`LAB_TECHNICIAN`), ציוד דיאגנוסטי (`DIAGNOSTIC_EQUIPMENT`), ובדיקות בתוך הזמנה (`LAB_ORDER_TEST`).
+* **טבלאות נתמכות:** הזמנות מעבדה (`lab_order`), בדיקות מעבדה (`lab_test`), תוצאות בדיקה (`lab_result`), טכנאי מעבדה (`lab_technician`), ציוד דיאגנוסטי (`diagnostic_equipment`), ובדיקות בתוך הזמנה (`lab_order_test`).
 * **חיפוש ושליפה (Read):** הזנת מפתח ראשי ולחיצה על "Load" טוענת את הנתונים ישירות לטפסים. טבלת תצוגה מציגה את כל הרשומות הקיימות.
 * **עדכון ויצירה (Create / Update):** כפתור "Save" מזהה אוטומטית אם מדובר ברשומה חדשה (ביצוע Insert) או קיימת (ביצוע Update) ושומר אותה בבסיס הנתונים.
 * **מחיקה (Delete):** כפתור מחיקה להסרת רשומות מבסיס הנתונים עם שגיאות ידידותיות במקרה של אילוצי מפתח זר.
@@ -97,14 +97,43 @@
 
 להלן תמונות מתוך המערכת הפעילה:
 
-#### 1. מסך הבית (Dashboard) במצב כהה
-![Dashboard](./screenshots/gui_screenshots/01_dashboard.png)
+### 🌤️ ממשק במצב בהיר (Light Mode)
 
-#### 2. מודול ניהול הזמנות (CRUD LAB_ORDER)
-![CRUD Orders](./screenshots/gui_screenshots/02_crud_orders.png)
+#### 1. מסך הבית (Dashboard) במצב בהיר
+![Dashboard - Light Mode](./screenshots/01_light_dashboard.png)
 
-#### 3. מודול ניהול טכנאים (CRUD LAB_TECHNICIAN)
-![CRUD Technicians](./screenshots/gui_screenshots/03_crud_technicians.png)
+#### 2. מודול ניהול הזמנות (CRUD Lab Orders) במצב בהיר
+![CRUD Orders - Light Mode](./screenshots/02_light_crud_orders.png)
 
-#### 4. מסך שאילתות ואנליטיקה (Analytics) הכולל הפעלת פונקציות ופרוצדורות מהדאטהבייס
-![Analytics](./screenshots/gui_screenshots/04_analytics.png)
+#### 3. מודול ניהול טכנאים (CRUD Lab Technicians) במצב בהיר
+![CRUD Technicians - Light Mode](./screenshots/03_light_crud_technicians.png)
+
+#### 4. מסך שאילתות ואנליטיקה (Analytics) במצב בהיר
+![Analytics - Light Mode](./screenshots/04_light_analytics.png)
+
+---
+
+### 🌙 ממשק במצב כהה (Dark Mode)
+
+#### 5. מסך הבית (Dashboard) במצב כהה
+![Dashboard - Dark Mode](./screenshots/05_dark_dashboard.png)
+
+#### 6. מודול ניהול הזמנות (CRUD Lab Orders) במצב כהה
+![CRUD Orders - Dark Mode](./screenshots/06_dark_crud_orders.png)
+
+#### 7. מודול ניהול טכנאים (CRUD Lab Technicians) במצב כהה
+![CRUD Technicians - Dark Mode](./screenshots/07_dark_crud_technicians.png)
+
+#### 8. מסך שאילתות ואנליטיקה (Analytics) במצב כהה
+![Analytics - Dark Mode](./screenshots/08_dark_analytics.png)
+
+---
+
+### ⚡ אילוצים ולוגים של בסיס הנתונים (Interactions & Logs)
+
+#### 9. לכידת חסימת טריגר (Trigger Database Block)
+מציג הודעת שגיאה מעוצבת בעת ניסיון עדכון הזמנה נעולה (הושלמה).
+![Trigger Status Protection Error](./screenshots/09_trigger_error_dialog.png)
+
+#### 10. פלט לוגים מהשרת של ריצת פרוצדורה (Stored Procedure Notice Logs)
+![Stored Procedure Notice Logs](./screenshots/10_procedure_notice_dialog.png)
