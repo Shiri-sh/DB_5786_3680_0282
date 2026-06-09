@@ -1,0 +1,506 @@
+"""Reusable CRUD screen with smart lookup and FK dropdowns in English."""
+
+from __future__ import annotations
+
+from datetime import date, datetime
+from typing import Any
+
+import customtkinter as ctk
+from tkinter import ttk
+
+from db_manager import DatabaseError, DatabaseManager
+from utils import dialogs
+from utils.theme import FONT_BODY, FONT_HEADING, FONT_SMALL, PAD_X, PAD_Y
+from views.crud.table_configs import FieldConfig, TableConfig, editable_columns
+
+COLUMN_TRANSLATIONS = {
+    "equipment_id": "Equipment ID",
+    "equipment_name": "Equipment Name",
+    "department": "Department",
+    "maintenance_date": "Maintenance Date",
+    "test_id": "Test ID",
+    "test_name": "Test Name",
+    "description": "Description",
+    "normal_range": "Normal Range",
+    "cost": "Cost",
+    "sample_type": "Sample Type",
+    "equipment": "Equipment",
+    "lab_order_id": "Order ID",
+    "visit_id": "Visit ID",
+    "doctor": "Referring Doctor",
+    "order_date": "Order Date",
+    "status": "Status",
+    "priority": "Priority",
+    "total_price": "Total Price",
+    "technician_id": "Technician ID",
+    "staff_member": "Staff Member",
+    "certification": "Certification",
+    "bonus_points": "Bonus Points",
+    "lab_order_test_id": "Line Item ID",
+    "lab_order": "Lab Order",
+    "test": "Test Name",
+    "result_id": "Result ID",
+    "order_test": "Order / Test Line",
+    "technician": "Technician",
+    "result_value": "Result Value",
+    "result_date": "Result Date"
+}
+
+
+class GenericCrudView(ctk.CTkFrame):
+    """Create / read / update / delete for a single laboratory table in English."""
+
+    def __init__(
+        self,
+        master: ctk.CTk,
+        db: DatabaseManager,
+        config: TableConfig,
+        on_back: callable,
+    ) -> None:
+        super().__init__(master)
+        self.db = db
+        self.config = config
+        self.on_back = on_back
+        self._widgets: dict[str, Any] = {}
+        self._fk_maps: dict[str, dict[str, Any]] = {}
+        self._loaded_pk: Any = None
+
+        self._build_ui()
+        self.refresh_grid()
+
+    def _build_ui(self) -> None:
+        header = ctk.CTkFrame(self, fg_color="transparent")
+        header.pack(fill="x", padx=PAD_X, pady=(PAD_Y, 8))
+        ctk.CTkButton(
+            header, 
+            text="← Back to Dashboard", 
+            width=160, 
+            fg_color="gray30",
+            hover_color="gray40",
+            command=self.on_back
+        ).pack(side="left")
+        ctk.CTkLabel(
+            header, text=self.config.title, font=FONT_HEADING
+        ).pack(side="left", padx=16)
+
+        body = ctk.CTkFrame(self)
+        body.pack(fill="both", expand=True, padx=PAD_X, pady=8)
+
+        left = ctk.CTkFrame(body, width=380)
+        left.pack(side="left", fill="y", padx=(0, 12), pady=4)
+        left.pack_propagate(False)
+
+        ctk.CTkLabel(left, text="Search Record to Update", font=FONT_BODY).pack(
+            anchor="w", padx=12, pady=(12, 4)
+        )
+        lookup_row = ctk.CTkFrame(left, fg_color="transparent")
+        lookup_row.pack(fill="x", padx=12)
+        self.lookup_entry = ctk.CTkEntry(
+            lookup_row, placeholder_text=f"Enter {self.config.lookup_label}"
+        )
+        self.lookup_entry.pack(side="left", fill="x", expand=True, padx=(0, 8))
+        ctk.CTkButton(
+            lookup_row, 
+            text="Load 🔍", 
+            width=70, 
+            command=self.load_record
+        ).pack(side="left")
+
+        ctk.CTkLabel(left, text="Record Details Form", font=FONT_BODY).pack(
+            anchor="w", padx=12, pady=(16, 4)
+        )
+        self.form_scroll = ctk.CTkScrollableFrame(left, width=350)
+        self.form_scroll.pack(fill="both", expand=True, padx=8, pady=4)
+        self._build_form_fields()
+
+        btn_row = ctk.CTkFrame(left, fg_color="transparent")
+        btn_row.pack(fill="x", padx=12, pady=12)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Create ➕", 
+            width=75,
+            fg_color="#27ae60",
+            hover_color="#2196f3",
+            command=self.create_record
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Update 💾", 
+            width=75,
+            fg_color="#2980b9",
+            hover_color="#1f538d",
+            command=self.update_record
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Delete 🗑️", 
+            width=75,
+            fg_color="#8B2942", 
+            hover_color="#6B1F32",
+            command=self.delete_record,
+        ).pack(side="left", padx=3)
+        
+        ctk.CTkButton(
+            btn_row, 
+            text="Clear 🧹", 
+            width=75,
+            fg_color="gray30", 
+            hover_color="gray40",
+            command=self.clear_form
+        ).pack(side="left", padx=3)
+
+        right = ctk.CTkFrame(body)
+        right.pack(side="left", fill="both", expand=True)
+        
+        header_row = ctk.CTkFrame(right, fg_color="transparent")
+        header_row.pack(fill="x", padx=8, pady=8)
+        
+        ctk.CTkLabel(
+            header_row, text="Registered Records", font=FONT_BODY
+        ).pack(side="left", anchor="w")
+        
+        ctk.CTkButton(
+            header_row, text="Refresh Table 🔄", width=130, command=self.refresh_grid
+        ).pack(side="right", anchor="e")
+
+        tree_frame = ctk.CTkFrame(right)
+        tree_frame.pack(fill="both", expand=True, padx=8, pady=8)
+
+        style = ttk.Style()
+        style.theme_use("clam")
+        style.configure(
+            "Lab.Treeview",
+            background="#2b2b2b",
+            foreground="white",
+            fieldbackground="#2b2b2b",
+            rowheight=26,
+        )
+        style.configure(
+            "Lab.Treeview.Heading",
+            background="#1f538d",
+            foreground="white",
+            font=(FONT_BODY[0], 11, "bold"),
+        )
+
+        self.tree = ttk.Treeview(tree_frame, style="Lab.Treeview", show="headings")
+        vsb = ttk.Scrollbar(tree_frame, orient="vertical", command=self.tree.yview)
+        hsb = ttk.Scrollbar(tree_frame, orient="horizontal", command=self.tree.xview)
+        self.tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
+        self.tree.grid(row=0, column=0, sticky="nsew")
+        vsb.grid(row=0, column=1, sticky="ns")
+        hsb.grid(row=1, column=0, sticky="ew")
+        tree_frame.grid_rowconfigure(0, weight=1)
+        tree_frame.grid_columnconfigure(0, weight=1)
+
+        self.tree.bind("<<TreeviewSelect>>", self._on_row_select)
+
+    def _build_form_fields(self) -> None:
+        for widget in self.form_scroll.winfo_children():
+            widget.destroy()
+        self._widgets.clear()
+        self._fk_maps.clear()
+
+        for field in self.config.fields:
+            ctk.CTkLabel(
+                self.form_scroll, text=field.label, font=FONT_SMALL
+            ).pack(anchor="w", pady=(8, 2))
+            widget = self._create_field_widget(field)
+            widget.pack(fill="x", pady=(0, 4))
+            self._widgets[field.column] = widget
+
+    def _create_field_widget(self, field: FieldConfig) -> Any:
+        if field.field_type == "choice":
+            w = ctk.CTkComboBox(self.form_scroll, values=field.choices)
+            if field.choices:
+                w.set(field.choices[0])
+            self._setup_combobox_autocomplete(w, field.choices)
+            return w
+        if field.field_type == "fk":
+            return self._create_fk_combo(field)
+        if field.field_type == "readonly":
+            w = ctk.CTkEntry(self.form_scroll)
+            w.configure(state="disabled")
+            return w
+        return ctk.CTkEntry(self.form_scroll)
+
+    def _create_fk_combo(self, field: FieldConfig) -> ctk.CTkComboBox:
+        combo = ctk.CTkComboBox(self.form_scroll, values=["Loading..."])
+        try:
+            rows = self.db.get_fk_options(field.fk_query or "")
+            display_values: list[str] = []
+            id_map: dict[str, Any] = {}
+            for pk_val, label in rows:
+                text = str(label)
+                display_values.append(text)
+                id_map[text] = pk_val
+            if not display_values:
+                display_values = ["(No options available)"]
+            combo.configure(values=display_values)
+            combo.set(display_values[0])
+            self._fk_maps[field.column] = id_map
+            self._setup_combobox_autocomplete(combo, display_values)
+        except Exception as exc:
+            combo.configure(values=[f"(FK load failed: {exc})"])
+            combo.set(combo.cget("values")[0])
+            self._fk_maps[field.column] = {}
+        return combo
+
+    def _setup_combobox_autocomplete(self, combo: ctk.CTkComboBox, original_values: list[str]) -> None:
+        def on_keyrelease(event: Any) -> None:
+            if event.keysym in ("Up", "Down", "Left", "Right", "Return", "Escape", "Tab"):
+                return
+            typed = combo.get()
+            if not typed:
+                filtered = original_values
+            else:
+                typed_lower = typed.lower()
+                filtered = [v for v in original_values if typed_lower in v.lower()]
+            combo.configure(values=filtered if filtered else ["(No matches)"])
+            try:
+                combo._open_dropdown_menu()
+            except Exception:
+                pass
+            combo.focus()
+
+        combo.bind("<KeyRelease>", on_keyrelease)
+
+    def refresh_grid(self) -> None:
+        try:
+            rows = self.db.execute(self.config.list_sql, fetch="all") or []
+        except DatabaseError as exc:
+            dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
+            return
+
+        self.tree.delete(*self.tree.get_children())
+        if not rows:
+            return
+
+        columns = list(rows[0].keys())
+        self.tree["columns"] = columns
+        for col in columns:
+            translated_text = COLUMN_TRANSLATIONS.get(col, col.replace("_", " ").title())
+            self.tree.heading(col, text=translated_text)
+            self.tree.column(col, width=max(120, len(translated_text) * 12), anchor="w")
+
+        for row in rows:
+            values = [self._format_cell(row[c]) for c in columns]
+            self.tree.insert("", "end", iid=str(row.get(self.config.pk, "")), values=values)
+
+    def load_record(self) -> None:
+        pk_raw = self.lookup_entry.get().strip()
+        if not pk_raw:
+            dialogs.show_warning(self.winfo_toplevel(), "Please enter a record ID to load.")
+            return
+        try:
+            pk_val = int(pk_raw)
+        except ValueError:
+            dialogs.show_warning(self.winfo_toplevel(), "Record ID must be a number.")
+            return
+
+        try:
+            row = self.db.execute(self.config.fetch_sql, (pk_val,), fetch="one")
+        except DatabaseError as exc:
+            dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
+            return
+
+        if not row:
+            dialogs.show_warning(self.winfo_toplevel(), "No record found with that ID.")
+            return
+
+        self._loaded_pk = pk_val
+        self._populate_form(row)
+
+    def _populate_form(self, row: dict[str, Any]) -> None:
+        for field in self.config.fields:
+            widget = self._widgets.get(field.column)
+            if widget is None:
+                continue
+            value = row.get(field.column)
+            if field.field_type == "fk":
+                id_map = self._fk_maps.get(field.column, {})
+                label = next((k for k, v in id_map.items() if v == value), None)
+                if label:
+                    widget.set(label)
+            elif field.field_type == "choice":
+                db_val = str(value) if value is not None else ""
+                matching_choice = next((c for c in field.choices if c.startswith(db_val)), db_val)
+                widget.set(matching_choice)
+            elif field.field_type == "readonly":
+                widget.configure(state="normal")
+                widget.delete(0, "end")
+                widget.insert(0, self._format_cell(value))
+                widget.configure(state="disabled")
+            else:
+                widget.delete(0, "end")
+                widget.insert(0, self._format_cell(value))
+
+    def _on_row_select(self, _event: Any = None) -> None:
+        selected = self.tree.selection()
+        if not selected:
+            return
+        pk = selected[0]
+        self.lookup_entry.delete(0, "end")
+        self.lookup_entry.insert(0, pk)
+        self.load_record()
+
+    def create_record(self) -> None:
+        values, columns = self._collect_form_values(creating=True)
+        if values is None:
+            return
+        try:
+            result = self.db.execute(self.config.insert_sql, values, fetch="one")
+            new_id = result[list(result.keys())[0]] if result else "?"
+            dialogs.show_success(
+                self.winfo_toplevel(),
+                f"Record created successfully in {self.config.title} (ID: {new_id}).",
+            )
+            self.clear_form()
+            self.refresh_grid()
+        except DatabaseError as exc:
+            dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
+
+    def update_record(self) -> None:
+        pk = self._loaded_pk
+        if pk is None:
+            pk_raw = self.lookup_entry.get().strip()
+            if not pk_raw:
+                dialogs.show_warning(
+                    self.winfo_toplevel(),
+                    "Please load a record first or enter its ID in the search box.",
+                )
+                return
+            try:
+                pk = int(pk_raw)
+            except ValueError:
+                dialogs.show_warning(self.winfo_toplevel(), "Invalid record ID.")
+                return
+
+        values, _ = self._collect_form_values(creating=False)
+        if values is None:
+            return
+        values = list(values) + [pk]
+        try:
+            self.db.execute(self.config.update_sql, values)
+            dialogs.show_success(self.winfo_toplevel(), "Record updated successfully.")
+            self._loaded_pk = pk
+            self.refresh_grid()
+        except DatabaseError as exc:
+            dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
+
+    def delete_record(self) -> None:
+        pk = self._loaded_pk
+        if pk is None:
+            pk_raw = self.lookup_entry.get().strip()
+            if not pk_raw:
+                dialogs.show_warning(self.winfo_toplevel(), "Please select or load a record to delete.")
+                return
+            try:
+                pk = int(pk_raw)
+            except ValueError:
+                dialogs.show_warning(self.winfo_toplevel(), "Invalid record ID.")
+                return
+
+        if not dialogs.confirm(
+            self.winfo_toplevel(),
+            f"Are you sure you want to permanently delete record #{pk} from {self.config.title}?",
+        ):
+            return
+        try:
+            self.db.execute(self.config.delete_sql, (pk,))
+            dialogs.show_success(self.winfo_toplevel(), "Record deleted successfully.")
+            self.clear_form()
+            self.refresh_grid()
+        except DatabaseError as exc:
+            dialogs.show_error(self.winfo_toplevel(), str(exc), detail=exc.detail)
+
+    def clear_form(self) -> None:
+        self._loaded_pk = None
+        self.lookup_entry.delete(0, "end")
+        for field in self.config.fields:
+            widget = self._widgets.get(field.column)
+            if widget is None:
+                continue
+            if field.field_type in ("choice", "fk"):
+                vals = widget.cget("values")
+                if vals:
+                    widget.set(vals[0])
+            elif field.field_type == "readonly":
+                widget.configure(state="normal")
+                widget.delete(0, "end")
+                widget.configure(state="disabled")
+            else:
+                widget.delete(0, "end")
+
+    def _collect_form_values(
+        self, *, creating: bool
+    ) -> tuple[tuple[Any, ...], list[str]] | tuple[None, None]:
+        cols: list[str] = []
+        vals: list[Any] = []
+        for field in editable_columns(self.config, creating=creating):
+            try:
+                raw = self._read_field(field)
+            except ValueError as exc:
+                dialogs.show_warning(self.winfo_toplevel(), str(exc))
+                return None, None
+            if raw is None and field.required:
+                dialogs.show_warning(
+                    self.winfo_toplevel(), f"Field '{field.label}' is required."
+                )
+                return None, None
+            cols.append(field.column)
+            vals.append(raw)
+        return tuple(vals), cols
+
+    def _read_field(self, field: FieldConfig) -> Any:
+        widget = self._widgets[field.column]
+        if field.field_type == "fk":
+            label = widget.get().strip()
+            id_map = self._fk_maps.get(field.column, {})
+            if not label:
+                return None
+            if label not in id_map:
+                raise ValueError(
+                    f"Selected value '{label}' for '{field.label}' is invalid or not in the options list."
+                )
+            return id_map[label]
+        if field.field_type == "choice":
+            label = widget.get().strip()
+            if not label:
+                return None
+            if label not in field.choices:
+                raise ValueError(
+                    f"Selected value '{label}' for '{field.label}' is invalid. Options are: {', '.join(field.choices)}"
+                )
+            return label
+        if field.field_type == "readonly":
+            return None
+        text = widget.get().strip()
+        if not text:
+            return None
+        try:
+            if field.field_type == "int":
+                return int(text)
+            if field.field_type == "float":
+                return float(text)
+            if field.field_type == "date":
+                return date.fromisoformat(text)
+            if field.field_type == "datetime":
+                return datetime.fromisoformat(text.replace(" ", "T", 1))
+        except ValueError:
+            raise ValueError(f"Invalid format for '{field.label}'.")
+        return text
+
+    @staticmethod
+    def _format_cell(value: Any) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, datetime):
+            return value.strftime("%Y-%m-%d %H:%M")
+        if isinstance(value, date):
+            return value.isoformat()
+        if isinstance(value, float):
+            return f"{value:.2f}"
+        return str(value)
