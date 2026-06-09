@@ -129,6 +129,26 @@
 
 ---
 
+### 🔄 הדגמת מחזור חיים מלא של פעולות CRUD (ניהול רשומות)
+
+#### 11. יצירת רשומה חדשה (Create Record)
+מילוי טופס עבור ציוד דיאגנוסטי חדש ("Automated Spectrometer X") ולחיצה על יצירה. המערכת מחוללת מפתח ראשי חדש ומציגה הודעת אישור על הצלחת ההוספה (מזהה ID: 501).
+![CRUD Create Success](./screenshots/11_crud_create_success.png)
+
+#### 12. עדכון רשומה קיימת (Update Record)
+טעינת הרשומה שנוצרה, עדכון שמה ל-"Automated Spectrometer X2" ולחיצה על שמירה. המערכת מעדכנת את הרשומה ומציגה הודעת אישור על ביצוע ה-Update.
+![CRUD Update Success](./screenshots/12_crud_update_success.png)
+
+#### 13. מחיקת רשומה - תיבת אישור (Delete Confirmation Window)
+לחיצה על מחיקה עבור הרשומה. המערכת מציגה תיבת דו-שיח המבקשת מהמשתמש לאשר את המחיקה הסופית של הרשומה כדי למנוע טעויות.
+![CRUD Delete Confirm](./screenshots/13_crud_delete_confirm.png)
+
+#### 14. מחיקת רשומה - אישור הצלחה (Delete Success Window)
+לאחר אישור המשתמש, הרשומה נמחקת לצמיתות ומסך הממשק מאשר זאת בדו-שיח ומנקה את הטפסים.
+![CRUD Delete Success](./screenshots/14_crud_delete_success.png)
+
+---
+
 ### ⚡ אילוצים ולוגים של בסיס הנתונים (Interactions & Logs)
 
 #### 9. לכידת חסימת טריגר (Trigger Database Block)
