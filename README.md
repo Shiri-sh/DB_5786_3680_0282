@@ -1,7 +1,7 @@
 # DB Project - Hospital Management System
 **Selected Division**: Laboratory & Diagnostics Division
 
-### 🧑‍💻 Authors
+###  Authors
 - Shiri Shachor
 - Yael Shushan
 
@@ -22,7 +22,7 @@ This section describes the graphical user interface (GUI) built for the medical 
 
 ---
 
-## 🛠️ Development Approach and Tools
+##  Development Approach and Tools
 
 The user interface was built as a desktop application using **Python** and a structured layered architecture that separates business logic, database connectivity, and the presentation layer:
 
@@ -42,7 +42,7 @@ The user interface was built as a desktop application using **Python** and a str
 
 ---
 
-## 🚀 System Login and Startup Instructions
+##  System Login and Startup Instructions
 
 The full code and files for the interface are organized in the submission folder [DBProject_5786_3680_0282/שלב ה](./DBProject_5786_3680_0282/שלב%20ה/).
 
@@ -70,11 +70,11 @@ The full code and files for the interface are organized in the submission folder
 
 ---
 
-## 📸 Comprehensive System Screenshot Gallery
+##  Comprehensive System Screenshot Gallery
 
 Below are screenshots demonstrating the various screens, display modes (light mode and dark mode), and database operations in action:
 
-### 🌤️ Light Mode Interface
+###  Light Mode Interface
 
 #### 1. Main Dashboard - Light Mode
 The dashboard displaying connection details and the current database version.
@@ -94,7 +94,7 @@ The analytics screen displaying the report results for the 5 most popular tests.
 
 ---
 
-### 🌙 Dark Mode Interface
+###  Dark Mode Interface
 
 #### 5. Main Dashboard - Dark Mode
 The dashboard with full dark theme styling.
@@ -111,7 +111,7 @@ A query tracking urgent orders that have been waiting for more than 48 hours.
 ![Analytics - Dark Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/08_dark_analytics.png)
 
 ---
-### ⚡ Database Operations, Constraints, and Runtime Logs (Interactions & Logs)
+###  Database Operations, Constraints, and Runtime Logs (Interactions & Logs)
 
 #### 9. Constraint Enforcement and Trigger Block (Trigger Database Block)
 A screenshot demonstrating error capture from the server when the user attempts to update an order with status `COMPLETED`. The `trg_status_protection` trigger rejected the change, and the database rolled back the transaction. The system displays the error properly in a dedicated dialog without crashing.
@@ -123,7 +123,7 @@ Running the `pr_promote_technicians` procedure for bonuses. The system retrieves
 
 ---
 
-### 🔄 Full CRUD Lifecycle Demonstration (Record Management)
+### Full CRUD Lifecycle Demonstration (Record Management)
 
 Below are screenshots demonstrating step by step the operations for creating, updating, and deleting records in the database (performed on the diagnostic equipment table):
 
