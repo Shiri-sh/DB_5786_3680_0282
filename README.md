@@ -12,134 +12,137 @@
 * [Stage 2 — SQL Queries, Updates & Constraints](./שלב_ב/README.md)
 * [Stage 3 — Integration & Foreign Data Wrapper (FDW)](./שלב_ג/README.md)
 * [Stage 4 — Database Programming (PL/pgSQL)](./שלב_ד/README.md)
-* [Stage 5 — Graphical User Interface (GUI)](#stage-5--graphical-user-interface-gui---שלב-ה)
+* [Stage 5 — Graphical User Interface (GUI)](#stage-5--graphical-user-interface-gui)
 
 ---
 
-# Stage 5 – Graphical User Interface (GUI) - שלב ה'
+# Stage 5 – Graphical User Interface (GUI)
 
-חלק זה מתאר את הממשק הגרפי (GUI) שנבנה עבור מערכת ניהול המעבדה הרפואית. הממשק מאפשר עבודה שוטפת מול בסיס הנתונים בצורה ידידותית וחזותית, תוך הפעלת כל היכולות הלוגיות והאינטגרטיביות שפותחו בשלבים הקודמים.
-
----
-
-## 🛠️ הסבר על דרך העבודה והכלים לפיתוח המערכת
-
-ממשק המשתמש נבנה כיישום שולחני (Desktop Application) תוך שימוש בשפת **Python** וארכיטקטורת שכבות מסודרת שמפרידה בין הלוגיקה העסקית, החיבור לבסיס הנתונים ושכבת התצוגה:
-
-1. **CustomTkinter (עיצוב הממשק):**
-   בחרנו להשתמש בספריית `customtkinter` (הרחבה מודרנית לספריית `tkinter` המובנית של פייתון). הספרייה מספקת רכיבים ויזואליים יפהפיים (כפתורים מעוגלים, טפסים מודרניים, תפריטי צד מבוססי ניווט) ותומכת באופן מובנה בהחלפה מהירה בין **מצב כהה (Dark Mode)** ל**מצב בהיר (Light Mode)**.
-
-2. **Psycopg2-binary & Connection Pooling (ניהול מסד הנתונים):**
-   החיבור ל-PostgreSQL מנוהל באמצעות מנגנון **Connection Pool** (בריכת חיבורים) דרך כלי ה-`ThreadedConnectionPool` של `psycopg2`. שיטה זו מונעת פתיחה וסגירה מרובה של חיבורים בכל פעולה, משפרת ביצועים ומאפשרת טיפול בריבוי תהליכים (Multi-threading).
-
-3. **שילוב פונקציות ופרוצדורות משלב ד':**
-   המשק משולב עמוק עם הלוגיקה הפנימית של בסיס הנתונים:
-   * **פרוצדורות:** המערכת קוראת ישירות ל-`pr_update_all_order_prices` (עדכון מחירי כל ההזמנות) ול-`pr_promote_technicians` (קידום טכנאים עם בונוסים), ושולפת את ההודעות (`RAISE NOTICE`) שנוצרו בדאטהבייס כדי להציג אותן למשתמש בדו-שיח מפורט.
-   * **פונקציות ואינטגרציה:** מסך האנליטיקה משתמש בפונקציה `fn_get_doctor_workload` כדי להביא את עומס העבודה של רופאים, כאשר רשימת הרופאים עצמה נשלפת בזמן אמת מטבלת האינטגרציה ה-Staff החיצונית (`staff_remote`) שהוקמה בשלב ג'.
-
-4. **מנגנון הגנה חכם מפני שגיאות (Constraint & Trigger Interception):**
-   במקרה של הפרת אילוצי דאטהבייס (למשל, ניסיון לעדכן הזמנה שכבר הושלמה אשר נחסמת על ידי הטריגר `trg_status_protection`), האפליקציה לוכדת את הודעת השגיאה המדויקת מהשרת ומציגה אותה למשתמש בתיבת שיח ידידותית ומעוצבת, במקום לקרוס.
+This section describes the graphical user interface (GUI) built for the medical laboratory management system. The interface enables day-to-day work with the database in a friendly, visual way, while activating all the logical and integrative capabilities developed in the previous stages.
 
 ---
 
-## 🚀 הוראות כניסה והפעלה של המערכת
+## 🛠️ Development Approach and Tools
 
-הקוד והקבצים המלאים של הממשק מאורגנים בתיקיית ההגשה [DBProject_5786_3680_0282/שלב ה](./DBProject_5786_3680_0282/שלב%20ה/).
+The user interface was built as a desktop application using **Python** and a structured layered architecture that separates business logic, database connectivity, and the presentation layer:
 
-### שלבי הרצה מהירים:
-1. **הפעלת בסיס הנתונים:** ודאו שקונטיינר ה-Docker של ה-Postgres שלכן פועל (`docker compose up -d db`).
-2. **ניווט לתיקיית שלב ה':**
+1. **CustomTkinter (UI Design):**
+   We chose to use the `customtkinter` library (a modern extension of Python's built-in `tkinter` library). The library provides beautiful visual components (rounded buttons, modern forms, navigation-based side menus) and natively supports quick switching between **Dark Mode** and **Light Mode**.
+
+2. **Psycopg2-binary & Connection Pooling (Database Management):**
+   The connection to PostgreSQL is managed via a **Connection Pool** using `psycopg2`'s `ThreadedConnectionPool`. This approach avoids repeatedly opening and closing connections on every operation, improves performance, and supports multi-threading.
+
+3. **Integration with Stage 4 Functions and Procedures:**
+   The interface is deeply integrated with the database's internal logic:
+   * **Procedures:** The system calls `pr_update_all_order_prices` (update all order prices) and `pr_promote_technicians` (promote technicians with bonuses) directly, and retrieves the messages (`RAISE NOTICE`) generated in the database to display them to the user in a detailed dialog.
+   * **Functions and Integration:** The analytics screen uses the `fn_get_doctor_workload` function to fetch doctors' workloads, while the doctor list itself is pulled in real time from the external Staff integration table (`staff_remote`) established in Stage 3.
+
+4. **Smart Error Protection Mechanism (Constraint & Trigger Interception):**
+   In the event of a database constraint violation (for example, attempting to update an order that has already been completed, which is blocked by the `trg_status_protection` trigger), the application captures the exact error message from the server and displays it to the user in a friendly, styled dialog box, instead of crashing.
+
+---
+
+## 🚀 System Login and Startup Instructions
+
+The full code and files for the interface are organized in the submission folder [DBProject_5786_3680_0282/שלב ה](./DBProject_5786_3680_0282/שלב%20ה/).
+
+### Quick Start Steps:
+1. **Start the database:** Make sure your Postgres Docker container is running (`docker compose up -d db`).
+2. **Navigate to the Stage 5 folder:**
    ```bash
    cd "DBProject_5786_3680_0282/שלב ה"
    ```
-3. **יצירת והפעלת סביבה וירטואלית:**
+3. **Create and activate a virtual environment:**
    ```bash
    python -m venv .venv
-   # הפעלה בחלונות (PowerShell):
+   # Activation on Windows (PowerShell):
    .venv\Scripts\Activate.ps1
    ```
-4. **התקנת הספריות הנדרשות:**
+4. **Install the required libraries:**
    ```bash
    pip install -r requirements.txt
    ```
-5. **הגדרת קובץ `.env`:** העתיקו את קובץ `.env.example` לקובץ `.env` ועדכנו בו את פרטי החיבור לשרת (שרת מקומי: `localhost`, משתמש: `MyUser`, סיסמה: `pass1234`, בסיס נתונים: `Hospital`).
-6. **הרצת האפליקציה:**
+5. **Configure the `.env` file:** Copy `.env.example` to `.env` and update the server connection details (local server: `localhost`, user: `MyUser`, password: `pass1234`, database: `Hospital`).
+6. **Run the application:**
    ```bash
    python main.py
    ```
 
 ---
 
-## 📸 גלריית תמונות מסך מקיפה של המערכת
+## 📸 Comprehensive System Screenshot Gallery
 
-להלן צילומי מסך המדגימים את המסכים השונים, את מצבי התצוגה (מצב בהיר ומצב כהה) ואת ביצוע הפעולות מול מסד הנתונים:
+Below are screenshots demonstrating the various screens, display modes (light mode and dark mode), and database operations in action:
 
-### 🌤️ ממשק במצב בהיר (Light Mode)
+### 🌤️ Light Mode Interface
 
-#### 1. לוח הבקרה הראשי (Dashboard) - מצב בהיר
-לוח הבקרה המציג את פרטי החיבור וגרסת מסד הנתונים הנוכחית.
+#### 1. Main Dashboard - Light Mode
+The dashboard displaying connection details and the current database version.
 ![Dashboard - Light Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/01_light_dashboard.png)
 
-#### 2. מודול ניהול הזמנות (CRUD Lab Orders) - מצב בהיר
-טופס מילוי וניהול הזמנות המעבדה בשילוב עם טבלת הנתונים.
+#### 2. Lab Orders Management Module (CRUD Lab Orders) - Light Mode
+A form for filling in and managing lab orders, combined with the data table.
 ![CRUD Orders - Light Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/02_light_crud_orders.png)
 
-#### 3. מודול ניהול טכנאים (CRUD Lab Technicians) - מצב בהיר
-מסך להוספה, עדכון ומחיקת טכנאי המעבדה עם תיבות בחירה חכמות למקצוע/הסמכה ומזהי עובדים.
+#### 3. Lab Technicians Management Module (CRUD Lab Technicians) - Light Mode
+A screen for adding, updating, and deleting lab technicians with smart selection boxes for profession/certification and employee IDs.
 ![CRUD Technicians - Light Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/03_light_crud_technicians.png)
 
-#### 4. שאילתות ודוחות (Analytics & Reports) - מצב בהיר
-מסך האנליטיקה המציג את תוצאות הדוח של 5 הבדיקות הפופולריות ביותר.
+#### 4. Queries and Reports (Analytics & Reports) - Light Mode
+The analytics screen displaying the report results for the 5 most popular tests.
 ![Analytics - Light Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/04_light_analytics.png)
 
 ---
 
-### 🌙 ממשק במצב כהה (Dark Mode)
+### 🌙 Dark Mode Interface
 
-#### 5. לוח הבקרה הראשי (Dashboard) - מצב כהה
-לוח הבקרה עם התאמה מלאה לעיצוב הכהה.
+#### 5. Main Dashboard - Dark Mode
+The dashboard with full dark theme styling.
 ![Dashboard - Dark Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/05_dark_dashboard.png)
 
-#### 6. מודול ניהול הזמנות (CRUD Lab Orders) - מצב כהה
+#### 6. Lab Orders Management Module (CRUD Lab Orders) - Dark Mode
 ![CRUD Orders - Dark Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/06_dark_crud_orders.png)
 
-#### 7. מודול ניהול טכנאים (CRUD Lab Technicians) - מצב כהה
+#### 7. Lab Technicians Management Module (CRUD Lab Technicians) - Dark Mode
 ![CRUD Technicians - Dark Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/07_dark_crud_technicians.png)
 
-#### 8. שאילתות ודוחות (Analytics & Reports) - מצב כהה
-שאילתת מעקב אחר הזמנות דחופות שממתינות מעל 48 שעות.
+#### 8. Queries and Reports (Analytics & Reports) - Dark Mode
+A query tracking urgent orders that have been waiting for more than 48 hours.
 ![Analytics - Dark Mode](./DBProject_5786_3680_0282/שלב%20ה/screenshots/08_dark_analytics.png)
 
 ---
+### ⚡ Database Operations, Constraints, and Runtime Logs (Interactions & Logs)
 
-### 🔄 הדגמת מחזור חיים מלא של פעולות CRUD (ניהול רשומות)
+#### 9. Constraint Enforcement and Trigger Block (Trigger Database Block)
+A screenshot demonstrating error capture from the server when the user attempts to update an order with status `COMPLETED`. The `trg_status_protection` trigger rejected the change, and the database rolled back the transaction. The system displays the error properly in a dedicated dialog without crashing.
+![Trigger Status Protection Error](./DBProject_5786_3680_0282/שלב%20ה/screenshots/09_trigger_error_dialog.png)
 
-להלן צילומי מסך המדגימים צעד אחר צעד את הפעולות ליצירה, עדכון ומחיקה של רשומות במאגר (בוצע על טבלת הציוד הדיאגנוסטי):
+#### 10. Stored Procedure Execution and Runtime Logs (Stored Procedure Notice Logs)
+Running the `pr_promote_technicians` procedure for bonuses. The system retrieves and displays the `RAISE NOTICE` messages passed directly from the server in a special scrollable window (list of employees who received bonuses and the number of tests they performed).
+![Stored Procedure Notice Logs](./DBProject_5786_3680_0282/שלב%20ה/screenshots/10_procedure_notice_dialog.png)
 
-#### 11. יצירת רשומה חדשה (Create Record)
-מילוי טופס עבור ציוד דיאגנוסטי חדש ("Automated Spectrometer X") ולחיצה על יצירה. המערכת מחוללת מפתח ראשי חדש ומציגה הודעת אישור על הצלחת ההוספה (מזהה ID: 501).
+---
+
+### 🔄 Full CRUD Lifecycle Demonstration (Record Management)
+
+Below are screenshots demonstrating step by step the operations for creating, updating, and deleting records in the database (performed on the diagnostic equipment table):
+
+#### 11. Create Record
+Filling in the form for new diagnostic equipment ("Automated Spectrometer X") and clicking Create. The system generates a new primary key and displays a confirmation message for a successful addition (ID: 501).
 ![CRUD Create Success](./DBProject_5786_3680_0282/שלב%20ה/screenshots/11_crud_create_success.png)
 
-#### 12. עדכון רשומה קיימת (Update Record)
-טעינת הרשומה שנוצרה, עדכון שמה ל-"Automated Spectrometer X2" ולחיצה על שמירה. המערכת מעדכנת את הרשומה ומציגה הודעת אישור על ביצוע ה-Update.
+#### 12. Update Record
+Loading the created record, updating its name to "Automated Spectrometer X2", and clicking Save. The system updates the record and displays a confirmation message for the successful update.
 ![CRUD Update Success](./DBProject_5786_3680_0282/שלב%20ה/screenshots/12_crud_update_success.png)
 
-#### 13. מחיקת רשומה - תיבת אישור (Delete Confirmation Window)
-לחיצה על מחיקה עבור הרשומה. המערכת מציגה תיבת דו-שיח המבקשת מהמשתמש לאשר את המחיקה הסופית של הרשומה כדי למנוע טעויות.
+#### 13. Delete Record - Confirmation Dialog
+Clicking Delete for the record. The system displays a dialog asking the user to confirm the permanent deletion of the record to prevent mistakes.
 ![CRUD Delete Confirm](./DBProject_5786_3680_0282/שלב%20ה/screenshots/13_crud_delete_confirm.png)
 
-#### 14. מחיקת רשומה - אישור הצלחה (Delete Success Window)
-לאחר אישור המשתמש, הרשומה נמחקת לצמיתות ומסך הממשק מאשר זאת בדו-שיח ומנקה את הטפסים.
+#### 14. Delete Record - Success Confirmation
+After the user confirms, the record is permanently deleted and the interface confirms this in a dialog and clears the forms.
 ![CRUD Delete Success](./DBProject_5786_3680_0282/שלב%20ה/screenshots/14_crud_delete_success.png)
 
 ---
 
-### ⚡ פעולות מסד נתונים, אילוצים ויומני ריצה (Interactions & Logs)
 
-#### 9. הפעלת אילוצים וחסימת טריגר (Trigger Database Block)
-צילום מסך המדגים את לכידת השגיאה מהשרת כאשר המשתמש מנסה לעדכן הזמנה בסטטוס `COMPLETED`. הטריגר `trg_status_protection` הודף את השינוי, ובסיס הנתונים דוחה את הטרנזקציה. המערכת מציגה את השגיאה כהלכה בתיבת דו-שיח ייעודית מבלי לקרוס.
-![Trigger Status Protection Error](./DBProject_5786_3680_0282/שלב%20ה/screenshots/09_trigger_error_dialog.png)
-
-#### 10. הרצת פרוצדורה וקבלת יומן ריצה (Stored Procedure Notice Logs)
-הרצת הפרוצדורה `pr_promote_technicians` לקבלת בונוסים. המערכת שולפת ומציגה בתוך חלון גלילה מיוחד את ה-`RAISE NOTICE` המועברים ישירות מהשרת (רשימת העובדים שקיבלו בונוס וכמות הבדיקות שביצעו).
-![Stored Procedure Notice Logs](./DBProject_5786_3680_0282/שלב%20ה/screenshots/10_procedure_notice_dialog.png)
